@@ -2,7 +2,7 @@
   "themes": [
     {
       "id": "01",
-      "title": "つなげモン ポータル <span class=\"text-xl text-slate-400 font-bold\">(仮)</span>",
+      "title": "つなげモン ポータル",
       "subtitle": "〜 取引先と「つなげモン」 〜",
       "description": "顧客、協力会社、仕入先と<span class=\"text-blue-600 font-bold border-b-2 border-blue-600\">マイページ</span>を介してリアルタイムな情報をつなげます",
       "problems": [
@@ -12,7 +12,7 @@
     },
     {
       "id": "02",
-      "title": "つなげモン 窓口 <span class=\"text-xl text-slate-400 font-bold\">(仮)</span>",
+      "title": "つなげモン 窓口",
       "subtitle": "〜 問合せを「つなげモン」 〜",
       "description": "<span class=\"text-green-600 font-bold border-b-2 border-green-600\">eメール、LINE等、FAX</span>の情報を自社データベースへつなげます",
       "problems": [
@@ -22,7 +22,7 @@
     },
     {
       "id": "03",
-      "title": "つなげモン モバイル <span class=\"text-xl text-slate-400 font-bold\">(仮)</span>",
+      "title": "つなげモン モバイル",
       "subtitle": "〜 モバイルと「つなげモン」 〜",
       "description": "仕入・出荷・棚卸等で<span class=\"text-yellow-600 font-bold border-b-2 border-yellow-600\">スマホやバーコードリーダ</span>を活用し、自社DBへつなげます",
       "problems": [
@@ -32,7 +32,7 @@
     },
     {
       "id": "04",
-      "title": "つなげモン ハブ <span class=\"text-xl text-slate-400 font-bold\">(仮)</span>",
+      "title": "つなげモン ハブ",
       "subtitle": "〜 他システムと「つなげモン」 〜",
       "description": "SalesforceやKintone等の<span class=\"text-purple-600 font-bold border-b-2 border-purple-600\">他システム（SaaS等）</span>とつなげます",
       "problems": [
@@ -42,7 +42,7 @@
     },
     {
       "id": "05",
-      "title": "つなげモン IoT <span class=\"text-xl text-slate-400 font-bold\">(仮)</span>",
+      "title": "つなげモン IoT",
       "subtitle": "〜 ハードと「つなげモン」 〜",
       "description": "制御装置やセンサー等の<span class=\"text-red-600 font-bold border-b-2 border-red-600\">ハードウェア（IoT）</span>とつなげます",
       "problems": [
