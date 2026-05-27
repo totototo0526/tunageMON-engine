@@ -153,3 +153,88 @@
     overflow: hidden;
     position: relative;
 }
+
+/* --------------------------------------------------------------------------
+   ユースケース2 (製造業向け) 用カスタムシェイプ
+   -------------------------------------------------------------------------- */
+/* Cloud shape */
+.cloud-container {
+    position: relative;
+    width: 220px;
+    height: 120px;
+    background: #2563eb;
+    border-radius: 50% 50% 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cloud-container::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: #2563eb;
+    border-radius: 50%;
+    top: 10%;
+    left: -20%;
+}
+
+.cloud-container::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: #2563eb;
+    border-radius: 50%;
+    top: -10%;
+    right: -20%;
+}
+
+/* Arrow shapes for flow */
+.flow-arrow {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid #2563eb;
+}
+
+.process-arrow {
+    width: 40px;
+    height: 12px;
+    background: #2563eb;
+    position: relative;
+    margin: 0 10px;
+}
+
+.process-arrow::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: -4px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 12px solid #2563eb;
+}
+
+/* Dashed arrow for jump */
+.dashed-arrow-group {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.dash {
+    width: 8px;
+    height: 12px;
+    background: #60a5fa;
+}
+
+.dash-head {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 12px solid #2563eb;
+}
