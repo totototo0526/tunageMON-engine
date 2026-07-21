@@ -9,4 +9,5 @@ Convert hardcoded HTML sections in the TunageMON LP template (`TemplateA.astro` 
 3. Create generic layout components (e.g., `BlockCards.astro`, `BlockBeforeAfter.astro`, `BlockFAQ.astro`) that handle presentation logic independent of the specific theme.
 4. Update Typst PDF generator to loop through the blocks and dynamically create corresponding slides based on the block type.
 5. Comment out or remove legacy hardcoded HTML text in all markdown files.
-6. Document the new block types and schema in `README.md`.
+## Status
+**Completed**: All legacy hardcoded HTML text in `07-theme.md` has been fully migrated to generic YAML blocks and rendered properly in both Web (Astro) and PDF (Typst).
