@@ -1,0 +1,32 @@
+---
+import { getCollection, render } from 'astro:content';
+import LPLayout from '../../layouts/LPLayout.astro';
+import TemplateA from '../../components/lp-templates/TemplateA.astro';
+
+export async function getStaticPaths() {
+  const themes = await getCollection('themes');
+  return themes.map(theme => ({
+    params: { slug: theme.id },
+    props: { theme },
+  }));
+}
+
+const { theme } = Astro.props;
+// Render content if there is any standard markdown body
+const { Content } = await render(theme);
+---
+
+<LPLayout frontmatter={theme.data}>
+    {/* layoutプロパティ等に応じてデザインをスイッチする仕組み（現在はID=02のみ仮で適用） */}
+    {theme.id === '02' ? (
+        <TemplateA theme={theme} />
+    ) : (
+        <div class="max-w-4xl mx-auto py-32 px-6 min-h-screen">
+            <a href="/" class="text-orange-500 font-bold hover:underline mb-8 inline-block">← トップに戻る</a>
+            <h1 class="text-4xl font-extrabold mb-8">{theme.data.title}</h1>
+            <div class="prose max-w-none text-slate-700 text-lg leading-loose">
+                <Content />
+            </div>
+        </div>
+    )}
+</LPLayout>
