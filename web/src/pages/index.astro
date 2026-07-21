@@ -1,0 +1,192 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ThemeCard from '../components/ThemeCard.astro';
+import themeData from '../../../data/theme.json';
+---
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>「つなげモン」サービスシリーズ | あらゆる分断をシームレスにつなぐ</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body class="font-sans text-slate-800 bg-white">
+
+    <Header />
+
+    <!-- ヒーローセクション (FV) -->
+    <header class="hero-pattern pt-32 pb-20 px-6 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2 z-10 text-center md:text-left">
+                <p
+                    class="inline-block bg-orange-100 text-orange-700 font-bold px-4 py-1.5 rounded-full mb-6 tracking-widest text-sm border border-orange-200">
+                    〜 お客様の夢と現実をつなげます 〜
+                </p>
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 tracking-tight text-slate-800">
+                    社内外の分断をなくし、<br>
+                    <span class="gradient-text">データの自動化</span>を実現する。
+                </h1>
+                <p class="text-lg text-slate-600 mb-8 leading-relaxed font-medium">
+                    取引先とのやり取り、バラバラの社内システム、現場のアナログ作業...<br>
+                    企業にはびこる「手作業・二重入力」の壁を、ゲートウェイアプリ「つなげモン」がシームレスに連携します。
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#contact"
+                        class="bg-orange-500 text-white font-bold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-orange-600 transition flex items-center justify-center gap-2">
+                        無料で相談してみる <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#solutions"
+                        class="bg-white text-slate-700 font-bold text-lg px-8 py-4 rounded-full shadow-md border border-slate-200 hover:bg-slate-50 transition text-center">
+                        機能を見る
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative z-10 w-full">
+                <!-- ヒーローイメージ：システムが繋がる抽象図 -->
+                <div class="bg-slate-800 rounded-3xl p-8 shadow-2xl border-8 border-white relative overflow-hidden">
+                    <div class="absolute inset-0 opacity-20"
+                        style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 20px 20px;">
+                    </div>
+                    <div class="flex items-center justify-center h-64 relative">
+                        <!-- 周囲の要素 -->
+                        <div
+                            class="absolute top-4 left-4 bg-blue-500/20 p-3 rounded-xl border border-blue-400/30 backdrop-blur-sm animate-pulse">
+                            <i data-lucide="smartphone" class="w-8 h-8 text-blue-300"></i>
+                        </div>
+                        <div class="absolute bottom-4 left-10 bg-green-500/20 p-3 rounded-xl border border-green-400/30 backdrop-blur-sm animate-pulse"
+                            style="animation-delay: 0.5s;"><i data-lucide="mail" class="w-8 h-8 text-green-300"></i>
+                        </div>
+                        <div class="absolute top-10 right-8 bg-purple-500/20 p-3 rounded-xl border border-purple-400/30 backdrop-blur-sm animate-pulse"
+                            style="animation-delay: 1s;"><i data-lucide="cloud" class="w-8 h-8 text-purple-300"></i>
+                        </div>
+                        <div class="absolute bottom-8 right-12 bg-red-500/20 p-3 rounded-xl border border-red-400/30 backdrop-blur-sm animate-pulse"
+                            style="animation-delay: 1.5s;"><i data-lucide="cpu" class="w-8 h-8 text-red-300"></i></div>
+
+                        <!-- 中央のつなげモンとDB -->
+                        <div class="flex items-center gap-6">
+                            <div
+                                class="bg-gradient-to-br from-orange-400 to-red-500 p-1.5 rounded-full shadow-[0_0_30px_rgba(249,115,22,0.5)] z-20">
+                                <div class="bg-slate-900 rounded-full p-4 flex items-center justify-center">
+                                    <i data-lucide="workflow" class="w-10 h-10 text-orange-400"></i>
+                                </div>
+                            </div>
+                            <i data-lucide="arrow-right" class="w-8 h-8 text-slate-500"></i>
+                            <div class="bg-slate-700 p-4 rounded-xl border border-slate-600 shadow-inner z-20">
+                                <i data-lucide="database" class="w-12 h-12 text-blue-400 mb-1"></i>
+                                <div class="text-[10px] text-white font-bold text-center">自社DB</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 課題セクション -->
+    <section id="problems" class="py-20 px-6 bg-slate-800 text-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">こんな「連携の壁」にお悩みではありませんか？</h2>
+                <div class="w-16 h-1 bg-orange-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-slate-700/50 p-6 rounded-2xl border border-slate-600 flex gap-4 items-start">
+                    <div class="bg-slate-800 p-3 rounded-xl text-slate-400"><i data-lucide="phone-call"
+                            class="w-6 h-6"></i></div>
+                    <div>
+                        <h3 class="font-bold text-lg text-orange-300 mb-2">電話・FAXでの受発注</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">未だに注文はFAX。手作業でシステムに入力するため、時間がかかり転記ミスも減らない。</p>
+                    </div>
+                </div>
+                <div class="bg-slate-700/50 p-6 rounded-2xl border border-slate-600 flex gap-4 items-start">
+                    <div class="bg-slate-800 p-3 rounded-xl text-slate-400"><i data-lucide="files" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-orange-300 mb-2">システムのサイロ化（孤立）</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            営業はSaaS、全社はKintone、基幹システムは別...。顧客マスタがバラバラで二重入力が発生している。</p>
+                    </div>
+                </div>
+                <div class="bg-slate-700/50 p-6 rounded-2xl border border-slate-600 flex gap-4 items-start">
+                    <div class="bg-slate-800 p-3 rounded-xl text-slate-400"><i data-lucide="clipboard-list"
+                            class="w-6 h-6"></i></div>
+                    <div>
+                        <h3 class="font-bold text-lg text-orange-300 mb-2">現場の紙（野帳）運用</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            倉庫や工場では紙で記録し、事務所に戻ってからExcelに打ち直すという非効率な作業が続いている。</p>
+                    </div>
+                </div>
+                <div class="bg-slate-700/50 p-6 rounded-2xl border border-slate-600 flex gap-4 items-start">
+                    <div class="bg-slate-800 p-3 rounded-xl text-slate-400"><i data-lucide="mail-warning"
+                            class="w-6 h-6"></i></div>
+                    <div>
+                        <h3 class="font-bold text-lg text-orange-300 mb-2">バラバラの問い合わせ窓口</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">メール、LINE、電話など複数の窓口から連絡が来るため、対応履歴が一元管理できていない。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-xl font-bold">その課題、<span class="text-orange-400 text-2xl mx-2">「つなげモン」</span>がすべて解決します。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ソリューション (5テーマ) -->
+    <section id="solutions" class="py-24 px-6 bg-slate-50">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-orange-600 font-bold tracking-widest text-sm uppercase">Solutions</span>
+                <h2 class="text-4xl font-extrabold text-slate-800 mt-2 mb-4">5つの連携ソリューション</h2>
+                <p class="text-slate-600">自社データベース（販売管理システム等）を軸に、あらゆる情報を集約します。</p>
+            </div>
+
+            <div class="space-y-12">
+                <!-- ThemeCard を JSONからループ生成 -->
+                {themeData.themes.map(theme => <ThemeCard theme={theme} />)}
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / お問い合わせ -->
+    <section id="contact" class="py-24 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 bg-slate-800"></div>
+        <div class="absolute inset-0 opacity-10"
+            style="background-image: radial-gradient(#fff 2px, transparent 2px); background-size: 30px 30px;"></div>
+
+        <div class="max-w-4xl mx-auto relative z-10 bg-white rounded-3xl p-10 md:p-16 text-center shadow-2xl">
+            <i data-lucide="network" class="w-16 h-16 text-orange-500 mx-auto mb-6"></i>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mb-6">「うちのシステムも繋がる？」<br>まずはお気軽にご相談ください。</h2>
+            <p class="text-slate-600 mb-10 font-medium">
+                現状の業務フローやご利用中のシステムをお伺いし、<br class="hidden md:block">
+                最適な「つなげモン」の活用方法と費用感をご提案いたします。
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://www.k-sp.co.jp/contact"
+                    class="bg-orange-500 text-white font-bold text-lg px-10 py-4 rounded-full shadow-lg hover:bg-orange-600 transition flex items-center justify-center gap-2">
+                    <i data-lucide="mail" class="w-5 h-5"></i> お問い合わせ・資料請求
+                </a>
+                <a href="#"
+                    class="bg-slate-800 text-white font-bold text-lg px-10 py-4 rounded-full shadow-lg hover:bg-slate-900 transition flex items-center justify-center gap-2">
+                    <i data-lucide="phone" class="w-5 h-5"></i> 06-6355-4120
+                </a>
+            </div>
+            <p class="text-sm text-slate-400 mt-6">営業時間：平日 9:00〜17:00</p>
+        </div>
+    </section>
+
+    <Footer />
+
+    <script is:inline src="/assets/js/main.js"></script>
+</body>
+</html>

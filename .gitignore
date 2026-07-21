@@ -1,1 +1,18 @@
-docs/
+# Build outputs
+web/dist/
+slides/
+**/*.pdf
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS / Editor
+.DS_Store
+.vscode/
+.idea/
+
+# Astro specific
+web/.astro/
