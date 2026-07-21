@@ -1,10 +1,11 @@
 ---
 import LPHero from './LPHero.astro';
 import LPProblems from './LPProblems.astro';
-import LPSolution from './LPSolution.astro';
-import LPScenarios from './LPScenarios.astro';
-import LPFAQ from './LPFAQ.astro';
 import LPPricing from './LPPricing.astro';
+
+import BlockCards from '../lp-blocks/BlockCards.astro';
+import BlockBeforeAfter from '../lp-blocks/BlockBeforeAfter.astro';
+import BlockFAQ from '../lp-blocks/BlockFAQ.astro';
 
 const { theme } = Astro.props;
 ---
@@ -155,9 +156,12 @@ details[open] span[data-ind]{transform:rotate(45deg)}
     
     <LPProblems theme={theme} />
     
-    <LPSolution theme={theme} />
-    <LPScenarios theme={theme} />
-    <LPFAQ theme={theme} />
+    {theme.data.blocks && theme.data.blocks.map(block => {
+        if (block.type === 'BlockCards') return <BlockCards block={block} />;
+        if (block.type === 'BlockBeforeAfter') return <BlockBeforeAfter block={block} />;
+        if (block.type === 'BlockFAQ') return <BlockFAQ block={block} />;
+        return null;
+    })}
 
     <slot />
 

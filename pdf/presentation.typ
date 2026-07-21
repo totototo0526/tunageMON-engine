@@ -124,83 +124,91 @@
     )
   ]
 
-  #if "solution" in theme and theme.solution != none [
-    #slide(title: theme.title, subtitle: "解決策")[
-      #v(1em)
-      #text(size: 32pt, weight: "bold", fill: rgb("0F172A"))[
-        #if "catchphrase" in theme.solution [ #theme.solution.catchphrase ] else [ つなげモンは、3つをひとつにします ]
-      ]
-      #v(2em)
-      #grid(
-        columns: (1fr, 1fr, 1fr),
-        gutter: 2em,
-        ..theme.solution.points.map(point => [
-          #box(fill: rgb("F8FAFC"), inset: 1.5em, radius: 1em, width: 100%, height: 100%, [
-            #if "badge" in point [
-              #text(size: 48pt, weight: "bold", fill: rgb("E2E8F0"))[#point.badge]
-              #v(-1.5em)
-            ]
-            #text(size: 24pt, weight: "bold", fill: rgb("1E293B"))[#point.title]
-            #if "subtitle" in point and point.subtitle != "" [
-              #v(0.5em)
-              #text(size: 16pt, weight: "bold", fill: rgb("C2410C"))[#point.subtitle]
-            ]
+  #if "blocks" in theme and theme.blocks != none [
+    #for block in theme.blocks [
+      #if block.type == "BlockCards" [
+        #slide(title: theme.title, subtitle: block.title)[
+          #v(1em)
+          #if "desc" in block and block.desc != "" [
+            #text(size: 24pt, fill: rgb("475569"))[#block.desc]
             #v(1em)
-            #text(size: 18pt)[#point.desc]
-          ])
-        ])
-      )
-    ]
-  ]
-
-  #if "scenarios" in theme and theme.scenarios != none [
-    #for (i, scenario) in theme.scenarios.enumerate() [
-      #slide(title: theme.title, subtitle: "導入シナリオ " + str(i + 1))[
-        #v(1em)
-        #box(fill: rgb("FFF7ED"), inset: 1em, radius: 0.5em)[
-          #text(weight: "bold", fill: rgb("C2410C"))[#scenario.industry]
-        ]
-        #v(1em)
-        #grid(
-          columns: (1fr, auto, 1fr),
-          align: horizon,
-          gutter: 2em,
-          [
-            #text(size: 20pt, fill: rgb("64748B"))[導入前]
-            #v(0.5em)
-            #text(size: 28pt, weight: "bold")[#scenario.before]
-          ],
-          [
-            #text(size: 40pt, fill: rgb("94A3B8"))[→]
-          ],
-          [
-            #text(size: 20pt, fill: rgb("64748B"))[導入後]
-            #v(0.5em)
-            #text(size: 28pt, weight: "bold", fill: rgb("10B981"))[#scenario.after]
           ]
-        )
-        #v(2em)
-        #box(fill: rgb("F1F5F9"), inset: 2em, radius: 1em, width: 100%)[
-          #text(size: 20pt)[#scenario.desc]
+          #if "items" in block and block.items != none [
+            #grid(
+              columns: (1fr, 1fr, 1fr),
+              gutter: 2em,
+              ..block.items.map(point => [
+                #box(fill: rgb("F8FAFC"), inset: 1.5em, radius: 1em, width: 100%, height: 100%, [
+                  #if "badge" in point [
+                    #text(size: 48pt, weight: "bold", fill: rgb("E2E8F0"))[#point.badge]
+                    #v(-1.5em)
+                  ]
+                  #text(size: 24pt, weight: "bold", fill: rgb("1E293B"))[#point.title]
+                  #if "subtitle" in point and point.subtitle != "" [
+                    #v(0.5em)
+                    #text(size: 16pt, weight: "bold", fill: rgb("C2410C"))[#point.subtitle]
+                  ]
+                  #if "desc" in point [
+                    #v(1em)
+                    #text(size: 18pt)[#point.desc]
+                  ]
+                ])
+              ])
+            )
+          ]
+        ]
+      ] else if block.type == "BlockBeforeAfter" [
+        #if "items" in block and block.items != none [
+          #for (i, scenario) in block.items.enumerate() [
+            #slide(title: theme.title, subtitle: block.title + " " + str(i + 1))[
+              #v(1em)
+              #box(fill: rgb("FFF7ED"), inset: 1em, radius: 0.5em)[
+                #text(weight: "bold", fill: rgb("C2410C"))[#scenario.tag]
+              ]
+              #v(1em)
+              #grid(
+                columns: (1fr, auto, 1fr),
+                align: horizon,
+                gutter: 2em,
+                [
+                  #text(size: 20pt, fill: rgb("64748B"))[導入前]
+                  #v(0.5em)
+                  #text(size: 28pt, weight: "bold")[#scenario.before]
+                ],
+                [
+                  #text(size: 40pt, fill: rgb("94A3B8"))[→]
+                ],
+                [
+                  #text(size: 20pt, fill: rgb("64748B"))[導入後]
+                  #v(0.5em)
+                  #text(size: 28pt, weight: "bold", fill: rgb("10B981"))[#scenario.after]
+                ]
+              )
+              #v(2em)
+              #box(fill: rgb("F1F5F9"), inset: 2em, radius: 1em, width: 100%)[
+                #text(size: 20pt)[#scenario.desc]
+              ]
+            ]
+          ]
+        ]
+      ] else if block.type == "BlockFAQ" [
+        #if "items" in block and block.items != none [
+          #slide(title: theme.title, subtitle: block.title)[
+            #v(1em)
+            #grid(
+              columns: (1fr),
+              gutter: 1.5em,
+              ..block.items.slice(0, 4).map(item => [
+                #box(width: 100%, stroke: (bottom: 1pt + rgb("E2E8F0")), inset: (bottom: 1em))[
+                  #text(weight: "bold", size: 20pt, fill: rgb("1E293B"))[Q. #item.q]
+                  #v(0.5em)
+                  #text(size: 18pt, fill: rgb("475569"))[A. #item.a]
+                ]
+              ])
+            )
+          ]
         ]
       ]
-    ]
-  ]
-
-  #if "faq" in theme and theme.faq != none [
-    #slide(title: theme.title, subtitle: "よくある質問")[
-      #v(1em)
-      #grid(
-        columns: (1fr),
-        gutter: 1.5em,
-        ..theme.faq.slice(0, 4).map(item => [
-          #box(width: 100%, stroke: (bottom: 1pt + rgb("E2E8F0")), inset: (bottom: 1em))[
-            #text(weight: "bold", size: 20pt, fill: rgb("1E293B"))[Q. #item.q]
-            #v(0.5em)
-            #text(size: 18pt, fill: rgb("475569"))[A. #item.a]
-          ]
-        ])
-      )
     ]
   ]
 ]
