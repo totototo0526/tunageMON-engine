@@ -1,0 +1,28 @@
+---
+const { theme } = Astro.props;
+---
+<section data-screen-label="悩み" style="background:#F7F5F0;padding:clamp(72px,9vw,110px) 24px">
+  <div style="max-width:1080px;margin:0 auto">
+    <div data-fade="0" style="display:flex;align-items:center;gap:14px;margin:0 0 16px">
+      <span style="font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--c-accent)">01</span>
+      <span style="width:36px;height:1px;background:#C9C4B6"></span>
+    </div>
+    <h2 data-fade="0" style="margin:0 0 40px;font-size:clamp(26px,3.6vw,38px);font-weight:900;line-height:1.45;letter-spacing:.03em;color:#1F2430;font-feature-settings:'palt';word-break:auto-phrase">こんな悩みはありませんか</h2>
+    <div class="problem-grid">
+      {theme.data.problems ? theme.data.problems.map((prob, index) => {
+         const title = typeof prob === 'string' ? prob : prob.title;
+         const desc = typeof prob === 'string' ? '' : prob.description;
+         const img = typeof prob === 'string' ? '01-decision.webp' : (prob.image || '01-decision.webp');
+         const delay = index * 80;
+         return (
+           <article class="problem-card" data-fade={delay}>
+             <div class="problem-card-media"><img src={`../../assets/problems/cards/${img}`} alt={title} width="1672" height="941" loading="lazy" decoding="async" /></div>
+             <div class="problem-card-body"><h3>{title}</h3><p>{desc}</p></div>
+           </article>
+         );
+      }) : (
+        <p>（悩みが登録されていません）</p>
+      )}
+    </div>
+  </div>
+</section>

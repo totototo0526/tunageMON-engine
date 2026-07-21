@@ -1,0 +1,30 @@
+---
+const { theme } = Astro.props;
+---
+<section id="top" class="hero-section" data-screen-label="ヒーロー" style="padding:clamp(72px,10vw,130px) 24px clamp(64px,8vw,110px);scroll-margin-top:70px">
+  <img class="hero-background" src="../../assets/visuals/hero-ai-banto.webp" alt="社内担当者がつなげモン No.2とともに業務情報を確認し、会社の記録として整理するイメージ" width="1600" height="900" decoding="async" fetchpriority="high">
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-layout" style="max-width:1080px;margin:0 auto">
+    <div class="hero-copy">
+      <div data-fade="0" style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 30px">
+        <span class="hero-badge" style="font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--c-primary);background:#F7F5F0;border:1px solid #E4E1D8;padding:6px 14px">{theme.data.title || 'つなげモン No.2'}</span>
+      </div>
+      <h1 style="margin:0 0 28px;font-weight:900;letter-spacing:.02em;color:#1F2430;font-feature-settings:'palt';word-break:auto-phrase">
+        <span data-fade="80" style="display:block;color:var(--c-primary)">{theme.data.subtitle || '事業の判断と実行をスピードアップ。'}</span>
+      </h1>
+      <p class="hero-lead" data-fade="420" style="margin:0 0 26px;max-width:720px;font-size:clamp(15.5px,1.6vw,17.5px);line-height:2.05;color:#444B59;word-break:auto-phrase" set:html={theme.data.description || '今までどおりの仕事をAIと進めるだけで、商談の経緯や案件の状況、各業務の手順が、社内で共有できる形に整理されていきます。'} />
+      <div class="hero-service-menu" data-fade="640">
+        <p>導入から定着まで支援</p>
+        <div class="hero-service-list">
+          <div class="hero-service-item"><span class="hero-service-index">01</span><span>つなげモン No.2の環境構築</span></div>
+          <div class="hero-service-item"><span class="hero-service-index">02</span><span>定期ヒアリングで実行結果を確認し、改善策を一緒に検討</span></div>
+          <div class="hero-service-item"><span class="hero-service-index">03</span><span>本件責任者への運用方法、AI・IT指導</span></div>
+        </div>
+      </div>
+      <div class="hero-actions" data-fade="720" style="display:flex;flex-wrap:wrap;align-items:center;gap:14px">
+        <a href="https://www.k-sp.co.jp/admin/std/contact/new" style="display:inline-block;background:var(--c-accent);color:#FFFFFF;font-size:16px;font-weight:700;letter-spacing:.06em;padding:16px 40px;border-radius:3px;text-decoration:none;box-shadow:0 6px 16px rgba(176,84,60,.25);transition:filter .2s ease,transform .2s ease" style-hover="filter:brightness(.92);transform:translateY(-1px);color:#FFFFFF">無料で相談する</a>
+        <a href="#pricing" style="display:inline-block;background:#FFFFFF;color:var(--c-primary);border:1px solid var(--c-primary);font-size:16px;font-weight:700;letter-spacing:.06em;padding:15px 40px;border-radius:3px;text-decoration:none;transition:background .2s ease" style-hover="background:#F2F1EC">料金を見る</a>
+      </div>
+    </div>
+  </div>
+</section>
