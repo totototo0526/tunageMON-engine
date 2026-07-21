@@ -30,9 +30,8 @@ jobs:
       - name: Download Japanese Font
         run: |
           mkdir -p pdf/fonts
-          curl -L -o NotoSansJP.zip "https://fonts.google.com/download?family=Noto%20Sans%20JP"
-          unzip NotoSansJP.zip -d pdf/fonts/
-          rm NotoSansJP.zip
+          curl -L -o pdf/fonts/NotoSansCJKjp-Regular.otf "https://github.com/notofonts/noto-cjk/raw/main/Sans/OTF/Japanese/NotoSansCJKjp-Regular.otf"
+          curl -L -o pdf/fonts/NotoSansCJKjp-Bold.otf "https://github.com/notofonts/noto-cjk/raw/main/Sans/OTF/Japanese/NotoSansCJKjp-Bold.otf"
 
       - name: Install dependencies
         run: npm ci
