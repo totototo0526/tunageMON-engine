@@ -44,7 +44,10 @@ for (const file of files) {
     }
 }
 
-const output = { themes };
+const output = { 
+    _WARNING: "⚠️このファイルは自動生成されています。直接編集しないでください！ データを追加・変更する場合は、web/src/content/themes/ のMarkdownファイルを編集してください。",
+    themes 
+};
 const jsonOutput = JSON.stringify(output, null, 2);
 
 // Write to master data folder for Typst
