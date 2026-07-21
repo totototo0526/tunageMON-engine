@@ -25,6 +25,26 @@ const themesCollection = defineCollection({
       initial: z.string().optional(),
       monthly: z.string().optional(),
     }).optional(),
+    solution: z.object({
+      catchphrase: z.string().optional(),
+      points: z.array(z.object({
+        badge: z.string().optional(),
+        title: z.string(),
+        subtitle: z.string().optional(),
+        desc: z.string()
+      }))
+    }).optional(),
+    scenarios: z.array(z.object({
+      industry: z.string(),
+      before: z.string(),
+      after: z.string(),
+      desc: z.string(),
+      image: z.string()
+    })).optional(),
+    faq: z.array(z.object({
+      q: z.string(),
+      a: z.string()
+    })).optional(),
     button: z.object({
       type: z.string(),
       url: z.string(),

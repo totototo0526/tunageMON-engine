@@ -1,0 +1,30 @@
+---
+const { theme } = Astro.props;
+const solution = theme.data.solution;
+---
+
+{solution && solution.points && (
+<section data-screen-label="解決策" style="background:#FFFFFF;padding:clamp(72px,9vw,110px) 24px">
+  <div style="max-width:1080px;margin:0 auto">
+    <div data-fade="0" style="display:flex;align-items:center;gap:14px;margin:0 0 16px">
+      <span style="font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--c-accent)">02　解決策</span>
+      <span style="width:36px;height:1px;background:#C9C4B6"></span>
+    </div>
+    
+    <h2 data-fade="0" style="margin:0 0 10px;font-size:clamp(27px,3.8vw,40px);font-weight:900;line-height:1.5;letter-spacing:.03em;color:#1F2430;font-feature-settings:'palt';word-break:auto-phrase">
+      {solution.catchphrase ? solution.catchphrase : "つなげモンは、3つをひとつにします"}
+    </h2>
+    
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin:0 0 72px">
+      {solution.points.map((point, index) => (
+      <div data-fade={index * 100} style="position:relative;overflow:hidden;background:#FFFFFF;border:1px solid #E4E1D8;border-top:2px solid var(--c-primary);padding:30px 28px">
+        {point.badge && <span style="position:absolute;top:6px;right:14px;font-size:72px;font-weight:900;line-height:1;color:rgba(27,42,74,.06);pointer-events:none">{point.badge}</span>}
+        <h4 style="margin:0 0 6px;font-size:22px;font-weight:900;letter-spacing:.04em;color:#1F2430">{point.title}</h4>
+        {point.subtitle && <p style="margin:0 0 14px;font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--c-accent)">{point.subtitle}</p>}
+        <p style="margin:0;font-size:15px;line-height:1.95;color:#444B59">{point.desc}</p>
+      </div>
+      ))}
+    </div>
+  </div>
+</section>
+)}

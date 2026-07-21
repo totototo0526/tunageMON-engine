@@ -1,6 +1,9 @@
 ---
 import LPHero from './LPHero.astro';
 import LPProblems from './LPProblems.astro';
+import LPSolution from './LPSolution.astro';
+import LPScenarios from './LPScenarios.astro';
+import LPFAQ from './LPFAQ.astro';
 import LPPricing from './LPPricing.astro';
 
 const { theme } = Astro.props;
@@ -149,8 +152,12 @@ details[open] span[data-ind]{transform:rotate(45deg)}
 <div class="lp-theme-wrapper">
     <!-- ヒーローセクションから下のみを配置（ヘッダー等はLPLayoutから提供） -->
     <LPHero theme={theme} />
-
+    
     <LPProblems theme={theme} />
+    
+    <LPSolution theme={theme} />
+    <LPScenarios theme={theme} />
+    <LPFAQ theme={theme} />
 
     <slot />
 
