@@ -12,6 +12,8 @@ import BlockList from '../lp-blocks/BlockList.astro';
 import BlockCTA from '../lp-blocks/BlockCTA.astro';
 import BlockComparisonCards from '../lp-blocks/BlockComparisonCards.astro';
 import BlockText from '../lp-blocks/BlockText.astro';
+import BlockChatDemo from '../lp-blocks/BlockChatDemo.astro';
+import BlockReasoningGrid from '../lp-blocks/BlockReasoningGrid.astro';
 
 const { theme } = Astro.props;
 ---
@@ -172,6 +174,8 @@ details[open] span[data-ind]{transform:rotate(45deg)}
         if (block.type === 'BlockCTA') return <BlockCTA block={block} />;
         if (block.type === 'BlockComparisonCards') return <BlockComparisonCards block={block} />;
         if (block.type === 'BlockText') return <BlockText block={block} />;
+        if (block.type === 'BlockChatDemo') return <BlockChatDemo block={block} />;
+        if (block.type === 'BlockReasoningGrid') return <BlockReasoningGrid block={block} />;
         return null;
     })}
 

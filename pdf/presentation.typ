@@ -191,6 +191,57 @@
             ]
           ]
         ]
+      ] else if block.type == "BlockChatDemo" [
+        #slide(title: theme.title, subtitle: block.title)[
+          #v(1em)
+          #if "patterns" in block and block.patterns != none [
+            #grid(
+              columns: (1fr, 1fr),
+              gutter: 2em,
+              ..block.patterns.map(pattern => [
+                #box(fill: rgb("F8FAFC"), inset: 1.5em, radius: 1em, width: 100%, height: 100%, [
+                  #text(size: 20pt, weight: "bold", fill: rgb("1E293B"))[#pattern.label: #pattern.title]
+                  #v(1em)
+                  #for msg in pattern.messages [
+                    #if msg.senderType == "user" [
+                      #box(fill: rgb("E2E8F0"), inset: 1em, radius: 0.5em, width: 100%)[
+                        #text(weight: "bold")[#msg.senderName]
+                        #v(0.5em)
+                        #text(size: 16pt)[#if "prefix" in msg { [#text(fill: rgb("64748B"))[#msg.prefix] ] } #msg.text]
+                      ]
+                    ] else [
+                      #box(fill: rgb("FFF7ED"), stroke: 1pt + rgb("F97316"), inset: 1em, radius: 0.5em, width: 100%)[
+                        #text(weight: "bold", fill: rgb("C2410C"))[#msg.senderName]
+                        #v(0.5em)
+                        #text(size: 16pt)[#msg.text]
+                      ]
+                    ]
+                    #v(0.5em)
+                  ]
+                ])
+              ])
+            )
+          ]
+        ]
+      ] else if block.type == "BlockReasoningGrid" [
+        #slide(title: theme.title, subtitle: block.title)[
+          #v(1em)
+          #if "items" in block and block.items != none [
+            #grid(
+              columns: (1fr, 1fr, 1fr),
+              gutter: 1.5em,
+              ..block.items.map(item => [
+                #box(stroke: 1pt + rgb("E2E8F0"), inset: 1.5em, radius: 1em, width: 100%, height: 100%, [
+                  #text(weight: "bold", fill: rgb("C2410C"))[#item.num]
+                  #v(0.5em)
+                  #text(weight: "bold", size: 18pt)[#item.title]
+                  #v(0.5em)
+                  #text(size: 14pt)[#item.desc]
+                ])
+              ])
+            )
+          ]
+        ]
       ] else if block.type == "BlockFAQ" [
         #if "items" in block and block.items != none [
           #slide(title: theme.title, subtitle: block.title)[

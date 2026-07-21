@@ -1,0 +1,44 @@
+---
+const { block } = Astro.props;
+---
+<section data-screen-label={block.title || "詳細解説"} style="background:#FFFFFF;padding:clamp(0px,0vw,0px) 24px">
+<div style="max-width:1080px;margin:0 auto">
+<div style="max-width:760px;margin:0 auto 72px">
+  <h3 data-fade="0" style="margin:0 0 8px;font-size:clamp(19px,2.2vw,23px);font-weight:800;letter-spacing:.04em;color:#1F2430;font-feature-settings:'palt'">{block.title}</h3>
+  {block.note && <p data-fade="0" style="margin:0 0 28px;font-size:13px;color:#8A8FA0">{block.note}</p>}
+
+  {block.patterns && block.patterns.map(pattern => (
+  <>
+  <div class="print-keep-heading" data-fade="0" style="display:flex;align-items:center;gap:10px;margin:0 0 14px">
+    <span style="font-size:12px;font-weight:800;letter-spacing:.06em;color:#FFFFFF;background:var(--c-primary);padding:4px 12px">{pattern.label}</span>
+    <span style="font-size:15px;font-weight:700;color:#1F2430">{pattern.title}</span>
+  </div>
+  <div class="print-keep-card" data-fade="0" style="background:#22252E;border-radius:10px;overflow:hidden;box-shadow:0 14px 34px rgba(23,28,44,.16);margin:0 0 36px">
+    <div style="display:flex;align-items:center;gap:7px;padding:12px 16px;background:#1B1E26">
+      <span style="width:10px;height:10px;border-radius:50%;background:#3A3F4D"></span>
+      <span style="width:10px;height:10px;border-radius:50%;background:#3A3F4D"></span>
+      <span style="width:10px;height:10px;border-radius:50%;background:#3A3F4D"></span>
+      <span style="margin-left:8px;font-size:12.5px;letter-spacing:.06em;color:#8E96A8">社内チャット</span>
+    </div>
+    <div style="padding:22px 20px 26px;display:flex;flex-direction:column;gap:20px">
+      {pattern.messages.map(msg => (
+      <div style="display:flex;gap:12px;align-items:flex-start">
+        <span style={`flex:none;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:${msg.senderType === 'user' ? '15px' : '13px'};font-weight:${msg.senderType === 'user' ? '700' : '800'};background:${msg.senderType === 'user' ? '#3A4152' : 'var(--c-accent)'};color:${msg.senderType === 'user' ? '#DDE2EC' : '#FFFFFF'}`}>
+          {msg.senderName.charAt(0)}
+        </span>
+        <div style="min-width:0">
+          <div style="margin:0 0 5px;font-size:13.5px;font-weight:700;color:#C8CEDC">{msg.senderName}</div>
+          {msg.prefix && <div style="font-size:14.5px;line-height:1.85;color:#E7EAF2"><span style="color:#9BA3B5">{msg.prefix}</span>{msg.text}</div>}
+          {!msg.prefix && msg.text.split('\\n').map(line => (
+             <div style="font-size:14.5px;line-height:1.9;color:#E7EAF2">{line}</div>
+          ))}
+        </div>
+      </div>
+      ))}
+    </div>
+  </div>
+  </>
+  ))}
+</div>
+</div>
+</section>

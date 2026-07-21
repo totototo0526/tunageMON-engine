@@ -1,0 +1,22 @@
+---
+const { block } = Astro.props;
+---
+<section data-screen-label={block.title || "解決できる理由"} style="background:#FFFFFF;padding:clamp(0px,0vw,0px) 24px">
+<div style="max-width:1080px;margin:0 auto">
+  <h3 data-fade="0" style="margin:0 0 clamp(42px,6vw,70px);font-size:clamp(22px,3vw,32px);font-weight:900;line-height:1.5;letter-spacing:.04em;color:#1F2430;font-feature-settings:'palt';word-break:auto-phrase">{block.title}</h3>
+  <div class="reason-list">
+    {block.items && block.items.map((item, i) => (
+    <article class={`reason-row ${i % 2 !== 0 ? 'is-even' : ''}`} data-fade="0">
+      <div class="reason-visual"><img src={item.image} alt={item.imageAlt} width="1448" height="1086" loading="lazy" decoding="async" /></div>
+      <div class="reason-content"><span class="reason-number">{item.num}</span><h4>{item.title}</h4><p>{item.desc}</p></div>
+    </article>
+    ))}
+  </div>
+  {block.summary && (
+  <div data-fade="0" style="margin:clamp(48px,7vw,78px) 0 0;background:color-mix(in oklab, var(--c-primary) 5%, #FFFFFF);border:1px solid color-mix(in oklab, var(--c-primary) 18%, #FFFFFF);padding:24px 28px">
+    <p style="margin:0;font-size:16px;font-weight:700;line-height:2;color:#1F2430">{block.summary}</p>
+  </div>
+  )}
+  {block.note && <p data-fade="0" style="margin:18px 0 0;font-size:13.5px;line-height:1.9;color:#767E8C">{block.note}</p>}
+</div>
+</section>

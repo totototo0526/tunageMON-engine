@@ -84,6 +84,74 @@ blocks:
     a: やめられます。定着支援・環境保守とも、いつでも解約いただけます。サーバーやChatGPTなどはお客様名義のご契約のため、解約後も構築した環境はそのままお使いいただけます。
   - q: システムの機能追加や改修は月額に含まれますか。
     a: 標準の環境保守を超える機能追加・外部連携・データ移行・個別開発・24時間対応は、範囲と影響を確認して別途お見積りします。
+- type: BlockChatDemo
+  title: たとえば、こんなやり取りです
+  note: ※画面はイメージです
+  patterns:
+  - label: パターン1
+    title: 案件の現在地を聞く
+    messages:
+    - senderName: 担当者
+      senderType: user
+      text: A社の見積の件、どうなってたっけ?
+    - senderName: AI
+      senderType: ai
+      text: 'A社向け見積(6/24ご依頼)の現在地です。
+
+        ・6/26 数量変更の連絡あり(500→800個)
+
+        ・6/27 単価は台帳の判断条件に沿って仮置き済み
+
+        ・未対応:納期の回答(制作部の確認待ち)'
+  - label: パターン2
+    title: 会議の内容を台帳に残す
+    messages:
+    - senderName: 担当者
+      senderType: user
+      prefix: (会議の文字起こしを貼り付け)
+      text: この内容、A社のA案件に議事録としてまとめておいて
+    - senderName: AI
+      senderType: ai
+      text: '議事録にまとめ、台帳のA案件に記録しました。要点です。
+
+        ・決定:納期は8月末で回答/追加分の単価は据え置き
+
+        ・宿題:仕様書の修正(担当:営業、期限7/22)'
+- type: BlockReasoningGrid
+  title: なぜ、つなげモン No.2で解決できるのか
+  items:
+  - num: POINT 01
+    title: 会社の方針を最初に覚え込ませる
+    desc: 導入時に、言葉遣い・優先順位・やってはいけないことをAIへ設定します。誰が話しかけても、会社の方針に沿った同じ振る舞いで応えます。
+    image: ../../assets/reasons/01-policy.webp
+    imageAlt: 人が会社の方針を説明し、AIが優先順位や確認条件を整理しているイメージ
+  - num: POINT 02
+    title: 記憶が消えない
+    desc: AIは、保存された過去のやり取り・決定・経緯を必要なときに検索して呼び出します。「先月のあの件」も、担当者に聞かずAIに聞けます。人が確認した内容は共有台帳に残るので、担当者が入れ替わっても同じ考え方で仕事が進みます。属人化した記憶が、会社の記憶に変わります。
+    image: ../../assets/reasons/02-memory.webp
+    imageAlt: AIが過去の会話や決定の記録から必要な経緯を探し、人へ渡しているイメージ
+  - num: POINT 03
+    title: うまくいったやり方を、自分で手順書にする
+    desc: 一度うまく処理できた仕事は、AIが手順として整理し、人の確認を経て共有台帳に残します。次から同じ品質で繰り返せるため、「マニュアルを作る時間がない」会社でも、日々の業務をこなすだけで手順書が育ちます。
+    image: ../../assets/reasons/03-manual.webp
+    imageAlt: 人が確認した仕事の流れをAIが手順に整理し、別の社員が活用しているイメージ
+  - num: POINT 04
+    title: 整理した結果を、共有台帳に書き込む
+    desc: AIは、集めた経緯・決めたこと・手順を整理し、人の確認を経て共有台帳へ記録します。AIとのやり取りの中に埋もれず、台帳を開けば誰でも同じ情報にたどり着けます。AIが整理し、人が確かめ、台帳に残す——この循環が全体の仕組みです。
+    image: ../../assets/reasons/04-ledger.webp
+    imageAlt: AIが整理した情報を人が確認し、共有台帳へ記録して社員が閲覧するイメージ
+  - num: POINT 05
+    title: 決まった仕事は決まった時間に
+    desc: 日次の進捗まとめ、期限前のリマインド、定例前の資料集めなど、繰り返しの仕事はAIが決まった時間に実行し、普段のチャットに届けます。
+    image: ../../assets/reasons/05-schedule.webp
+    imageAlt: AIが決まった時間に進捗や期限、定例資料を準備して社員へ届けるイメージ
+  - num: POINT 06
+    title: 勝手に確定しない
+    desc: AIは人に代わって決めるのではなく、判断材料を整え、実行を支える副官のような役割です。AIが独断で外部へメールを送ったり、数字を確定したりすることはありません。送る・決めるは人が行います。
+    image: ../../assets/reasons/06-human-approval.webp
+    imageAlt: AIが下書きと判断材料を人へ渡し、人が確認して送信や実行を決めるイメージ
+  summary: この②〜④が、「判断が頭の中にある」「案件の経緯が担当者しか分からない」「手順書が育たない」「AI活用が個人の工夫で止まる」という悩みを解決できる理由です。
+  note: 対象業務の例:案件管理(進行・期限・議事録)、社内管理(申請・会議記録・手順書・社内ルール共有)
 - type: BlockSteps
   subtitle: '04'
   title: 導入の流れ
@@ -232,108 +300,3 @@ blocks:
     url: https://www.k-sp.co.jp/admin/std/contact/new
 ---
 
-<section data-screen-label="詳細解説" style="background:#FFFFFF;padding:clamp(0px,0vw,0px) 24px">
-<div style="max-width:1080px;margin:0 auto">
-<div style="max-width:760px;margin:0 auto 72px">
-  <h3 data-fade="0" style="margin:0 0 8px;font-size:clamp(19px,2.2vw,23px);font-weight:800;letter-spacing:.04em;color:#1F2430;font-feature-settings:'palt'">たとえば、こんなやり取りです</h3>
-  <p data-fade="0" style="margin:0 0 28px;font-size:13px;color:#8A8FA0">※画面はイメージです</p>
-
-  <div class="print-keep-heading" data-fade="0" style="display:flex;align-items:center;gap:10px;margin:0 0 14px">
-    <span style="font-size:12px;font-weight:800;letter-spacing:.06em;color:#FFFFFF;background:var(--c-primary);padding:4px 12px">パターン1</span>
-    <span style="font-size:15px;font-weight:700;color:#1F2430">案件の現在地を聞く</span>
-  </div>
-  <div class="print-keep-card" data-fade="0" style="background:#22252E;border-radius:10px;overflow:hidden;box-shadow:0 14px 34px rgba(23,28,44,.16);margin:0 0 36px">
-    <div style="display:flex;align-items:center;gap:7px;padding:12px 16px;background:#1B1E26">
-      <span style="width:10px;height:10px;border-radius:50%;background:#3A3F4D"></span>
-      <span style="width:10px;height:10px;border-radius:50%;background:#3A3F4D"></span>
-      <span style="width:10px;height:10px;border-radius:50%;background:#3A3F4D"></span>
-      <span style="margin-left:8px;font-size:12.5px;letter-spacing:.06em;color:#8E96A8">社内チャット</span>
-    </div>
-    <div style="padding:22px 20px 26px;display:flex;flex-direction:column;gap:20px">
-      <div style="display:flex;gap:12px;align-items:flex-start">
-        <span style="flex:none;width:38px;height:38px;border-radius:50%;background:#3A4152;color:#DDE2EC;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700">担</span>
-        <div style="min-width:0">
-          <div style="margin:0 0 5px;font-size:13.5px;font-weight:700;color:#C8CEDC">担当者</div>
-          <div style="font-size:14.5px;line-height:1.85;color:#E7EAF2">A社の見積の件、どうなってたっけ?</div>
-        </div>
-      </div>
-      <div style="display:flex;gap:12px;align-items:flex-start">
-        <span style="flex:none;width:38px;height:38px;border-radius:50%;background:var(--c-accent);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800">AI</span>
-        <div style="min-width:0">
-          <div style="margin:0 0 5px;font-size:13.5px;font-weight:700;color:#C8CEDC">AI</div>
-          <div style="font-size:14.5px;line-height:1.9;color:#E7EAF2">A社向け見積(6/24ご依頼)の現在地です。</div>
-          <div style="font-size:14.5px;line-height:1.9;color:#E7EAF2">・6/26 数量変更の連絡あり(500→800個)</div>
-          <div style="font-size:14.5px;line-height:1.9;color:#E7EAF2">・6/27 単価は台帳の判断条件に沿って仮置き済み</div>
-          <div style="font-size:14.5px;line-height:1.9;color:#E7EAF2">・未対応:納期の回答(制作部の確認待ち)</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="print-keep-heading" data-fade="0" style="display:flex;align-items:center;gap:10px;margin:0 0 14px">
-    <span style="font-size:12px;font-weight:800;letter-spacing:.06em;color:#FFFFFF;background:var(--c-primary);padding:4px 12px">パターン2</span>
-    <span style="font-size:15px;font-weight:700;color:#1F2430">会議の内容を台帳に残す</span>
-  </div>
-  <div class="print-keep-card" data-fade="0" style="background:#22252E;border-radius:10px;overflow:hidden;box-shadow:0 14px 34px rgba(23,28,44,.16)">
-    <div style="display:flex;align-items:center;gap:7px;padding:12px 16px;background:#1B1E26">
-      <span style="width:10px;height:10px;border-radius:50%;background:#3A3F4D"></span>
-      <span style="width:10px;height:10px;border-radius:50%;background:#3A3F4D"></span>
-      <span style="width:10px;height:10px;border-radius:50%;background:#3A3F4D"></span>
-      <span style="margin-left:8px;font-size:12.5px;letter-spacing:.06em;color:#8E96A8">社内チャット</span>
-    </div>
-    <div style="padding:22px 20px 26px;display:flex;flex-direction:column;gap:20px">
-      <div style="display:flex;gap:12px;align-items:flex-start">
-        <span style="flex:none;width:38px;height:38px;border-radius:50%;background:#3A4152;color:#DDE2EC;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700">担</span>
-        <div style="min-width:0">
-          <div style="margin:0 0 5px;font-size:13.5px;font-weight:700;color:#C8CEDC">担当者</div>
-          <div style="font-size:14.5px;line-height:1.85;color:#E7EAF2"><span style="color:#9BA3B5">(会議の文字起こしを貼り付け)</span>この内容、A社のA案件に議事録としてまとめておいて</div>
-        </div>
-      </div>
-      <div style="display:flex;gap:12px;align-items:flex-start">
-        <span style="flex:none;width:38px;height:38px;border-radius:50%;background:var(--c-accent);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800">AI</span>
-        <div style="min-width:0">
-          <div style="margin:0 0 5px;font-size:13.5px;font-weight:700;color:#C8CEDC">AI</div>
-          <div style="font-size:14.5px;line-height:1.9;color:#E7EAF2">議事録にまとめ、台帳のA案件に記録しました。要点です。</div>
-          <div style="font-size:14.5px;line-height:1.9;color:#E7EAF2">・決定:納期は8月末で回答/追加分の単価は据え置き</div>
-          <div style="font-size:14.5px;line-height:1.9;color:#E7EAF2">・宿題:仕様書の修正(担当:営業、期限7/22)</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div style="max-width:1080px;margin:0 auto">
-  <h3 data-fade="0" style="margin:0 0 clamp(42px,6vw,70px);font-size:clamp(22px,3vw,32px);font-weight:900;line-height:1.5;letter-spacing:.04em;color:#1F2430;font-feature-settings:'palt';word-break:auto-phrase">なぜ、つなげモン No.2で解決できるのか</h3>
-  <div class="reason-list">
-    <article class="reason-row" data-fade="0">
-      <div class="reason-visual"><img src="../../assets/reasons/01-policy.webp" alt="人が会社の方針を説明し、AIが優先順位や確認条件を整理しているイメージ" width="1448" height="1086" loading="lazy" decoding="async"></div>
-      <div class="reason-content"><span class="reason-number">POINT 01</span><h4>会社の方針を最初に覚え込ませる</h4><p>導入時に、言葉遣い・優先順位・やってはいけないことをAIへ設定します。誰が話しかけても、会社の方針に沿った同じ振る舞いで応えます。</p></div>
-    </article>
-    <article class="reason-row is-even" data-fade="0">
-      <div class="reason-visual"><img src="../../assets/reasons/02-memory.webp" alt="AIが過去の会話や決定の記録から必要な経緯を探し、人へ渡しているイメージ" width="1448" height="1086" loading="lazy" decoding="async"></div>
-      <div class="reason-content"><span class="reason-number">POINT 02</span><h4>記憶が消えない</h4><p>AIは、保存された過去のやり取り・決定・経緯を必要なときに検索して呼び出します。「先月のあの件」も、担当者に聞かずAIに聞けます。人が確認した内容は共有台帳に残るので、担当者が入れ替わっても同じ考え方で仕事が進みます。属人化した記憶が、会社の記憶に変わります。</p></div>
-    </article>
-    <article class="reason-row" data-fade="0">
-      <div class="reason-visual"><img src="../../assets/reasons/03-manual.webp" alt="人が確認した仕事の流れをAIが手順に整理し、別の社員が活用しているイメージ" width="1448" height="1086" loading="lazy" decoding="async"></div>
-      <div class="reason-content"><span class="reason-number">POINT 03</span><h4>うまくいったやり方を、自分で手順書にする</h4><p>一度うまく処理できた仕事は、AIが手順として整理し、人の確認を経て共有台帳に残します。次から同じ品質で繰り返せるため、「マニュアルを作る時間がない」会社でも、日々の業務をこなすだけで手順書が育ちます。</p></div>
-    </article>
-    <article class="reason-row is-even" data-fade="0">
-      <div class="reason-visual"><img src="../../assets/reasons/04-ledger.webp" alt="AIが整理した情報を人が確認し、共有台帳へ記録して社員が閲覧するイメージ" width="1448" height="1086" loading="lazy" decoding="async"></div>
-      <div class="reason-content"><span class="reason-number">POINT 04</span><h4>整理した結果を、共有台帳に書き込む</h4><p>AIは、集めた経緯・決めたこと・手順を整理し、人の確認を経て共有台帳へ記録します。AIとのやり取りの中に埋もれず、台帳を開けば誰でも同じ情報にたどり着けます。AIが整理し、人が確かめ、台帳に残す——この循環が全体の仕組みです。</p></div>
-    </article>
-    <article class="reason-row" data-fade="0">
-      <div class="reason-visual"><img src="../../assets/reasons/05-schedule.webp" alt="AIが決まった時間に進捗や期限、定例資料を準備して社員へ届けるイメージ" width="1448" height="1086" loading="lazy" decoding="async"></div>
-      <div class="reason-content"><span class="reason-number">POINT 05</span><h4>決まった仕事は決まった時間に</h4><p>日次の進捗まとめ、期限前のリマインド、定例前の資料集めなど、繰り返しの仕事はAIが決まった時間に実行し、普段のチャットに届けます。</p></div>
-    </article>
-    <article class="reason-row is-even" data-fade="0">
-      <div class="reason-visual"><img src="../../assets/reasons/06-human-approval.webp" alt="AIが下書きと判断材料を人へ渡し、人が確認して送信や実行を決めるイメージ" width="1448" height="1086" loading="lazy" decoding="async"></div>
-      <div class="reason-content"><span class="reason-number">POINT 06</span><h4>勝手に確定しない</h4><p>AIは人に代わって決めるのではなく、判断材料を整え、実行を支える副官のような役割です。AIが独断で外部へメールを送ったり、数字を確定したりすることはありません。送る・決めるは人が行います。</p></div>
-    </article>
-  </div>
-  <div data-fade="0" style="margin:clamp(48px,7vw,78px) 0 0;background:color-mix(in oklab, var(--c-primary) 5%, #FFFFFF);border:1px solid color-mix(in oklab, var(--c-primary) 18%, #FFFFFF);padding:24px 28px">
-    <p style="margin:0;font-size:16px;font-weight:700;line-height:2;color:#1F2430">この②〜④が、「判断が頭の中にある」「案件の経緯が担当者しか分からない」「手順書が育たない」「AI活用が個人の工夫で止まる」という悩みを解決できる理由です。</p>
-  </div>
-  <p data-fade="0" style="margin:18px 0 0;font-size:13.5px;line-height:1.9;color:#767E8C">対象業務の例:案件管理(進行・期限・議事録)、社内管理(申請・会議記録・手順書・社内ルール共有)</p>
-</div>
-</div>
-</section>
