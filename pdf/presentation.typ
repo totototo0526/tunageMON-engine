@@ -5,7 +5,7 @@
 )
 
 #set text(
-  font: ("Inter", "Noto Sans CJK JP", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "sans-serif"),
+  font: ("Noto Sans CJK JP", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "sans-serif"),
   size: 24pt,
   fill: rgb("F8FAFC") // Tailwind slate-50
 )
@@ -13,7 +13,7 @@
 // Helper: Custom Gradient Text
 #let gradient-text(content, from: rgb("F97316"), to: rgb("EF4444")) = {
   // Typst doesn't have native gradient text yet, but we can simulate it or just use a solid vibrant color for now
-  text(fill: from, weight: "black", content)
+  text(fill: from, weight: "bold", content)
 }
 
 // ----------------------------------------------------------------------------
@@ -21,11 +21,11 @@
 // ----------------------------------------------------------------------------
 #box(width: 100%, height: 100%, inset: 4em, [
   #v(1fr)
-  #text(size: 32pt, weight: "bold", fill: rgb("F97316"), tracking: 0.1em)[つなげモン シリーズ]
+  #text(size: 32pt, weight: "bold", fill: rgb("F97316"))[つなげモン シリーズ]
   
   #v(1em)
   #par(leading: 1.2em)[
-    #text(size: 64pt, weight: "black")[
+    #text(size: 64pt, weight: "bold")[
       社内外の分断をなくし、\
       データの自動化を実現する。
     ]
@@ -57,7 +57,7 @@
   
   // Header
   place(top + left, dy: -3em, [
-    #text(size: 32pt, weight: "black", fill: rgb("1E293B"))[#title]
+    #text(size: 32pt, weight: "bold", fill: rgb("1E293B"))[#title]
     #if subtitle != "" [
       #h(1em)
       #text(size: 20pt, weight: "bold", fill: rgb("F97316"))[#subtitle]
