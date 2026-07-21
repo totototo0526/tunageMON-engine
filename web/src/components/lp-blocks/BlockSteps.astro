@@ -1,0 +1,21 @@
+---
+const { block } = Astro.props;
+---
+<section data-screen-label={block.title || "フロー"} style="background:#FFFFFF;padding:clamp(72px,9vw,110px) 24px">
+<div style="max-width:1080px;margin:0 auto">
+<div data-fade="0" style="display:flex;align-items:center;gap:14px;margin:0 0 16px">
+  {block.subtitle && <span style="font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--c-accent)">{block.subtitle}</span>}
+  <span style="width:36px;height:1px;background:#C9C4B6"></span>
+</div>
+{block.title && <h2 data-fade="0" style="margin:0 0 40px;font-size:clamp(26px,3.6vw,38px);font-weight:900;line-height:1.45;letter-spacing:.03em;color:#1F2430;font-feature-settings:'palt'">{block.title}</h2>}
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin:0 0 64px">
+  {block.items && block.items.map((item, i) => (
+  <div data-fade={i * 100} style="background:#FFFFFF;border:1px solid #E4E1D8;padding:28px 26px">
+    <div style="display:flex;align-items:baseline;gap:10px;margin:0 0 14px"><span style="font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--c-accent)">{item.stepLabel || 'STEP'}</span><span style="font-size:30px;font-weight:900;line-height:1;color:var(--c-primary)">{item.stepNumber || i+1}</span></div>
+    <h3 style="margin:0 0 10px;font-size:18px;font-weight:800;color:#1F2430;font-feature-settings:'palt'">{item.title}</h3>
+    <p style="margin:0;font-size:14.5px;line-height:1.95;color:#444B59">{item.desc}</p>
+  </div>
+  ))}
+</div>
+</div>
+</section>

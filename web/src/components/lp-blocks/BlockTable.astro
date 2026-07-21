@@ -1,0 +1,39 @@
+---
+const { block } = Astro.props;
+---
+<section data-screen-label={block.title || "比較"} style="background:#F7F5F0;padding:clamp(72px,9vw,110px) 24px">
+<div style="max-width:1080px;margin:0 auto">
+<div data-fade="0" style="display:flex;align-items:center;gap:14px;margin:0 0 16px">
+  {block.subtitle && <span style="font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--c-accent)">{block.subtitle}</span>}
+  <span style="width:36px;height:1px;background:#C9C4B6"></span>
+</div>
+{block.title && <h2 data-fade="0" style="margin:0 0 36px;font-size:clamp(26px,3.6vw,38px);font-weight:900;line-height:1.45;letter-spacing:.03em;color:#1F2430;font-feature-settings:'palt'">{block.title}</h2>}
+<div data-fade="0" style="overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid #E4E1D8">
+  <table style="width:100%;min-width:860px;border-collapse:collapse;background:#FFFFFF;font-size:14.5px;line-height:1.75">
+    <thead>
+      <tr>
+        <th style="padding:14px 18px;text-align:left;border-bottom:1px solid #E4E1D8;background:#FBFAF7;width:120px"></th>
+        {block.headers && block.headers.map((h, i) => (
+            i === block.headers.length - 1 ? 
+            <th style="padding:14px 18px;text-align:left;border-bottom:1px solid var(--c-primary);background:var(--c-primary);font-size:14px;font-weight:900;color:#FFFFFF;letter-spacing:.04em">{h}</th> :
+            <th style="padding:14px 18px;text-align:left;border-bottom:1px solid #E4E1D8;background:#FBFAF7;font-size:13.5px;font-weight:700;color:#5C6270">{h}</th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {block.rows && block.rows.map(row => (
+      <tr>
+        <td style="padding:14px 18px;border-bottom:1px solid #EDEAE1;font-size:13.5px;font-weight:800;color:#1F2430;white-space:nowrap">{row.label}</td>
+        {row.values.map((v, i) => (
+            i === row.values.length - 1 ?
+            <td style="padding:14px 18px;border-bottom:1px solid color-mix(in oklab, var(--c-primary) 20%, #FFFFFF);background:color-mix(in oklab, var(--c-primary) 7%, #FFFFFF);font-weight:700;color:#1F2430">{v}</td> :
+            <td style="padding:14px 18px;border-bottom:1px solid #EDEAE1;color:#444B59">{v}</td>
+        ))}
+      </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+{block.note && <p data-fade="0" style="margin:14px 0 0;font-size:12.5px;color:#8A8FA0">{block.note}</p>}
+</div>
+</section>

@@ -1,0 +1,35 @@
+---
+const { block } = Astro.props;
+---
+<section data-screen-label={block.title || "テキスト"} style={`background:${block.theme === 'dark' ? 'var(--c-primary)' : '#FFFFFF'};padding:clamp(80px,10vw,120px) 24px`}>
+<div style="max-width:1080px;margin:0 auto">
+<div data-fade="0" style="display:flex;align-items:center;gap:14px;margin:0 0 18px">
+  {block.subtitle && <span style={`font-size:13px;font-weight:700;letter-spacing:.16em;color:${block.theme === 'dark' ? 'rgba(255,255,255,.55)' : 'var(--c-accent)'}`}>{block.subtitle}</span>}
+  <span style={`width:36px;height:1px;background:${block.theme === 'dark' ? 'rgba(255,255,255,.3)' : '#C9C4B6'}`}></span>
+</div>
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:40px;margin:0 0 60px">
+  <h2 data-fade="0" style={`margin:0;font-size:clamp(28px,4vw,42px);font-weight:900;line-height:1.45;letter-spacing:.04em;color:${block.theme === 'dark' ? '#FFFFFF' : '#1F2430'};font-feature-settings:'palt'`}>
+    {block.title.split('\\n').map(line => <span style="display:block">{line}</span>)}
+  </h2>
+  <div data-fade="0" style="width:100%;max-width:540px;display:flex;flex-direction:column;gap:1.5em">
+    {block.paragraphs && block.paragraphs.map(p => (
+    <p style={`margin:0;font-size:15.5px;line-height:2.1;color:${block.theme === 'dark' ? 'rgba(255,255,255,.85)' : '#444B59'}`}>{p}</p>
+    ))}
+  </div>
+</div>
+{block.cards && (
+<div data-fade="0" style="margin:0 0 80px">
+  {block.cardsTitle && <p style={`margin:0 0 16px;font-size:13.5px;font-weight:800;letter-spacing:.12em;color:${block.theme === 'dark' ? '#D4B895' : 'var(--c-accent)'}`}>{block.cardsTitle}</p>}
+  <div style={`display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:${block.theme === 'dark' ? 'rgba(255,255,255,.1)' : '#E4E1D8'};border:1px solid ${block.theme === 'dark' ? 'rgba(255,255,255,.1)' : '#E4E1D8'}`}>
+    {block.cards.map((card, i) => (
+    <article style={`background:${block.theme === 'dark' ? 'var(--c-primary)' : '#FFFFFF'};padding:36px 32px`}>
+      {card.num && <span style={`display:block;margin:0 0 10px;font-size:14px;font-weight:800;letter-spacing:.12em;color:${block.theme === 'dark' ? 'rgba(255,255,255,.3)' : '#9AA0AC'}`}>{card.num}</span>}
+      <h3 style={`margin:0 0 14px;font-size:18px;font-weight:800;line-height:1.6;color:${block.theme === 'dark' ? '#FFFFFF' : '#1F2430'}`}>{card.title}</h3>
+      <p style={`margin:0;font-size:14.5px;line-height:1.95;color:${block.theme === 'dark' ? 'rgba(255,255,255,.7)' : '#5C6270'}`}>{card.desc}</p>
+    </article>
+    ))}
+  </div>
+</div>
+)}
+</div>
+</section>

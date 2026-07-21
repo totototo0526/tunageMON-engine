@@ -84,8 +84,153 @@ blocks:
     a: やめられます。定着支援・環境保守とも、いつでも解約いただけます。サーバーやChatGPTなどはお客様名義のご契約のため、解約後も構築した環境はそのままお使いいただけます。
   - q: システムの機能追加や改修は月額に含まれますか。
     a: 標準の環境保守を超える機能追加・外部連携・データ移行・個別開発・24時間対応は、範囲と影響を確認して別途お見積りします。
----
+- type: BlockSteps
+  subtitle: '04'
+  title: 導入の流れ
+  items:
+  - title: 相談・設計(無料)
+    desc: 困りごとが絞れていなくてもOK。業務の流れと判断が集中している場面を伺い、トライアルの進め方を一緒に設計します。
+  - title: 無料トライアル(1ヶ月)
+    desc: 実務の中でつなげモン No.2を使い、効果を確かめてから判断できます。対象業務は相談時に一緒に決めます。期間中、環境構築や支援にかかる当社への費用は発生しません(ChatGPT有料プランなどの実費はお客様負担です)。
+  - title: 本番移行
+    desc: トライアルの結果をもとに範囲・価格を確定し、本格導入と定着支援を開始します。
+- type: BlockTable
+  subtitle: '05'
+  title: 他の選択肢と比べると
+  headers:
+  - AI・DX人材を採用
+  - DXコンサルに依頼
+  - AIツール導入のみ
+  - 本サービス
+  rows:
+  - label: 費用の目安
+    values:
+    - 月40万円〜(給与+採用費)
+    - 月30万円〜
+    - 月数千円〜数万円
+    - 月12万円〜
+  - label: 始めるまで
+    values:
+    - 採用できれば(数ヶ月〜)
+    - 契約後
+    - すぐ
+    - 無料トライアル1ヶ月
+  - label: 業務の理解
+    values:
+    - 入社後にゼロから
+    - ヒアリングの範囲まで
+    - —
+    - 業務を知る自社の担当者が使う
+  - label: 社内に残るもの
+    values:
+    - 人(辞めれば失われる)
+    - 報告書・提案
+    - ツールと個人のコツ
+    - 台帳・手順書・改善を回せる担当者
+  - label: やめたとき
+    values:
+    - 引き継ぎ問題が再発
+    - 改善が止まる
+    - 元どおり
+    - 環境と記録はお客様名義で残る
+  note: ※金額は一般的な目安です。
+- type: BlockCTA
+  theme: dark
+  title: まずは1ヶ月の無料トライアルから始められます。
+  desc: 期間中、環境構築や支援にかかる当社への費用は発生しません(ChatGPT有料プランなどの実費はお客様負担です)。
+  button:
+    text: 無料トライアルを相談する
+    url: https://www.k-sp.co.jp/admin/std/contact/new
+- type: BlockCards
+  subtitle: '07'
+  title: セキュリティとデータの扱い
+  items:
+  - title: AIの学習に使われません
+    desc: 入力内容がAIの学習に使われない設定(学習オフ)で運用します
+  - title: 渡す情報を決めてから始めます
+    desc: AIに渡す情報・渡さない情報、閲覧・更新・承認できる人を、初期整理で一緒に決めます
+  - title: 環境はお客様名義です
+    desc: サーバーやChatGPTの契約はお客様名義。解約後も、環境と記録はお客様の手元に残ります
+  - title: より強固な構成もご提案できます
+    desc: 外部にデータを出さないローカルLLM環境のご提案も承ります(別途お見積り)
+- type: BlockList
+  subtitle: '08'
+  title: AIだから、うまくいかないことも先にお伝えします
+  items:
+  - title: AIに教えたルールが、いつの間にか効かなくなることがあります
+    desc: AIの更新や会話の状況により、以前守れていた書き方や確認手順が崩れる場合があります。重要なルールは記録として残し、結果を人が確認します。
+  - title: AIの「できました」は、そのまま信用できません
+    desc: 登録・修正の報告があっても、一部しか反映されていない場合があります。完了報告ではなく、実際の台帳・ファイル・画面を確認してから完了と判断します。
+  - title: 記録場所を増やしすぎると、かえって分からなくなります
+    desc: 同じ内容が複数の場所に残ると、どれが最新か判断しにくくなります。最初は案件・確認待ち・判断を確認できる場所へ絞ります。
+  - title: 自動化を増やしても、運用が楽になるとは限りません
+    desc: 自動化や連携が増えるほど、サービス更新・設定変更・停止の影響も増えます。最初は人が確認できる半手動から始め、繰り返し使える部分だけを自動化します。
+  - title: 仕組みを作るだけでは、業務に定着しません
+    desc: 忙しい時期には記録が後回しになります。すべてを細かく入力するのではなく、最低限残す情報を決め、AIで記録負担を減らしながら定期的に見直します。
+- type: BlockText
+  subtitle: '09'
+  title: 私たちへの依存ではなく、御社の中に残す
+  paragraphs:
+  - 本番環境では、原則として御社名義のサーバーとアカウントを使います。契約終了後も、その時点の環境と記録を御社側で使い続けられる構成にします。
+  - 残すのは、環境だけではありません。業務を整理し、AIへ渡し、結果を確認し、次回の手順へ反映する——御社の中で改善を続けるための考え方と進め方まで引き継ぐことを目指します。
+  cardsTitle: 御社に残るもの
+  cards:
+  - title: 案件・対応履歴
+    desc: ''
+  - title: 確認待ち・担当・期限
+    desc: ''
+  - title: 判断理由・会議の決定
+    desc: ''
+  - title: 報告・依頼テンプレート
+    desc: ''
+- type: BlockComparisonCards
+  subtitle: '10'
+  title: 相性の確認
+  groups:
+  - type: positive
+    title: 合いやすい会社
+    items:
+    - 判断や情報が一部の人に集まっている
+    - 社内にAI活用の担当者を育てたい
+    - 今ある仕組みを生かして改善したい
+    - 退職や異動のたびに、引き継ぎで業務が止まった経験がある
+    - ChatGPTを個人では使っているが、会社の仕事に定着していない
+  - type: negative
+    title: 合いにくいご要望
+    items:
+    - 重要判断をAIへ任せきりにしたい
+    - 社内で確認・実行する人を置けない
+    - 短期間で全社を自動化したい
+    - 日々の実作業まで丸ごと外注したい
+    - ツールだけ導入して、業務の整理はしたくない
+- type: BlockText
+  theme: dark
+  subtitle: '11'
+  title: 'なぜ、私たちがこの
 
+    サービスをつくったのか'
+  paragraphs:
+  - 私たちケーエスピー株式会社は、中小企業のシステム運用に携わるなかで、同じ光景を何度も見てきました。判断は社長の頭の中、案件の経経緯は担当者のノートの中。責任感の強い人ほど仕事を抱え、その人が休むと、業務が止まってしまいます。
+  - これまで現場を支えてきたからこそ、経験や判断が、自然と特定の人に集まってきたのだと思います。AIが身近になった今、その大切な経験を、会社の中で無理なく共有できる形に変えていける。私たちはそう考えました。AIは導入するだけで力を発揮するものではありません。現場に合う形で使い続けられて、初めて会社の力になります。
+  cardsTitle: このサービスに込めた思い
+  cards:
+  - num: '01'
+    title: 誰か一人に、仕事を背負わせない
+    desc: 責任感のある人ほど休めず、いつも判断を求められる。そんな働き方を、仕組みから変えたい。
+  - num: '02'
+    title: 人の経験を、次の人へつなぐ
+    desc: 積み重ねた判断や工夫を、その人だけのものにしない。会社の記憶として残し、次の人へ渡したい。
+  - num: '03'
+    title: AIで、人の力をもっと引き出す
+    desc: 人を置き換えるためではなく、考える時間と余裕を取り戻すためにAIを使いたい。
+- type: BlockCTA
+  align: center
+  title: まずは、一緒に改善する最初の業務を決めましょう
+  desc: 実際に動いている画面を見ながら、御社の業務に合うかを確認します。その場で本番導入を決める必要はありません。
+  button:
+    text: お問い合わせ
+    url: https://www.k-sp.co.jp/admin/std/contact/new
+---
 
 <section data-screen-label="詳細解説" style="background:#FFFFFF;padding:clamp(0px,0vw,0px) 24px">
 <div style="max-width:1080px;margin:0 auto">
@@ -192,299 +337,3 @@ blocks:
 </div>
 </div>
 </section>
-
-<!-- Web用の詳細テキストをここに記述します。原氏のデザインの「解決策」や「導入シナリオ」など、中間セクションをここに記述することで拡張できます。 -->
-
-
-
-
-
-<section data-screen-label="導入の流れ" style="background:#FFFFFF;padding:clamp(72px,9vw,110px) 24px">
-<div style="max-width:1080px;margin:0 auto">
-<div data-fade="0" style="display:flex;align-items:center;gap:14px;margin:0 0 16px">
-  <span style="font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--c-accent)">04</span>
-  <span style="width:36px;height:1px;background:#C9C4B6"></span>
-</div>
-<h2 data-fade="0" style="margin:0 0 40px;font-size:clamp(26px,3.6vw,38px);font-weight:900;line-height:1.45;letter-spacing:.03em;color:#1F2430;font-feature-settings:'palt'">導入の流れ</h2>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin:0 0 64px">
-  <div data-fade="0" style="background:#FFFFFF;border:1px solid #E4E1D8;padding:28px 26px">
-    <div style="display:flex;align-items:baseline;gap:10px;margin:0 0 14px"><span style="font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--c-accent)">STEP</span><span style="font-size:30px;font-weight:900;line-height:1;color:var(--c-primary)">1</span></div>
-    <h3 style="margin:0 0 10px;font-size:18px;font-weight:800;color:#1F2430;font-feature-settings:'palt'">相談・設計(無料)</h3>
-    <p style="margin:0;font-size:14.5px;line-height:1.95;color:#444B59">困りごとが絞れていなくてもOK。業務の流れと判断が集中している場面を伺い、トライアルの進め方を一緒に設計します。</p>
-  </div>
-  <div data-fade="100" style="background:#FFFFFF;border:1px solid #E4E1D8;padding:28px 26px">
-    <div style="display:flex;align-items:baseline;gap:10px;margin:0 0 14px"><span style="font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--c-accent)">STEP</span><span style="font-size:30px;font-weight:900;line-height:1;color:var(--c-primary)">2</span></div>
-    <h3 style="margin:0 0 10px;font-size:18px;font-weight:800;color:#1F2430;font-feature-settings:'palt'">無料トライアル(1ヶ月)</h3>
-    <p style="margin:0;font-size:14.5px;line-height:1.95;color:#444B59">実務の中でつなげモン No.2を使い、効果を確かめてから判断できます。対象業務は相談時に一緒に決めます。期間中、環境構築や支援にかかる当社への費用は発生しません(ChatGPT有料プランなどの実費はお客様負担です)。</p>
-  </div>
-  <div data-fade="200" style="background:#FFFFFF;border:1px solid #E4E1D8;padding:28px 26px">
-    <div style="display:flex;align-items:baseline;gap:10px;margin:0 0 14px"><span style="font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--c-accent)">STEP</span><span style="font-size:30px;font-weight:900;line-height:1;color:var(--c-primary)">3</span></div>
-    <h3 style="margin:0 0 10px;font-size:18px;font-weight:800;color:#1F2430;font-feature-settings:'palt'">本番移行</h3>
-    <p style="margin:0;font-size:14.5px;line-height:1.95;color:#444B59">トライアルの結果をもとに範囲・価格を確定し、本格導入と定着支援を開始します。</p>
-  </div>
-</div>
-</div>
-</section>
-
-<section data-screen-label="他の選択肢と比べると" style="background:#F7F5F0;padding:clamp(72px,9vw,110px) 24px">
-<div style="max-width:1080px;margin:0 auto">
-<div data-fade="0" style="display:flex;align-items:center;gap:14px;margin:0 0 16px">
-  <span style="font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--c-accent)">05</span>
-  <span style="width:36px;height:1px;background:#C9C4B6"></span>
-</div>
-<h2 data-fade="0" style="margin:0 0 36px;font-size:clamp(26px,3.6vw,38px);font-weight:900;line-height:1.45;letter-spacing:.03em;color:#1F2430;font-feature-settings:'palt'">他の選択肢と比べると</h2>
-<div data-fade="0" style="overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid #E4E1D8">
-  <table style="width:100%;min-width:860px;border-collapse:collapse;background:#FFFFFF;font-size:14.5px;line-height:1.75">
-    <thead>
-      <tr>
-        <th style="padding:14px 18px;text-align:left;border-bottom:1px solid #E4E1D8;background:#FBFAF7;width:120px"></th>
-        <th style="padding:14px 18px;text-align:left;border-bottom:1px solid #E4E1D8;background:#FBFAF7;font-size:13.5px;font-weight:700;color:#5C6270">AI・DX人材を採用</th>
-        <th style="padding:14px 18px;text-align:left;border-bottom:1px solid #E4E1D8;background:#FBFAF7;font-size:13.5px;font-weight:700;color:#5C6270">DXコンサルに依頼</th>
-        <th style="padding:14px 18px;text-align:left;border-bottom:1px solid #E4E1D8;background:#FBFAF7;font-size:13.5px;font-weight:700;color:#5C6270">AIツール導入のみ</th>
-        <th style="padding:14px 18px;text-align:left;border-bottom:1px solid var(--c-primary);background:var(--c-primary);font-size:14px;font-weight:900;color:#FFFFFF;letter-spacing:.04em">本サービス</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="padding:14px 18px;border-bottom:1px solid #EDEAE1;font-size:13.5px;font-weight:800;color:#1F2430;white-space:nowrap">費用の目安</td>
-        <td style="padding:14px 18px;border-bottom:1px solid #EDEAE1;color:#444B59">月40万円〜(給与+採用費)</td>
-        <td style="padding:14px 18px;border-bottom:1px solid #EDEAE1;color:#444B59">月30万円〜</td>
-        <td style="padding:14px 18px;border-bottom:1px solid #EDEAE1;color:#444B59">月数千円〜数万円</td>
-        <td style="padding:14px 18px;border-bottom:1px solid color-mix(in oklab, var(--c-primary) 20%, #FFFFFF);background:color-mix(in oklab, var(--c-primary) 7%, #FFFFFF);font-weight:700;color:#1F2430">月12万円〜</td>
-      </tr>
-      <tr>
-        <td style="padding:14px 18px;border-bottom:1px solid #EDEAE1;font-size:13.5px;font-weight:800;color:#1F2430;white-space:nowrap">始めるまで</td>
-        <td style="padding:14px 18px;border-bottom:1px solid #EDEAE1;color:#444B59">採用できれば(数ヶ月〜)</td>
-        <td style="padding:14px 18px;border-bottom:1px solid #EDEAE1;color:#444B59">契約後</td>
-        <td style="padding:14px 18px;border-bottom:1px solid #EDEAE1;color:#444B59">すぐ</td>
-        <td style="padding:14px 18px;border-bottom:1px solid color-mix(in oklab, var(--c-primary) 20%, #FFFFFF);background:color-mix(in oklab, var(--c-primary) 7%, #FFFFFF);font-weight:700;color:#1F2430">無料トライアル1ヶ月</td>
-      </tr>
-      <tr>
-        <td style="padding:14px 18px;border-bottom:1px solid #EDEAE1;font-size:13.5px;font-weight:800;color:#1F2430;white-space:nowrap">業務の理解</td>
-        <td style="padding:14px 18px;border-bottom:1px solid #EDEAE1;color:#444B59">入社後にゼロから</td>
-        <td style="padding:14px 18px;border-bottom:1px solid #EDEAE1;color:#444B59">ヒアリングの範囲まで</td>
-        <td style="padding:14px 18px;border-bottom:1px solid #EDEAE1;color:#444B59">—</td>
-        <td style="padding:14px 18px;border-bottom:1px solid color-mix(in oklab, var(--c-primary) 20%, #FFFFFF);background:color-mix(in oklab, var(--c-primary) 7%, #FFFFFF);font-weight:700;color:#1F2430">業務を知る自社の担当者が使う</td>
-      </tr>
-      <tr>
-        <td style="padding:14px 18px;border-bottom:1px solid #EDEAE1;font-size:13.5px;font-weight:800;color:#1F2430;white-space:nowrap">社内に残るもの</td>
-        <td style="padding:14px 18px;border-bottom:1px solid #EDEAE1;color:#444B59">人(辞めれば失われる)</td>
-        <td style="padding:14px 18px;border-bottom:1px solid #EDEAE1;color:#444B59">報告書・提案</td>
-        <td style="padding:14px 18px;border-bottom:1px solid #EDEAE1;color:#444B59">ツールと個人のコツ</td>
-        <td style="padding:14px 18px;border-bottom:1px solid color-mix(in oklab, var(--c-primary) 20%, #FFFFFF);background:color-mix(in oklab, var(--c-primary) 7%, #FFFFFF);font-weight:700;color:#1F2430">台帳・手順書・改善を回せる担当者</td>
-      </tr>
-      <tr>
-        <td style="padding:14px 18px;font-size:13.5px;font-weight:800;color:#1F2430;white-space:nowrap">やめたとき</td>
-        <td style="padding:14px 18px;color:#444B59">引き継ぎ問題が再発</td>
-        <td style="padding:14px 18px;color:#444B59">改善が止まる</td>
-        <td style="padding:14px 18px;color:#444B59">元どおり</td>
-        <td style="padding:14px 18px;background:color-mix(in oklab, var(--c-primary) 7%, #FFFFFF);font-weight:700;color:#1F2430">環境と記録はお客様名義で残る</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<p data-fade="0" style="margin:14px 0 0;font-size:12.5px;color:#8A8FA0">※金額は一般的な目安です。</p>
-</div>
-</section>
-
-
-<section data-screen-label="CTA帯" style="background:var(--c-primary);padding:clamp(48px,6vw,64px) 24px">
-<div style="max-width:1080px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px">
-<div style="max-width:660px">
-  <p style="margin:0 0 8px;font-size:clamp(20px,2.6vw,26px);font-weight:900;line-height:1.6;letter-spacing:.03em;color:#FFFFFF;font-feature-settings:'palt'">まずは1ヶ月の無料トライアルから始められます。</p>
-  <p style="margin:0;font-size:13.5px;line-height:1.9;color:rgba(255,255,255,.72)">期間中、環境構築や支援にかかる当社への費用は発生しません(ChatGPT有料プランなどの実費はお客様負担です)。</p>
-</div>
-<a href="https://www.k-sp.co.jp/admin/std/contact/new" style="flex:none;display:inline-block;background:var(--c-accent);color:#FFFFFF;font-size:16px;font-weight:700;letter-spacing:.06em;padding:16px 38px;border-radius:3px;text-decoration:none;transition:filter .2s ease,transform .2s ease" style-hover="filter:brightness(.92);transform:translateY(-1px);color:#FFFFFF">無料トライアルを相談する</a>
-</div>
-</section>
-
-<section data-screen-label="セキュリティ" style="background:#FFFFFF;padding:clamp(72px,9vw,110px) 24px">
-<div style="max-width:1080px;margin:0 auto">
-<div data-fade="0" style="display:flex;align-items:center;gap:14px;margin:0 0 16px">
-  <span style="font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--c-accent)">07</span>
-  <span style="width:36px;height:1px;background:#C9C4B6"></span>
-</div>
-<h2 data-fade="0" style="margin:0 0 36px;font-size:clamp(26px,3.6vw,38px);font-weight:900;line-height:1.45;letter-spacing:.03em;color:#1F2430;font-feature-settings:'palt'">セキュリティとデータの扱い</h2>
-<div class="security-grid">
-  <div class="security-card" data-fade="0"><h3>AIの学習に使われません</h3><p>入力内容がAIの学習に使われない設定(学習オフ)で運用します</p></div>
-  <div class="security-card" data-fade="80"><h3>渡す情報を決めてから始めます</h3><p>AIに渡す情報・渡さない情報、閲覧・更新・承認できる人を、初期整理で一緒に決めます</p></div>
-  <div class="security-card" data-fade="160"><h3>環境はお客様名義です</h3><p>サーバーやChatGPTの契約はお客様名義。解約後も、環境と記録はお客様の手元に残ります</p></div>
-  <div class="security-card" data-fade="240"><h3>より強固な構成もご提案できます</h3><p>外部にデータを出さないローカルLLM環境のご提案も承ります(別途お見積り)</p></div>
-</div>
-</div>
-</section>
-
-<section data-screen-label="うまくいかないこと" style="background:#F7F5F0;padding:clamp(72px,9vw,110px) 24px">
-<div style="max-width:1080px;margin:0 auto">
-<div data-fade="0" style="display:flex;align-items:center;gap:14px;margin:0 0 16px">
-  <span style="font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--c-accent)">08</span>
-  <span style="width:36px;height:1px;background:#C9C4B6"></span>
-</div>
-<h2 data-fade="0" style="margin:0 0 40px;font-size:clamp(26px,3.6vw,38px);font-weight:900;line-height:1.45;letter-spacing:.03em;color:#1F2430;font-feature-settings:'palt';word-break:auto-phrase">AIだから、うまくいかないことも先にお伝えします</h2>
-<div style="max-width:760px">
-  <div data-fade="0" style="display:flex;gap:20px;padding:24px 0;border-top:1px solid #DDD8CB">
-    <span style="flex:none;font-size:14px;font-weight:800;letter-spacing:.12em;color:#9AA0AC;line-height:2">01</span>
-    <div>
-      <h3 style="margin:0 0 8px;font-size:17px;font-weight:800;line-height:1.7;color:#1F2430;font-feature-settings:'palt'">AIに教えたルールが、いつの間にか効かなくなることがあります</h3>
-      <p style="margin:0;font-size:15px;line-height:1.95;color:#5C6270">AIの更新や会話の状況により、以前守れていた書き方や確認手順が崩れる場合があります。重要なルールは記録として残し、結果を人が確認します。</p>
-    </div>
-  </div>
-  <div data-fade="0" style="display:flex;gap:20px;padding:24px 0;border-top:1px solid #DDD8CB">
-    <span style="flex:none;font-size:14px;font-weight:800;letter-spacing:.12em;color:#9AA0AC;line-height:2">02</span>
-    <div>
-      <h3 style="margin:0 0 8px;font-size:17px;font-weight:800;line-height:1.7;color:#1F2430;font-feature-settings:'palt'">AIの「できました」は、そのまま信用できません</h3>
-      <p style="margin:0;font-size:15px;line-height:1.95;color:#5C6270">登録・修正の報告があっても、一部しか反映されていない場合があります。完了報告ではなく、実際の台帳・ファイル・画面を確認してから完了と判断します。</p>
-    </div>
-  </div>
-  <div data-fade="0" style="display:flex;gap:20px;padding:24px 0;border-top:1px solid #DDD8CB">
-    <span style="flex:none;font-size:14px;font-weight:800;letter-spacing:.12em;color:#9AA0AC;line-height:2">03</span>
-    <div>
-      <h3 style="margin:0 0 8px;font-size:17px;font-weight:800;line-height:1.7;color:#1F2430;font-feature-settings:'palt'">記録場所を増やしすぎると、かえって分からなくなります</h3>
-      <p style="margin:0;font-size:15px;line-height:1.95;color:#5C6270">同じ内容が複数の場所に残ると、どれが最新か判断しにくくなります。最初は案件・確認待ち・判断を確認できる場所へ絞ります。</p>
-    </div>
-  </div>
-  <div data-fade="0" style="display:flex;gap:20px;padding:24px 0;border-top:1px solid #DDD8CB">
-    <span style="flex:none;font-size:14px;font-weight:800;letter-spacing:.12em;color:#9AA0AC;line-height:2">04</span>
-    <div>
-      <h3 style="margin:0 0 8px;font-size:17px;font-weight:800;line-height:1.7;color:#1F2430;font-feature-settings:'palt'">自動化を増やしても、運用が楽になるとは限りません</h3>
-      <p style="margin:0;font-size:15px;line-height:1.95;color:#5C6270">自動化や連携が増えるほど、サービス更新・設定変更・停止の影響も増えます。最初は人が確認できる半手動から始め、繰り返し使える部分だけを自動化します。</p>
-    </div>
-  </div>
-  <div data-fade="0" style="display:flex;gap:20px;padding:24px 0;border-top:1px solid #DDD8CB;border-bottom:1px solid #DDD8CB">
-    <span style="flex:none;font-size:14px;font-weight:800;letter-spacing:.12em;color:#9AA0AC;line-height:2">05</span>
-    <div>
-      <h3 style="margin:0 0 8px;font-size:17px;font-weight:800;line-height:1.7;color:#1F2430;font-feature-settings:'palt'">仕組みを作るだけでは、業務に定着しません</h3>
-      <p style="margin:0;font-size:15px;line-height:1.95;color:#5C6270">忙しい時期には記録が後回しになります。すべてを細かく入力するのではなく、最低限残す情報を決め、AIで記録負担を減らしながら定期的に見直します。</p>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-
-<section data-screen-label="御社の中に残す" style="background:#FFFFFF;padding:clamp(72px,9vw,110px) 24px">
-<div style="max-width:1080px;margin:0 auto">
-<div data-fade="0" style="display:flex;align-items:center;gap:14px;margin:0 0 16px">
-  <span style="font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--c-accent)">09</span>
-  <span style="width:36px;height:1px;background:#C9C4B6"></span>
-</div>
-<h2 data-fade="0" style="margin:0 0 20px;font-size:clamp(26px,3.6vw,38px);font-weight:900;line-height:1.45;letter-spacing:.03em;color:#1F2430;font-feature-settings:'palt';word-break:auto-phrase">私たちへの依存ではなく、御社の中に残す</h2>
-<div class="handoff-layout">
-  <div class="handoff-visual" data-fade="0"><img src="../../assets/visuals/in-house-handoff.webp" alt="社内担当者がつなげモン No.2と台帳を自ら運用し、支援者が一歩引いて見守るイメージ" width="960" height="720" loading="lazy" decoding="async"></div>
-  <div class="handoff-copy">
-    <p data-fade="0" style="margin:0 0 32px;font-size:15.5px;line-height:2;color:#444B59">本番環境では、原則として御社名義のサーバーとアカウントを使います。契約終了後も、その時点の環境と記録を御社側で使い続けられる構成にします。</p>
-    <p data-fade="0" style="margin:0 0 18px;font-size:14px;font-weight:800;letter-spacing:.1em;color:var(--c-accent)">御社に残るもの</p>
-    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0 0 30px">
-      <div data-fade="0" style="display:flex;gap:10px;align-items:center;background:#F7F5F0;border:1px solid #E4E1D8;padding:16px"><span style="flex:none;width:8px;height:8px;background:var(--c-primary)"></span><p style="margin:0;font-size:14px;font-weight:700;color:#1F2430">案件・対応履歴</p></div>
-      <div data-fade="60" style="display:flex;gap:10px;align-items:center;background:#F7F5F0;border:1px solid #E4E1D8;padding:16px"><span style="flex:none;width:8px;height:8px;background:var(--c-primary)"></span><p style="margin:0;font-size:14px;font-weight:700;color:#1F2430">確認待ち・担当・期限</p></div>
-      <div data-fade="120" style="display:flex;gap:10px;align-items:center;background:#F7F5F0;border:1px solid #E4E1D8;padding:16px"><span style="flex:none;width:8px;height:8px;background:var(--c-primary)"></span><p style="margin:0;font-size:14px;font-weight:700;color:#1F2430">判断理由・会議の決定</p></div>
-      <div data-fade="180" style="display:flex;gap:10px;align-items:center;background:#F7F5F0;border:1px solid #E4E1D8;padding:16px"><span style="flex:none;width:8px;height:8px;background:var(--c-primary)"></span><p style="margin:0;font-size:14px;font-weight:700;color:#1F2430">報告・依頼テンプレート</p></div>
-    </div>
-    <p data-fade="0" style="margin:0;font-size:15.5px;line-height:2;color:#444B59">残すのは、環境だけではありません。業務を整理し、AIへ渡し、結果を確認し、次回の手順へ反映する——御社の中で改善を続けるための考え方と進め方まで引き継ぐことを目指します。</p>
-  </div>
-  <p class="handoff-note" data-fade="0" style="margin:0;padding:14px 18px;background:#F7F5F0;border:1px solid #E4E1D8;font-size:12.5px;line-height:1.9;color:#767E8C">契約終了後も、構築した環境・設定・記録は引き続きご利用いただけます。ただし、AIサービスの仕様変更に伴う修正、障害復旧、追加構築、CodexやVPSなどの利用料は、必要に応じて別途ご相談・ご負担となります。</p>
-</div>
-</div>
-</section>
-
-<section data-screen-label="相性の確認" style="background:#F7F5F0;padding:clamp(72px,9vw,110px) 24px">
-<div style="max-width:1080px;margin:0 auto">
-<div data-fade="0" style="display:flex;align-items:center;gap:14px;margin:0 0 16px">
-  <span style="font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--c-accent)">10</span>
-  <span style="width:36px;height:1px;background:#C9C4B6"></span>
-</div>
-<h2 data-fade="0" style="margin:0 0 36px;font-size:clamp(26px,3.6vw,38px);font-weight:900;line-height:1.45;letter-spacing:.03em;color:#1F2430;font-feature-settings:'palt'">相性の確認</h2>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px">
-  <div data-fade="0" style="background:#FFFFFF;border:1px solid #E4E1D8;border-top:2px solid var(--c-primary);padding:28px 30px">
-    <h3 style="margin:0 0 20px;font-size:18px;font-weight:800;color:var(--c-primary);font-feature-settings:'palt'">合いやすい会社</h3>
-    <div style="display:flex;flex-direction:column;gap:14px">
-      <div style="display:flex;gap:12px;align-items:flex-start"><span style="flex:none;font-size:16px;font-weight:800;color:var(--c-primary);line-height:1.8">○</span><p style="margin:0;font-size:15px;line-height:1.9;color:#1F2430">判断や情報が一部の人に集まっている</p></div>
-      <div style="display:flex;gap:12px;align-items:flex-start"><span style="flex:none;font-size:16px;font-weight:800;color:var(--c-primary);line-height:1.8">○</span><p style="margin:0;font-size:15px;line-height:1.9;color:#1F2430">社内にAI活用の担当者を育てたい</p></div>
-      <div style="display:flex;gap:12px;align-items:flex-start"><span style="flex:none;font-size:16px;font-weight:800;color:var(--c-primary);line-height:1.8">○</span><p style="margin:0;font-size:15px;line-height:1.9;color:#1F2430">今ある仕組みを生かして改善したい</p></div>
-      <div style="display:flex;gap:12px;align-items:flex-start"><span style="flex:none;font-size:16px;font-weight:800;color:var(--c-primary);line-height:1.8">○</span><p style="margin:0;font-size:15px;line-height:1.9;color:#1F2430">退職や異動のたびに、引き継ぎで業務が止まった経験がある</p></div>
-      <div style="display:flex;gap:12px;align-items:flex-start"><span style="flex:none;font-size:16px;font-weight:800;color:var(--c-primary);line-height:1.8">○</span><p style="margin:0;font-size:15px;line-height:1.9;color:#1F2430">ChatGPTを個人では使っているが、会社の仕事に定着していない</p></div>
-    </div>
-  </div>
-  <div data-fade="100" style="background:#F1EFE9;border:1px solid #DDD8CB;border-top:2px solid #A9A294;padding:28px 30px">
-    <h3 style="margin:0 0 20px;font-size:18px;font-weight:800;color:#5C6270;font-feature-settings:'palt'">合いにくいご要望</h3>
-    <div style="display:flex;flex-direction:column;gap:14px">
-      <div style="display:flex;gap:12px;align-items:flex-start"><span style="flex:none;font-size:16px;font-weight:800;color:#9AA0AC;line-height:1.8">×</span><p style="margin:0;font-size:15px;line-height:1.9;color:#5C6270">重要判断をAIへ任せきりにしたい</p></div>
-      <div style="display:flex;gap:12px;align-items:flex-start"><span style="flex:none;font-size:16px;font-weight:800;color:#9AA0AC;line-height:1.8">×</span><p style="margin:0;font-size:15px;line-height:1.9;color:#5C6270">社内で確認・実行する人を置けない</p></div>
-      <div style="display:flex;gap:12px;align-items:flex-start"><span style="flex:none;font-size:16px;font-weight:800;color:#9AA0AC;line-height:1.8">×</span><p style="margin:0;font-size:15px;line-height:1.9;color:#5C6270">短期間で全社を自動化したい</p></div>
-      <div style="display:flex;gap:12px;align-items:flex-start"><span style="flex:none;font-size:16px;font-weight:800;color:#9AA0AC;line-height:1.8">×</span><p style="margin:0;font-size:15px;line-height:1.9;color:#5C6270">日々の実作業まで丸ごと外注したい</p></div>
-      <div style="display:flex;gap:12px;align-items:flex-start"><span style="flex:none;font-size:16px;font-weight:800;color:#9AA0AC;line-height:1.8">×</span><p style="margin:0;font-size:15px;line-height:1.9;color:#5C6270">ツールだけ導入して、業務の整理はしたくない</p></div>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-
-<section data-screen-label="想い" style="background:var(--c-primary);padding:clamp(80px,10vw,120px) 24px">
-<div style="max-width:1080px;margin:0 auto">
-<div data-fade="0" style="display:flex;align-items:center;gap:14px;margin:0 0 18px">
-  <span style="font-size:13px;font-weight:700;letter-spacing:.16em;color:rgba(255,255,255,.55)">11</span>
-  <span style="width:36px;height:1px;background:rgba(255,255,255,.3)"></span>
-</div>
-<div class="purpose-intro">
-  <h2 data-fade="0"><span style="display:block">なぜ、私たちがこの</span><span style="display:block">サービスをつくったのか</span></h2>
-  <div class="purpose-story" data-fade="0">
-    <p>私たちケーエスピー株式会社は、中小企業のシステム運用に携わるなかで、同じ光景を何度も見てきました。判断は社長の頭の中、案件の経経緯は担当者のノートの中。責任感の強い人ほど仕事を抱え、その人が休むと、業務が止まってしまいます。</p>
-    <p>これまで現場を支えてきたからこそ、経験や判断が、自然と特定の人に集まってきたのだと思います。AIが身近になった今、その大切な経験を、会社の中で無理なく共有できる形に変えていける。私たちはそう考えました。AIは導入するだけで力を発揮するものではありません。現場に合う形で使い続けられて、初めて会社の力になります。</p>
-  </div>
-</div>
-<div class="purpose-goals" data-fade="0">
-  <p class="purpose-kicker">このサービスに込めた思い</p>
-  <div class="purpose-goal-grid">
-    <article class="purpose-goal-card">
-      <span class="purpose-goal-number">01</span>
-      <h3>誰か一人に、仕事を背負わせない</h3>
-      <p>責任感のある人ほど休めず、いつも判断を求められる。そんな働き方を、仕組みから変えたい。</p>
-    </article>
-    <article class="purpose-goal-card">
-      <span class="purpose-goal-number">02</span>
-      <h3>人の経験を、次の人へつなぐ</h3>
-      <p>積み重ねた判断や工夫を、その人だけのものにしない。会社の記憶として残し、次の人へ渡したい。</p>
-    </article>
-    <article class="purpose-goal-card">
-      <span class="purpose-goal-number">03</span>
-      <h3>AIで、人の力をもっと引き出す</h3>
-      <p>人を置き換えるためではなく、考える時間と余裕を取り戻すためにAIを使いたい。</p>
-    </article>
-  </div>
-</div>
-<div class="purpose-closing" data-fade="0">
-  <div>
-    <span class="purpose-closing-label">私たちの約束</span>
-    <h3>主役は、<br>現場で働く人です。</h3>
-  </div>
-  <div class="purpose-closing-copy">
-    <p>AIに判断を任せきるのではなく、重要な判断は必ず人が確認します。私たちは、「全部お任せください」とは言いません。業務を一番よく知っているのは、御社の皆さまだからです。皆さまが力を発揮し、無理なく使い続けられる仕組みができるまで、私たちは伴走します。</p>
-  </div>
-</div>
-</div>
-</section>
-
-
-
-<section id="contact" data-screen-label="クロージング" style="background:#F7F5F0;padding:clamp(80px,10vw,120px) 24px;scroll-margin-top:70px">
-<div style="max-width:800px;margin:0 auto;text-align:center">
-<h2 data-fade="0" style="margin:0 0 18px;font-size:clamp(26px,3.6vw,38px);font-weight:900;line-height:1.5;letter-spacing:.03em;color:#1F2430;font-feature-settings:'palt';word-break:auto-phrase">まずは、一緒に改善する最初の業務を決めましょう</h2>
-<p data-fade="0" style="margin:0 0 40px;font-size:15.5px;line-height:2;color:#444B59">実際に動いている画面を見ながら、御社の業務に合うかを確認します。<br>その場で本番導入を決める必要はありません。</p>
-<div data-fade="0" style="background:#FFFFFF;border:1px solid #E4E1D8;padding:32px clamp(22px,4vw,40px);text-align:left;margin:0 0 40px">
-  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 24px;padding:0 0 18px;border-bottom:1px solid #EDEAE1">
-    <span style="font-size:12px;font-weight:800;letter-spacing:.06em;color:#FFFFFF;background:var(--c-primary);padding:4px 12px">デモミーティング</span>
-    <span style="font-size:15px;font-weight:700;color:#1F2430">実画面で確認</span>
-  </div>
-  <div style="display:flex;flex-direction:column;gap:16px">
-    <div style="display:flex;gap:14px;align-items:flex-start"><span style="flex:none;width:26px;height:26px;border:1px solid var(--c-primary);color:var(--c-primary);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800">1</span><p style="margin:0;font-size:15px;line-height:1.85;color:#1F2430">何が一番重い業務かを確認</p></div>
-    <div style="display:flex;gap:14px;align-items:flex-start"><span style="flex:none;width:26px;height:26px;border:1px solid var(--c-primary);color:var(--c-primary);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800">2</span><p style="margin:0;font-size:15px;line-height:1.85;color:#1F2430">台帳とAIの流れを実画面でデモ</p></div>
-    <div style="display:flex;gap:14px;align-items:flex-start"><span style="flex:none;width:26px;height:26px;border:1px solid var(--c-primary);color:var(--c-primary);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800">3</span><p style="margin:0;font-size:15px;line-height:1.85;color:#1F2430">現在の進め方との違いを確認</p></div>
-    <div style="display:flex;gap:14px;align-items:flex-start"><span style="flex:none;width:26px;height:26px;border:1px solid var(--c-primary);color:var(--c-primary);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800">4</span><p style="margin:0;font-size:15px;line-height:1.85;color:#1F2430">最初に改善する業務を1つ選ぶ</p></div>
-    <div style="display:flex;gap:14px;align-items:flex-start"><span style="flex:none;width:26px;height:26px;border:1px solid var(--c-primary);color:var(--c-primary);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800">5</span><p style="margin:0;font-size:15px;line-height:1.85;color:#1F2430">トライアルで見る指標を決める</p></div>
-  </div>
-</div>
-<a data-fade="0" href="https://www.k-sp.co.jp/admin/std/contact/new" style="display:inline-block;background:var(--c-accent);color:#FFFFFF;font-size:17px;font-weight:700;letter-spacing:.08em;padding:19px 64px;border-radius:3px;text-decoration:none;box-shadow:0 8px 20px rgba(176,84,60,.28);transition:filter .2s ease,transform .2s ease" style-hover="filter:brightness(.92);transform:translateY(-1px);color:#FFFFFF">お問い合わせ</a>
-<p data-fade="0" style="margin:48px 0 0;font-size:12px;line-height:2;color:#8A8FA0;text-align:left">記載内容・料金・契約条件・保守範囲は、打ち合わせおよび双方の確認を経て最終決定します。実データを扱う場合は、秘密保持、外部AI利用条件、個人情報・顧客情報の取り扱いを事前に文書で確認します。</p>
-</div>
-</section>
-
-

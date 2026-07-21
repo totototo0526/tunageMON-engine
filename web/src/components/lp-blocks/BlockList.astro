@@ -1,0 +1,23 @@
+---
+const { block } = Astro.props;
+---
+<section data-screen-label={block.title || "リスト"} style="background:#F7F5F0;padding:clamp(72px,9vw,110px) 24px">
+<div style="max-width:1080px;margin:0 auto">
+<div data-fade="0" style="display:flex;align-items:center;gap:14px;margin:0 0 16px">
+  {block.subtitle && <span style="font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--c-accent)">{block.subtitle}</span>}
+  <span style="width:36px;height:1px;background:#C9C4B6"></span>
+</div>
+{block.title && <h2 data-fade="0" style="margin:0 0 40px;font-size:clamp(26px,3.6vw,38px);font-weight:900;line-height:1.45;letter-spacing:.03em;color:#1F2430;font-feature-settings:'palt';word-break:auto-phrase">{block.title}</h2>}
+<div style="max-width:760px">
+  {block.items && block.items.map((item, i) => (
+  <div data-fade="0" style={`display:flex;gap:20px;padding:24px 0;border-top:1px solid #DDD8CB;${i === block.items.length - 1 ? 'border-bottom:1px solid #DDD8CB' : ''}`}>
+    <span style="flex:none;font-size:14px;font-weight:800;letter-spacing:.12em;color:#9AA0AC;line-height:2">{item.num || String(i+1).padStart(2, '0')}</span>
+    <div>
+      <h3 style="margin:0 0 8px;font-size:17px;font-weight:800;line-height:1.7;color:#1F2430;font-feature-settings:'palt'">{item.title}</h3>
+      <p style="margin:0;font-size:15px;line-height:1.95;color:#5C6270">{item.desc}</p>
+    </div>
+  </div>
+  ))}
+</div>
+</div>
+</section>

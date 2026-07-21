@@ -1,0 +1,27 @@
+---
+const { block } = Astro.props;
+---
+<section data-screen-label={block.title || "比較・相性"} style="background:#F7F5F0;padding:clamp(72px,9vw,110px) 24px">
+<div style="max-width:1080px;margin:0 auto">
+<div data-fade="0" style="display:flex;align-items:center;gap:14px;margin:0 0 16px">
+  {block.subtitle && <span style="font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--c-accent)">{block.subtitle}</span>}
+  <span style="width:36px;height:1px;background:#C9C4B6"></span>
+</div>
+{block.title && <h2 data-fade="0" style="margin:0 0 36px;font-size:clamp(26px,3.6vw,38px);font-weight:900;line-height:1.45;letter-spacing:.03em;color:#1F2430;font-feature-settings:'palt'">{block.title}</h2>}
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px">
+  {block.groups && block.groups.map((group, gIndex) => (
+  <div data-fade={gIndex * 100} style={group.type === 'positive' ? "background:#FFFFFF;border:1px solid #E4E1D8;border-top:2px solid var(--c-primary);padding:28px 30px" : "background:#F1EFE9;border:1px solid #DDD8CB;border-top:2px solid #A9A294;padding:28px 30px"}>
+    <h3 style={`margin:0 0 20px;font-size:18px;font-weight:800;color:${group.type === 'positive' ? 'var(--c-primary)' : '#5C6270'};font-feature-settings:'palt'`}>{group.title}</h3>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      {group.items && group.items.map(item => (
+      <div style="display:flex;gap:12px;align-items:flex-start">
+        <span style={`flex:none;font-size:16px;font-weight:800;color:${group.type === 'positive' ? 'var(--c-primary)' : '#9AA0AC'};line-height:1.8`}>{group.type === 'positive' ? '○' : '×'}</span>
+        <p style={`margin:0;font-size:15px;line-height:1.9;color:${group.type === 'positive' ? '#1F2430' : '#5C6270'}`}>{item}</p>
+      </div>
+      ))}
+    </div>
+  </div>
+  ))}
+</div>
+</div>
+</section>

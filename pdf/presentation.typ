@@ -124,7 +124,7 @@
     )
   ]
 
-  #if "blocks" in theme and theme.blocks != none [
+    #if "blocks" in theme and theme.blocks != none [
     #for block in theme.blocks [
       #if block.type == "BlockCards" [
         #slide(title: theme.title, subtitle: block.title)[
@@ -206,6 +206,105 @@
                 ]
               ])
             )
+          ]
+        ]
+      ] else if block.type == "BlockSteps" [
+        #slide(title: theme.title, subtitle: if "title" in block { block.title } else { "フロー" })[
+          #v(1em)
+          #if "items" in block and block.items != none [
+            #grid(
+              columns: (1fr),
+              gutter: 1.5em,
+              ..block.items.map(item => [
+                #box(fill: rgb("F8FAFC"), inset: 1.5em, radius: 1em, width: 100%, [
+                  #text(size: 20pt, weight: "bold", fill: rgb("1E293B"))[#item.title]
+                  #v(0.5em)
+                  #if "desc" in item and item.desc != none [
+                    #text(size: 16pt)[#item.desc]
+                  ]
+                ])
+              ])
+            )
+          ]
+        ]
+      ] else if block.type == "BlockTable" [
+        #slide(title: theme.title, subtitle: if "title" in block { block.title } else { "比較" })[
+          #v(1em)
+          #if "rows" in block and block.rows != none [
+            #table(
+              columns: (1fr, 1fr, 1fr, 1fr, 1fr),
+              align: center + horizon,
+              stroke: 0.5pt + rgb("E2E8F0"),
+              ..block.headers.map(h => [#text(weight:"bold", fill: rgb("475569"))[#h]]),
+              ..block.rows.map(row => {
+                let cells = ()
+                cells.push([#text(weight:"bold")[#row.label]])
+                for v in row.values {
+                  cells.push([#text()[#v]])
+                }
+                return cells
+              }).flatten()
+            )
+          ]
+        ]
+      ] else if block.type == "BlockList" [
+        #slide(title: theme.title, subtitle: if "title" in block { block.title } else { "リスト" })[
+          #v(1em)
+          #if "items" in block and block.items != none [
+            #grid(
+              columns: (1fr),
+              gutter: 1em,
+              ..block.items.map(item => [
+                #box(width: 100%, stroke: (bottom: 1pt + rgb("E2E8F0")), inset: (bottom: 0.5em))[
+                  #text(weight: "bold", size: 18pt, fill: rgb("1E293B"))[#item.title]
+                  #v(0.5em)
+                  #if "desc" in item and item.desc != none [
+                    #text(size: 14pt, fill: rgb("475569"))[#item.desc]
+                  ]
+                ]
+              ])
+            )
+          ]
+        ]
+      ] else if block.type == "BlockCTA" [
+        #slide(title: theme.title, subtitle: "次へのアクション")[
+          #v(2em)
+          #align(center)[
+            #text(size: 32pt, weight: "bold")[#if "title" in block { block.title } else { "" }]
+            #v(1em)
+            #if "desc" in block and block.desc != none [
+              #text(size: 20pt, fill: rgb("475569"))[#block.desc]
+            ]
+          ]
+        ]
+      ] else if block.type == "BlockComparisonCards" [
+        #slide(title: theme.title, subtitle: if "title" in block { block.title } else { "相性" })[
+          #v(1em)
+          #if "groups" in block and block.groups != none [
+            #grid(
+              columns: (1fr, 1fr),
+              gutter: 2em,
+              ..block.groups.map(group => [
+                #box(fill: if group.type == "positive" { rgb("F8FAFC") } else { rgb("FEF2F2") }, inset: 1.5em, radius: 1em, width: 100%, height: 100%, [
+                  #text(size: 24pt, weight: "bold", fill: if group.type == "positive" { rgb("0F172A") } else { rgb("991B1B") })[#group.title]
+                  #v(1em)
+                  #for item in group.items [
+                    #text(size: 16pt)[・ #item]
+                    #v(0.5em)
+                  ]
+                ])
+              ])
+            )
+          ]
+        ]
+      ] else if block.type == "BlockText" [
+        #slide(title: theme.title, subtitle: if "title" in block { block.title } else { "テキスト" })[
+          #v(1em)
+          #if "paragraphs" in block and block.paragraphs != none [
+            #for p in block.paragraphs [
+              #text(size: 18pt, fill: rgb("1E293B"))[#p]
+              #v(1em)
+            ]
           ]
         ]
       ]

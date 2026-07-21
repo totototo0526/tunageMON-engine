@@ -1,0 +1,14 @@
+---
+const { block } = Astro.props;
+---
+<section data-screen-label={block.title || "CTA帯"} style={`background:${block.theme === 'dark' ? 'var(--c-primary)' : '#F7F5F0'};padding:clamp(48px,6vw,80px) 24px;text-align:${block.align || 'left'}`}>
+<div style={`max-width:${block.maxWidth || '1080px'};margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:${block.align === 'center' ? 'center' : 'space-between'};gap:24px`}>
+<div style="max-width:660px">
+  <p style={`margin:0 0 8px;font-size:clamp(20px,2.6vw,26px);font-weight:900;line-height:1.6;letter-spacing:.03em;color:${block.theme === 'dark' ? '#FFFFFF' : '#1F2430'};font-feature-settings:'palt'`}>{block.title}</p>
+  {block.desc && <p style={`margin:0;font-size:13.5px;line-height:1.9;color:${block.theme === 'dark' ? 'rgba(255,255,255,.72)' : '#444B59'}`}>{block.desc}</p>}
+</div>
+{block.button && (
+<a href={block.button.url} style={`flex:none;display:inline-block;background:var(--c-accent);color:#FFFFFF;font-size:16px;font-weight:700;letter-spacing:.06em;padding:16px 38px;border-radius:3px;text-decoration:none;transition:filter .2s ease,transform .2s ease;${block.align === 'center' ? 'margin-top:20px;' : ''}`} style-hover="filter:brightness(.92);transform:translateY(-1px);color:#FFFFFF">{block.button.text}</a>
+)}
+</div>
+</section>
