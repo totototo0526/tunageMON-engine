@@ -24,6 +24,14 @@
           "description": "取引先によってフォーマットがバラバラで、個別の確認作業に多くの時間を奪われている。",
           "image": "02-case-history.webp"
         }
+      ],
+      "blocks": [
+        {
+          "type": "BlockText",
+          "paragraphs": [
+            "Web用の詳細テキストをここに記述します。"
+          ]
+        }
       ]
     },
     {
@@ -48,6 +56,14 @@
           "title": "紙（FAX）の手動パンチ入力",
           "description": "FAXで届いた注文書や問い合わせを、担当者が手作業でシステムに打ち直すという非効率な作業が続いている。",
           "image": "02-case-history.webp"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "BlockText",
+          "paragraphs": [
+            "Web用の詳細テキストをここに記述します。"
+          ]
         }
       ]
     },
@@ -74,6 +90,14 @@
           "description": "現場のデータがシステムに反映されるまでにタイムラグがあり、正確な在庫状況が常に分からない。",
           "image": "04-isolated-ai-use.webp"
         }
+      ],
+      "blocks": [
+        {
+          "type": "BlockText",
+          "paragraphs": [
+            "Web用の詳細テキストをここに記述します。"
+          ]
+        }
       ]
     },
     {
@@ -98,6 +122,14 @@
           "title": "部門間のデータ連携での手作業",
           "description": "システム間でデータを移すためだけに、CSVをエクスポートして加工し、インポートする作業が毎日発生している。",
           "image": "03-outdated-procedure.webp"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "BlockText",
+          "paragraphs": [
+            "Web用の詳細テキストをここに記述します。"
+          ]
         }
       ]
     },
@@ -124,6 +156,14 @@
           "description": "機器の異常や故障が起きた際、発見が遅れて生産ライン全体に大きな影響を与えてしまう。",
           "image": "02-case-history.webp"
         }
+      ],
+      "blocks": [
+        {
+          "type": "BlockText",
+          "paragraphs": [
+            "Web用の詳細テキストをここに記述します。"
+          ]
+        }
       ]
     },
     {
@@ -149,6 +189,14 @@
           "title": "サプライチェーンのボトルネック",
           "description": "受発注から製造、物流までのプロセスにおいて、どこがボトルネックになり得るかの経営的な判断材料が不足している。",
           "image": "01-decision.webp"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "BlockText",
+          "paragraphs": [
+            "Web用の詳細テキストをここに記述します。"
+          ]
         }
       ]
     },

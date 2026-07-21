@@ -1,4 +1,5 @@
 ---
+
 id: "04"
 layout: "template_a"
 title: "つなげモン ハブ"
@@ -16,6 +17,9 @@ problems:
   - title: "部門間のデータ連携での手作業"
     description: "システム間でデータを移すためだけに、CSVをエクスポートして加工し、インポートする作業が毎日発生している。"
     image: "03-outdated-procedure.webp"
+blocks:
+- type: BlockText
+  paragraphs:
+  - Web用の詳細テキストをここに記述します。
 ---
 
-Web用の詳細テキストをここに記述します。

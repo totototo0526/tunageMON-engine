@@ -1,4 +1,5 @@
 ---
+
 id: "06"
 layout: "template_a"
 title: "つなげモン シミュレータ"
@@ -17,6 +18,9 @@ problems:
   - title: "サプライチェーンのボトルネック"
     description: "受発注から製造、物流までのプロセスにおいて、どこがボトルネックになり得るかの経営的な判断材料が不足している。"
     image: "01-decision.webp"
+blocks:
+- type: BlockText
+  paragraphs:
+  - Web用の詳細テキストをここに記述します。
 ---
 
-Web用の詳細テキストをここに記述します。

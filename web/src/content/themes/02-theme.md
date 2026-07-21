@@ -1,4 +1,5 @@
 ---
+
 id: "02"
 layout: "template_a"
 title: "つなげモン 窓口"
@@ -16,6 +17,9 @@ problems:
   - title: "紙（FAX）の手動パンチ入力"
     description: "FAXで届いた注文書や問い合わせを、担当者が手作業でシステムに打ち直すという非効率な作業が続いている。"
     image: "02-case-history.webp"
+blocks:
+- type: BlockText
+  paragraphs:
+  - Web用の詳細テキストをここに記述します。
 ---
 
-Web用の詳細テキストをここに記述します。

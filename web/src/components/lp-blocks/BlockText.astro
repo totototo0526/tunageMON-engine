@@ -9,7 +9,7 @@ const { block } = Astro.props;
 </div>
 <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:40px;margin:0 0 60px">
   <h2 data-fade="0" style={`margin:0;font-size:clamp(28px,4vw,42px);font-weight:900;line-height:1.45;letter-spacing:.04em;color:${block.theme === 'dark' ? '#FFFFFF' : '#1F2430'};font-feature-settings:'palt'`}>
-    {block.title.split('\\n').map(line => <span style="display:block">{line}</span>)}
+    {block.title && block.title.split('\\n').map(line => <span style="display:block">{line}</span>)}
   </h2>
   <div data-fade="0" style="width:100%;max-width:540px;display:flex;flex-direction:column;gap:1.5em">
     {block.paragraphs && block.paragraphs.map(p => (

@@ -1,4 +1,5 @@
 ---
+
 id: "05"
 layout: "template_a"
 title: "つなげモン IoT"
@@ -16,6 +17,9 @@ problems:
   - title: "異常発生時の対応の遅れ"
     description: "機器の異常や故障が起きた際、発見が遅れて生産ライン全体に大きな影響を与えてしまう。"
     image: "02-case-history.webp"
+blocks:
+- type: BlockText
+  paragraphs:
+  - Web用の詳細テキストをここに記述します。
 ---
 
-Web用の詳細テキストをここに記述します。

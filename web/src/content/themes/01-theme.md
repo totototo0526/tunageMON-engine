@@ -1,4 +1,5 @@
 ---
+
 id: "01"
 layout: "template_a"
 title: "つなげモン ポータル"
@@ -16,6 +17,9 @@ problems:
   - title: "取引先ごとの個別対応の限界"
     description: "取引先によってフォーマットがバラバラで、個別の確認作業に多くの時間を奪われている。"
     image: "02-case-history.webp"
+blocks:
+- type: BlockText
+  paragraphs:
+  - Web用の詳細テキストをここに記述します。
 ---
 
-Web用の詳細テキストをここに記述します。

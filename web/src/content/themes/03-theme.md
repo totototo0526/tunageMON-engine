@@ -1,4 +1,5 @@
 ---
+
 id: "03"
 layout: "template_a"
 title: "つなげモン モバイル"
@@ -16,6 +17,9 @@ problems:
   - title: "リアルタイムな在庫のブラックボックス化"
     description: "現場のデータがシステムに反映されるまでにタイムラグがあり、正確な在庫状況が常に分からない。"
     image: "04-isolated-ai-use.webp"
+blocks:
+- type: BlockText
+  paragraphs:
+  - Web用の詳細テキストをここに記述します。
 ---
 
-Web用の詳細テキストをここに記述します。
