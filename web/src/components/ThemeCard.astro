@@ -17,7 +17,7 @@ const c = colorMap[theme.id] || colorMap["01"];
 // Alternating layout
 const isEven = parseInt(theme.id) % 2 === 0;
 const flexRow = isEven ? "md:flex-row-reverse" : "md:flex-row";
-const isNew = parseInt(theme.id) >= 6;
+const isNew = theme.isNew === true;
 ---
 
 <div data-theme-id={theme.id}
@@ -42,21 +42,15 @@ const isNew = parseInt(theme.id) >= 6;
             </ul>
         )}
         
-        {theme.id === "03" && (
-            <a href="usecase_mobile.html" class="inline-flex items-center gap-2 bg-yellow-50 text-yellow-700 border border-yellow-200 font-bold px-4 py-2 rounded-full text-sm hover:bg-yellow-100 transition shadow-sm">
-                <i data-lucide="external-link" class="w-4 h-4"></i> 詳細な利用イメージを見る
+        {theme.button && theme.button.type === "link" && (
+            <a href={theme.button.url} class={`inline-flex items-center gap-2 bg-${c.icon.split('-')[0]}-50 text-${c.text} border ${c.border.replace('border-', 'border-opacity-30 border-')} font-bold px-4 py-2 rounded-full text-sm hover:bg-${c.icon.split('-')[0]}-100 transition shadow-sm`}>
+                <i data-lucide={theme.button.icon} class="w-4 h-4"></i> {theme.button.text}
             </a>
         )}
         
-        {theme.id === "06" && (
-            <a href="slides/simulator_presentation.pdf" target="_blank" class="inline-flex items-center gap-2 bg-orange-500 text-white font-bold px-5 py-3 rounded-full text-sm hover:bg-orange-600 transition shadow-md">
-                <i data-lucide="file-down" class="w-5 h-5"></i> 提案書（PDF）をダウンロード
-            </a>
-        )}
-        
-        {theme.id === "07" && (
-            <a href="slides/ai_adjutant_presentation.pdf" target="_blank" class="inline-flex items-center gap-2 bg-indigo-500 text-white font-bold px-5 py-3 rounded-full text-sm hover:bg-indigo-600 transition shadow-md">
-                <i data-lucide="file-down" class="w-5 h-5"></i> 提案書（PDF）をダウンロード
+        {theme.button && theme.button.type === "pdf" && (
+            <a href={theme.button.url} target="_blank" class={`inline-flex items-center gap-2 bg-${c.icon.split('-')[0]}-500 text-white font-bold px-5 py-3 rounded-full text-sm hover:bg-${c.icon.split('-')[0]}-600 transition shadow-md`}>
+                <i data-lucide={theme.button.icon} class="w-5 h-5"></i> {theme.button.text}
             </a>
         )}
     </div>
