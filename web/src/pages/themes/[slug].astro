@@ -19,7 +19,9 @@ const { Content } = await render(theme);
 <LPLayout frontmatter={theme.data}>
     {/* layoutプロパティ等に応じてデザインをスイッチする仕組み（現在はID=02のみ仮で適用） */}
     {theme.data.layout === 'template_a' ? (
-        <TemplateA theme={theme} />
+        <TemplateA theme={theme}>
+            <Content />
+        </TemplateA>
     ) : (
         <div class="max-w-4xl mx-auto py-32 px-6 min-h-screen">
             <a href="../../index.html" class="text-orange-500 font-bold hover:underline mb-8 inline-block">← トップに戻る</a>
