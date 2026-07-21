@@ -7,7 +7,8 @@ echo "🚀 つなげモン 統合ビルドを開始します..."
 # モックアップの .typ をコンパイルするのみのプレースホルダーです。
 echo "📄 プレゼン用PDF (Typst) のビルドを実行中..."
 cd pdf
-typst compile --root .. presentation.typ
+# CI環境でダウンロードしたフォントを読み込むために --font-path を追加
+typst compile --root .. --font-path fonts presentation.typ
 if [ $? -eq 0 ]; then
   mkdir -p ../web/public/slides
   cp presentation.pdf ../web/public/slides/simulator_presentation.pdf
