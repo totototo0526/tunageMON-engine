@@ -1,4 +1,7 @@
 ---
+import { getCollection } from 'astro:content';
+const themes = await getCollection('themes');
+const themeCount = themes.length;
 ---
 <!-- ナビゲーション -->
 <nav class="fixed w-full bg-white/90 backdrop-blur-sm z-50 border-b border-slate-200">
@@ -11,7 +14,7 @@
         <div class="hidden md:flex gap-6 items-center font-bold text-sm text-slate-600">
             <a href="#about" class="hover:text-orange-500 transition">コンセプト</a>
             <a href="#problems" class="hover:text-orange-500 transition">よくある課題</a>
-            <a href="#solutions" class="hover:text-orange-500 transition">5つのソリューション</a>
+            <a href="#solutions" class="hover:text-orange-500 transition">{themeCount}つのソリューション</a>
             <a href="https://www.k-sp.co.jp/contact"
                 class="bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-600 transition shadow-md">資料請求・お問い合わせ</a>
         </div>
