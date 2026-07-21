@@ -20,12 +20,23 @@ else
 fi
 cd ..
 
-# 2. Astro (Web) のビルド
-echo "🌐 Web (Astro) のビルドを実行中..."
+# 2. 本番用エクスポート (ZIP) の生成
+echo "📦 本番公開用ZIPの生成を実行中..."
+./build_prod.sh
+if [ $? -ne 0 ]; then
+  echo "❌ 本番用ZIPの生成に失敗しました。"
+  exit 1
+fi
+
+# 3. Astro (Web/Preview) のビルド
+echo "🌐 Web (プレビュー用Astro) のビルドを実行中..."
 cd web
+export PUBLIC_IS_PREVIEW=true
 npm run build
 if [ $? -eq 0 ]; then
   echo "✅ Webのビルドに成功しました。"
+  # 生成された本番用ZIPをプレビューサイトのルートに配置してダウンロード可能にする
+  mv ../production-build.zip dist/
 else
   echo "❌ Webのビルドに失敗しました。"
   exit 1

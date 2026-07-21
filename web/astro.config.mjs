@@ -5,8 +5,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://totototo0526.github.io',
-  base: '/tunageMON-engine',
+  site: process.env.SITE_URL || 'https://totototo0526.github.io',
+  base: process.env.BASE_PATH || '/tunageMON-engine',
   vite: {
     plugins: [tailwindcss()]
   }

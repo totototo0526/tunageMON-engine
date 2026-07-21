@@ -3,7 +3,10 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ThemeCard from '../components/ThemeCard.astro';
+import AdminPanel from '../components/AdminPanel.astro';
 import themeData from '../../../data/theme.json';
+
+const themes = themeData.themes;
 ---
 <!DOCTYPE html>
 <html lang="ja" class="scroll-smooth">
@@ -186,6 +189,8 @@ import themeData from '../../../data/theme.json';
     </section>
 
     <Footer />
+    
+    <AdminPanel />
 
     <script is:inline src="assets/js/main.js"></script>
 </body>
