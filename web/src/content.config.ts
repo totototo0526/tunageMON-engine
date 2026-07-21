@@ -26,13 +26,13 @@ const themesCollection = defineCollection({
       monthly: z.string().optional(),
     }).optional(),
     blocks: z.array(z.object({
-      type: z.string(), // "cards", "before_after", "faq", "text", "table"
+      type: z.string(), // "cards", "before_after", "faq", "text", "table", etc
       title: z.string().optional(),
       subtitle: z.string().optional(),
       desc: z.string().optional(),
       items: z.array(z.record(z.any())).optional(),
       text: z.string().optional()
-    })).optional(),
+    }).passthrough()).optional(),
     button: z.object({
       type: z.string(),
       url: z.string(),
