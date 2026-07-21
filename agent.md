@@ -3,8 +3,9 @@
 ## Current Status
 - **CMS Migration Completed:** Transformed the codebase from a static HTML structure to a Markdown-driven static site using Astro.
 - **Template Engine Active:** Created `TemplateA.astro` layout and extracted `LPHero`, `LPProblems`, `LPPricing` as dynamic UI components.
-- **Dynamic Content Injection:** Content schemas extended via `content.config.ts` to support nested objects (pricing, solution lists, arrays).
-- **Original Layout Restored (2026-07-21):** Restored all intermediate and remaining sections from the original Hara-san HTML design directly into `TemplateA.astro` to ensure full layout parity with the original mockups (Solution, Scenarios, Features, Comparisons, Security, FAQ, Contact).
+- **Fully YAML-Driven Architecture Completed:** Completely eliminated hardcoded HTML from Markdown files. Replaced with dynamic YAML blocks (`BlockChatDemo`, `BlockReasoningGrid`, etc.).
+- **CMS Integration:** Integrated Decap CMS (`public/admin`) to allow local and remote non-technical editing. Astro preview pane disabled for full-screen editing UI.
+- **Universal Output Sync:** Built `build.sh` pipeline to successfully render identical presentation PDFs via Typst alongside the Astro static site using a single YAML source.
 
 ## Core Philosophy
 1. **CMS-Driven Flexibility:** Any newly created theme should only require editing a single Markdown file (`0x-theme.md`). Layout logic stays within Astro components.
@@ -18,5 +19,8 @@
 - [x] Update Portal UI (index) to dynamically reflect the number of available themes.
 - [x] Populate all 7 themes with foundational Markdown structures.
 - [x] Restore original extended layout sections (FAQ, Security, Flow, Scenarios) to `TemplateA.astro`.
-- [ ] Refactor newly restored layout sections into standalone Astro components (e.g., `LPFAQ.astro`, `LPScenarios.astro`) to enable conditional rendering based on Markdown frontmatter content.
+- [x] Refactor layout sections into standalone Astro components (e.g., `BlockFAQ.astro`, `BlockScenarios.astro`) to enable conditional rendering based on Markdown frontmatter `blocks`.
+- [x] Integrate local CMS to manage the complex YAML block schema.
+- [x] Validate Typst PDF compilation and layout sync against the new unified YAML data structure.
 - [ ] Consolidate newly provided imagery into `web/public/assets/` and bind relative paths within Markdown structures.
+- [ ] Roll out the fully YAML-ized structure to themes `01-theme` to `06-theme` (Currently only `07-theme` is complete).
