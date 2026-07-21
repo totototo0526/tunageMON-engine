@@ -57,16 +57,22 @@ const dateAdded = theme.dateAdded; // 自動判定用
             </a>
         )}
     </div>
-    <div class="md:w-1/2 bg-slate-50 rounded-2xl p-6 border border-slate-100 w-full flex items-center justify-center gap-4">
-        <!-- Generic abstract illustration for the right side -->
-        <div class="bg-white p-4 rounded-xl shadow-sm text-center z-10 w-24 border border-slate-200">
-            <i data-lucide="box" class={`w-8 h-8 text-${c.icon} mx-auto mb-2`}></i><span class="text-[10px] font-bold">Data Source</span>
-        </div>
-        <div class={`h-1 ${c.bg} w-8 flex-shrink-0 relative`}><i data-lucide="arrow-right" class={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-${c.icon} w-4 h-4`}></i></div>
-        <div class={`bg-slate-800 text-white p-4 rounded-full shadow-lg z-10`}><i data-lucide="workflow" class={`w-6 h-6 text-${c.icon}`}></i></div>
-        <div class={`h-1 ${c.bg} w-8 flex-shrink-0 relative`}><i data-lucide="arrow-right" class={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-${c.icon} w-4 h-4`}></i></div>
-        <div class={`${c.bg} ${c.text} p-4 rounded-xl shadow-md text-center z-10 w-28 border-b-4 ${c.border}`}>
-            <i data-lucide="database" class={`w-8 h-8 text-${c.icon} mx-auto mb-2`}></i><span class="text-[10px] font-bold">つなげモン DB</span>
-        </div>
+    <div class="md:w-1/2 bg-slate-50 rounded-2xl p-6 border border-slate-100 w-full flex items-center justify-center gap-4 overflow-hidden min-h-[200px]">
+        {theme.image ? (
+            <img src={theme.image} alt={theme.title} class="w-full max-h-64 object-contain rounded-xl shadow-sm" />
+        ) : (
+            <>
+                <!-- Generic abstract illustration for the right side -->
+                <div class="bg-white p-4 rounded-xl shadow-sm text-center z-10 w-24 border border-slate-200">
+                    <i data-lucide="box" class={`w-8 h-8 text-${c.icon} mx-auto mb-2`}></i><span class="text-[10px] font-bold">Data Source</span>
+                </div>
+                <div class={`h-1 ${c.bg} w-8 flex-shrink-0 relative`}><i data-lucide="arrow-right" class={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-${c.icon} w-4 h-4`}></i></div>
+                <div class={`bg-slate-800 text-white p-4 rounded-full shadow-lg z-10`}><i data-lucide="workflow" class={`w-6 h-6 text-${c.icon}`}></i></div>
+                <div class={`h-1 ${c.bg} w-8 flex-shrink-0 relative`}><i data-lucide="arrow-right" class={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-${c.icon} w-4 h-4`}></i></div>
+                <div class={`${c.bg} ${c.text} p-4 rounded-xl shadow-md text-center z-10 w-28 border-b-4 ${c.border}`}>
+                    <i data-lucide="database" class={`w-8 h-8 text-${c.icon} mx-auto mb-2`}></i><span class="text-[10px] font-bold">つなげモン DB</span>
+                </div>
+            </>
+        )}
     </div>
 </div>

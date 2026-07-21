@@ -11,6 +11,7 @@ button:
   url: "usecase_mobile.html"
   text: "詳細な利用イメージを見る"
   icon: "external-link"
+image: "assets/サンプル/予約システム_page-1.png"
 ---
 
 Web用の詳細テキストをここに記述します。

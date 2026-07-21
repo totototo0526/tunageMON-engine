@@ -10,6 +10,7 @@ const themesCollection = defineCollection({
     description: z.string(),
     problems: z.array(z.string()).optional(),
     dateAdded: z.string().optional(),
+    image: z.string().optional(),
     button: z.object({
       type: z.string(),
       url: z.string(),
