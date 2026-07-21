@@ -2,19 +2,7 @@
 
 echo "🚀 つなげモン 統合ビルドを開始します..."
 
-# 1. Astro (Web) のビルド
-echo "🌐 Web (Astro) のビルドを実行中..."
-cd web
-npm run build
-if [ $? -eq 0 ]; then
-  echo "✅ Webのビルドに成功しました。"
-else
-  echo "❌ Webのビルドに失敗しました。"
-  exit 1
-fi
-cd ..
-
-# 2. Typst (PDF) のビルド
+# 1. Typst (PDF) のビルド
 # ※ 現状はまだJSONとの完全な動的バインディング（Rust等）ではなく、
 # モックアップの .typ をコンパイルするのみのプレースホルダーです。
 echo "📄 プレゼン用PDF (Typst) のビルドを実行中..."
@@ -27,6 +15,18 @@ if [ $? -eq 0 ]; then
   echo "✅ PDFのビルドに成功しました。"
 else
   echo "❌ PDFのビルドに失敗しました。"
+  exit 1
+fi
+cd ..
+
+# 2. Astro (Web) のビルド
+echo "🌐 Web (Astro) のビルドを実行中..."
+cd web
+npm run build
+if [ $? -eq 0 ]; then
+  echo "✅ Webのビルドに成功しました。"
+else
+  echo "❌ Webのビルドに失敗しました。"
   exit 1
 fi
 cd ..
