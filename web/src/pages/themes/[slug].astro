@@ -18,7 +18,7 @@ const { Content } = await render(theme);
 
 <LPLayout frontmatter={theme.data}>
     {/* layoutプロパティ等に応じてデザインをスイッチする仕組み（現在はID=02のみ仮で適用） */}
-    {theme.id === '02' ? (
+    {theme.id === '02-theme' ? (
         <TemplateA theme={theme} />
     ) : (
         <div class="max-w-4xl mx-auto py-32 px-6 min-h-screen">
