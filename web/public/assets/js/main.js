@@ -8,9 +8,44 @@ document.addEventListener('DOMContentLoaded', () => {
         lucide.createIcons();
     }
     
+    // NEWバッジの期間評価 (クライアントサイド判定)
+    evaluateNewBadges();
+
     // テーマテキストのデータ読み込み (JSONアプローチ)
     loadThemeData();
 });
+
+/**
+ * クライアントサイドで日付を計算し、30日以内の場合のみNEWバッジを表示する
+ */
+function evaluateNewBadges() {
+    const cards = document.querySelectorAll('.theme-card');
+    const now = new Date();
+    
+    cards.forEach(card => {
+        const badge = card.querySelector('.new-badge');
+        if (!badge) return;
+        
+        // 手動で強制的にNEWにするフラグ
+        if (card.dataset.isNew === "true") {
+            badge.classList.remove('hidden');
+            return;
+        }
+        
+        // 日付ベースの判定
+        const dateAddedStr = card.dataset.dateAdded;
+        if (dateAddedStr) {
+            const addedDate = new Date(dateAddedStr);
+            const diffTime = Math.abs(now.getTime() - addedDate.getTime());
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            
+            // 30日以内ならバッジを表示
+            if (diffDays <= 30) {
+                badge.classList.remove('hidden');
+            }
+        }
+    });
+}
 
 /**
  * theme.jsonからデータを取得してHTMLに適用する関数

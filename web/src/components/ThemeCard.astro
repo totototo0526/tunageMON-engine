@@ -18,25 +18,17 @@ const c = colorMap[theme.id] || colorMap["01"];
 const isEven = parseInt(theme.id) % 2 === 0;
 const flexRow = isEven ? "md:flex-row-reverse" : "md:flex-row";
 
-// Check if it's new based on dateAdded (within last 30 days)
-let isNew = theme.isNew === true; // 互換性
-if (theme.dateAdded) {
-    const addedDate = new Date(theme.dateAdded);
-    const now = new Date();
-    const diffTime = Math.abs(now.getTime() - addedDate.getTime());
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
-    if (diffDays <= 30) {
-        isNew = true;
-    }
-}
+const isNew = theme.isNew === true; // 手動強制表示用
+const dateAdded = theme.dateAdded; // 自動判定用
 ---
 
 <div data-theme-id={theme.id}
-    class={`theme-card bg-white rounded-3xl shadow-xl border border-slate-200 p-8 md:p-10 flex flex-col ${flexRow} gap-8 items-center relative overflow-hidden ${isNew ? `border-l-8 border-l-${c.icon.split('-')[0]}-500` : ''}`}>
+    class={`theme-card bg-white rounded-3xl shadow-xl border border-slate-200 p-8 md:p-10 flex flex-col ${flexRow} gap-8 items-center relative overflow-hidden transition-all duration-300`}
+    data-is-new={isNew ? "true" : "false"}
+    data-date-added={dateAdded || ""}>
     
-    {isNew && (
-        <div class={`absolute top-0 ${isEven ? 'left-0 rounded-br-xl' : 'right-0 rounded-bl-xl'} bg-red-500 text-white font-bold px-4 py-1 text-xs z-20`}>NEW</div>
-    )}
+    <div class={`new-badge absolute top-0 ${isEven ? 'left-0 rounded-br-xl' : 'right-0 rounded-bl-xl'} bg-red-500 text-white font-bold px-4 py-1 text-xs z-20 hidden`}>NEW</div>
+
 
     <div class="md:w-1/2">
         <span class={`px-4 py-1.5 ${c.bg} ${c.text} font-bold rounded-full text-sm mb-4 inline-block`}>Theme {theme.id}</span>
