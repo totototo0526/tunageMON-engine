@@ -1,6 +1,11 @@
 #!/bin/bash
 echo "🚀 本番公開用 (Production) のビルドを開始します..."
 
+echo "🔄 Markdownからデータ(theme.json)を生成しています..."
+cd web
+node scripts/generate-theme-json.mjs
+cd ..
+
 # 1. プレビュー用フラグをOFFにしてAstroビルド
 echo "🌐 本番用Web (Astro) のビルドを実行中..."
 cd web

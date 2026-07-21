@@ -28,7 +28,13 @@
       "problems": [
         "紙のチェックシート（野帳）",
         "事務所に戻ってからの二度打ち"
-      ]
+      ],
+      "button": {
+        "type": "link",
+        "url": "usecase_mobile.html",
+        "text": "詳細な利用イメージを見る",
+        "icon": "external-link"
+      }
     },
     {
       "id": "04",
@@ -58,7 +64,14 @@
       "problems": [
         "複数商材戦略のストレステスト不足",
         "サプライチェーンのボトルネック"
-      ]
+      ],
+      "dateAdded": "2026-07-21",
+      "button": {
+        "type": "pdf",
+        "url": "slides/simulator_presentation.pdf",
+        "text": "提案書（PDF）をダウンロード",
+        "icon": "file-down"
+      }
     },
     {
       "id": "07",
@@ -68,7 +81,14 @@
       "problems": [
         "属人的な営業活動への依存",
         "ルーチン業務での時間ロス"
-      ]
+      ],
+      "dateAdded": "2026-07-21",
+      "button": {
+        "type": "pdf",
+        "url": "slides/ai_adjutant_presentation.pdf",
+        "text": "提案書（PDF）をダウンロード",
+        "icon": "file-down"
+      }
     }
   ]
 }

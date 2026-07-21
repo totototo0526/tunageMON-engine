@@ -2,6 +2,11 @@
 
 echo "🚀 つなげモン 統合ビルドを開始します..."
 
+echo "🔄 Markdownからデータ(theme.json)を生成しています..."
+cd web
+node scripts/generate-theme-json.mjs
+cd ..
+
 # 1. Typst (PDF) のビルド
 # ※ 現状はまだJSONとの完全な動的バインディング（Rust等）ではなく、
 # モックアップの .typ をコンパイルするのみのプレースホルダーです。

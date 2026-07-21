@@ -4,9 +4,11 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ThemeCard from '../components/ThemeCard.astro';
 import AdminPanel from '../components/AdminPanel.astro';
-import themeData from '../../../data/theme.json';
+import { getCollection } from 'astro:content';
 
-const themes = themeData.themes;
+const themeEntries = await getCollection('themes');
+const themes = themeEntries.map(entry => entry.data);
+themes.sort((a, b) => parseInt(a.id) - parseInt(b.id));
 ---
 <!DOCTYPE html>
 <html lang="ja" class="scroll-smooth">
@@ -155,8 +157,8 @@ const themes = themeData.themes;
             </div>
 
             <div class="space-y-12">
-                <!-- ThemeCard を JSONからループ生成 -->
-                {themeData.themes.map(theme => <ThemeCard theme={theme} />)}
+                <!-- ThemeCard を Markdown(Content Collections)からループ生成 -->
+                {themes.map(theme => <ThemeCard theme={theme} />)}
             </div>
         </div>
     </section>
