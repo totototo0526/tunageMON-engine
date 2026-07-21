@@ -153,10 +153,9 @@ details[open] span[data-ind]{transform:rotate(45deg)}
             <span class="hero-badge" style="font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--c-primary);background:#F7F5F0;border:1px solid #E4E1D8;padding:6px 14px">{theme.data.title || 'つなげモン No.2'}</span>
           </div>
           <h1 style="margin:0 0 28px;font-weight:900;letter-spacing:.02em;color:#1F2430;font-feature-settings:'palt';word-break:auto-phrase">
-            <span data-fade="80" style="display:block;color:var(--c-primary)">事業の判断と実行を</span>
-            <span data-fade="200" style="display:block;color:var(--c-primary)">スピードアップ。</span>
+            <span data-fade="80" style="display:block;color:var(--c-primary)">{theme.data.subtitle || '事業の判断と実行をスピードアップ。'}</span>
           </h1>
-          <p class="hero-lead" data-fade="420" style="margin:0 0 26px;max-width:720px;font-size:clamp(15.5px,1.6vw,17.5px);line-height:2.05;color:#444B59;word-break:auto-phrase">今までどおりの仕事をAIと進めるだけで、商談の経緯や案件の状況、各業務の手順が、社内で共有できる形に整理されていきます。</p>
+          <p class="hero-lead" data-fade="420" style="margin:0 0 26px;max-width:720px;font-size:clamp(15.5px,1.6vw,17.5px);line-height:2.05;color:#444B59;word-break:auto-phrase" set:html={theme.data.description || '今までどおりの仕事をAIと進めるだけで、商談の経緯や案件の状況、各業務の手順が、社内で共有できる形に整理されていきます。'} />
           <div class="hero-service-menu" data-fade="640">
             <p>導入から定着まで支援</p>
             <div class="hero-service-list">
@@ -181,22 +180,20 @@ details[open] span[data-ind]{transform:rotate(45deg)}
         </div>
         <h2 data-fade="0" style="margin:0 0 40px;font-size:clamp(26px,3.6vw,38px);font-weight:900;line-height:1.45;letter-spacing:.03em;color:#1F2430;font-feature-settings:'palt';word-break:auto-phrase">こんな悩みはありませんか</h2>
         <div class="problem-grid">
-          <article class="problem-card" data-fade="0">
-            <div class="problem-card-media"><img src="../../assets/problems/cards/01-decision.webp" alt="社長・熟練者に判断材料が集まり、社員が確認を待っている様子" width="1672" height="941" loading="lazy" decoding="async"></div>
-            <div class="problem-card-body"><h3>判断が社長・熟練者の頭の中にある</h3><p>見積や例外対応のたびに、その人へ確認しないと進めにくい。</p></div>
-          </article>
-          <article class="problem-card" data-fade="80">
-            <div class="problem-card-media"><img src="../../assets/problems/cards/02-case-history.webp" alt="案件資料を担当者が抱え、別の社員が共有場所で経緯を探している様子" width="1672" height="941" loading="lazy" decoding="async"></div>
-            <div class="problem-card-body"><h3>案件の経緯が担当者しか分からない</h3><p>資料や会話が分散し、不在時には経緯と次の対応を追い直している。</p></div>
-          </article>
-          <article class="problem-card" data-fade="160">
-            <div class="problem-card-media"><img src="../../assets/problems/cards/03-outdated-procedure.webp" alt="社員が修正の重なった手順書と現在の仕事を見比べている様子" width="1664" height="936" loading="lazy" decoding="async"></div>
-            <div class="problem-card-body"><h3>手順書を作る時間がない。作っても古くなる</h3><p>実際の仕事とずれていき、結局、詳しい人が口頭で教え続けている。</p></div>
-          </article>
-          <article class="problem-card" data-fade="240">
-            <div class="problem-card-media"><img src="../../assets/problems/cards/04-isolated-ai-use.webp" alt="社員が個人でAIチャットを活用し、周囲の共有場所とはまだつながっていない様子" width="1672" height="941" loading="lazy" decoding="async"></div>
-            <div class="problem-card-body"><h3>AI活用が個人の工夫で止まる</h3><p>うまくいった頼み方が共有されず、会社の型として残らない。</p></div>
-          </article>
+          {theme.data.problems ? theme.data.problems.map((prob, index) => {
+             const title = typeof prob === 'string' ? prob : prob.title;
+             const desc = typeof prob === 'string' ? '' : prob.description;
+             const img = typeof prob === 'string' ? '01-decision.webp' : (prob.image || '01-decision.webp');
+             const delay = index * 80;
+             return (
+               <article class="problem-card" data-fade={delay}>
+                 <div class="problem-card-media"><img src={`../../assets/problems/cards/${img}`} alt={title} width="1672" height="941" loading="lazy" decoding="async" /></div>
+                 <div class="problem-card-body"><h3>{title}</h3><p>{desc}</p></div>
+               </article>
+             );
+          }) : (
+            <p>（悩みが登録されていません）</p>
+          )}
         </div>
       </div>
     </section>

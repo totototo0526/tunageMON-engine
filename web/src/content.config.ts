@@ -8,9 +8,17 @@ const themesCollection = defineCollection({
     title: z.string(),
     subtitle: z.string(),
     description: z.string(),
-    problems: z.array(z.string()).optional(),
+    problems: z.array(z.union([
+      z.string(),
+      z.object({
+        title: z.string(),
+        description: z.string(),
+        image: z.string().optional()
+      })
+    ])).optional(),
     dateAdded: z.string().optional(),
     image: z.string().optional(),
+    layout: z.string().optional(),
     button: z.object({
       type: z.string(),
       url: z.string(),
