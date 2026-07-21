@@ -3,19 +3,35 @@
   "themes": [
     {
       "id": "01",
+      "layout": "template_a",
       "title": "つなげモン ポータル",
       "subtitle": "〜 取引先と「つなげモン」 〜",
-      "description": "顧客、協力会社、仕入先と<span class=\"text-blue-600 font-bold border-b-2 border-blue-600\">マイページ</span>を介してリアルタイムな情報をつなげます",
+      "description": "顧客、協力会社、仕入先と<span class=\"text-blue-600 font-bold\">BtoBマイページ</span>を介してリアルタイムな情報をつなげます。電話やFAXでの受発注をデジタル化し、転記ミスを撲滅します。",
+      "button": {
+        "type": "link",
+        "url": "./themes/01-theme/index.html",
+        "text": "特化LPを見る",
+        "icon": "external-link"
+      },
       "problems": [
-        "電話・FAXでの受発注",
-        "転記ミス・納期確認の手間"
+        {
+          "title": "電話・FAXでの受発注",
+          "description": "未だに注文はFAXや電話。手作業でシステムに入力するため、時間がかかり転記ミスも減らない。",
+          "image": "01-decision.webp"
+        },
+        {
+          "title": "取引先ごとの個別対応の限界",
+          "description": "取引先によってフォーマットがバラバラで、個別の確認作業に多くの時間を奪われている。",
+          "image": "02-case-history.webp"
+        }
       ]
     },
     {
       "id": "02",
+      "layout": "template_a",
       "title": "つなげモン 窓口",
       "subtitle": "〜 問合せを「つなげモン」 〜",
-      "description": "<span class=\"text-green-600 font-bold border-b-2 border-green-600\">eメール、LINE等、FAX</span>の情報を自社データベースへつなげます",
+      "description": "<span class=\"text-green-600 font-bold border-b-2 border-green-600\">eメール、LINE等、FAX</span>の情報を自社データベースへつなげます。バラバラな窓口からの連絡を一元管理し、FAXのOCR処理による自動データ化も実現します。",
       "button": {
         "type": "link",
         "url": "./themes/02-theme/index.html",
@@ -23,80 +39,144 @@
         "icon": "external-link"
       },
       "problems": [
-        "バラバラな窓口からの入力漏れ",
-        "紙（FAX）の手動パンチ入力"
+        {
+          "title": "バラバラな窓口からの入力漏れ",
+          "description": "メール、LINE、電話など複数の窓口から連絡が来るため、対応履歴が一元管理できていない。",
+          "image": "01-decision.webp"
+        },
+        {
+          "title": "紙（FAX）の手動パンチ入力",
+          "description": "FAXで届いた注文書や問い合わせを、担当者が手作業でシステムに打ち直すという非効率な作業が続いている。",
+          "image": "02-case-history.webp"
+        }
       ]
     },
     {
       "id": "03",
+      "layout": "template_a",
       "title": "つなげモン モバイル",
       "subtitle": "〜 モバイルと「つなげモン」 〜",
-      "description": "仕入・出荷・棚卸等で<span class=\"text-yellow-600 font-bold border-b-2 border-yellow-600\">スマホやバーコードリーダ</span>を活用し、自社DBへつなげます",
-      "problems": [
-        "紙のチェックシート（野帳）",
-        "事務所に戻ってからの二度打ち"
-      ],
+      "description": "仕入・出荷・棚卸等において<span class=\"text-yellow-600 font-bold border-b-2 border-yellow-600\">スマホやバーコードリーダ</span>を活用し、自社データベースへつなげます。紙の野帳を廃止し、現場から直接リアルタイム在庫更新を可能にします。",
       "button": {
         "type": "link",
-        "url": "usecase_mobile.html",
-        "text": "詳細な利用イメージを見る",
+        "url": "./themes/03-theme/index.html",
+        "text": "特化LPを見る",
         "icon": "external-link"
       },
-      "image": "assets/サンプル/予約システム_page-1.png"
+      "problems": [
+        {
+          "title": "現場での紙（野帳）運用",
+          "description": "倉庫や工場では紙で記録し、事務所に戻ってからExcelに打ち直すという二度手間が常態化している。",
+          "image": "03-outdated-procedure.webp"
+        },
+        {
+          "title": "リアルタイムな在庫のブラックボックス化",
+          "description": "現場のデータがシステムに反映されるまでにタイムラグがあり、正確な在庫状況が常に分からない。",
+          "image": "04-isolated-ai-use.webp"
+        }
+      ]
     },
     {
       "id": "04",
+      "layout": "template_a",
       "title": "つなげモン ハブ",
       "subtitle": "〜 他システムと「つなげモン」 〜",
-      "description": "SalesforceやKintone等の<span class=\"text-purple-600 font-bold border-b-2 border-purple-600\">他システム（SaaS等）</span>とつなげます",
+      "description": "SalesforceやKintone等の<span class=\"text-purple-600 font-bold border-b-2 border-purple-600\">他システム（SaaS）</span>とつなげます。部門ごとに分断されたシステムの「データの孤島」を解消し、基幹システムとのAPI連携でマスタを同期します。",
+      "button": {
+        "type": "link",
+        "url": "./themes/04-theme/index.html",
+        "text": "特化LPを見る",
+        "icon": "external-link"
+      },
       "problems": [
-        "部門ごとのシステムのサイロ化",
-        "顧客マスタなどの二重管理"
+        {
+          "title": "システムのサイロ化（孤立）",
+          "description": "営業はSaaS、全社はKintone、基幹システムは別...。顧客マスタがバラバラで二重入力が発生している。",
+          "image": "02-case-history.webp"
+        },
+        {
+          "title": "部門間のデータ連携での手作業",
+          "description": "システム間でデータを移すためだけに、CSVをエクスポートして加工し、インポートする作業が毎日発生している。",
+          "image": "03-outdated-procedure.webp"
+        }
       ]
     },
     {
       "id": "05",
+      "layout": "template_a",
       "title": "つなげモン IoT",
       "subtitle": "〜 ハードと「つなげモン」 〜",
-      "description": "制御装置やセンサー等の<span class=\"text-red-600 font-bold border-b-2 border-red-600\">ハードウェア（IoT）</span>とつなげます",
+      "description": "制御装置やセンサー等の<span class=\"text-red-600 font-bold border-b-2 border-red-600\">ハードウェア（IoT）</span>とつなげます。工場の機械の稼働ログや異常データを自動で収集し、目視確認なしに現場を可視化します。",
+      "button": {
+        "type": "link",
+        "url": "./themes/05-theme/index.html",
+        "text": "特化LPを見る",
+        "icon": "external-link"
+      },
       "problems": [
-        "機械稼働状況の目視確認",
-        "トラブル検知の遅れ"
+        {
+          "title": "機械の稼働状況がブラックボックス",
+          "description": "工場でどの機械がいつ止まったか、稼働率がどうなっているか、現場に行かないと分からない。",
+          "image": "01-decision.webp"
+        },
+        {
+          "title": "異常発生時の対応の遅れ",
+          "description": "機器の異常や故障が起きた際、発見が遅れて生産ライン全体に大きな影響を与えてしまう。",
+          "image": "02-case-history.webp"
+        }
       ]
     },
     {
       "id": "06",
+      "layout": "template_a",
       "title": "つなげモン シミュレータ",
       "subtitle": "〜 経営判断を「つなげモン」 〜",
-      "description": "新規事業や複数商材展開におけるリスクを統合し、<span class=\"text-orange-600 font-bold border-b-2 border-orange-600\">AI主導の最適化シミュレーション</span>を提供します",
-      "problems": [
-        "複数商材戦略のストレステスト不足",
-        "サプライチェーンのボトルネック"
-      ],
+      "description": "新規事業や複数商材展開におけるリスクを統合し、<span class=\"text-orange-600 font-bold border-b-2 border-orange-600\">AI主導の最適化シミュレーション</span>を提供します。",
       "dateAdded": "2026-07-21",
       "button": {
-        "type": "pdf",
-        "url": "slides/simulator_presentation.pdf",
-        "text": "提案書（PDF）をダウンロード",
-        "icon": "file-down"
-      }
+        "type": "link",
+        "url": "./themes/06-theme/index.html",
+        "text": "特化LPを見る",
+        "icon": "external-link"
+      },
+      "problems": [
+        {
+          "title": "複数商材戦略のストレステスト不足",
+          "description": "新しい商材を展開する際、既存のサプライチェーンや体制にどのような負荷がかかるかの予測ができていない。",
+          "image": "04-isolated-ai-use.webp"
+        },
+        {
+          "title": "サプライチェーンのボトルネック",
+          "description": "受発注から製造、物流までのプロセスにおいて、どこがボトルネックになり得るかの経営的な判断材料が不足している。",
+          "image": "01-decision.webp"
+        }
+      ]
     },
     {
       "id": "07",
+      "layout": "template_a",
       "title": "つなげモン AI副官",
       "subtitle": "〜 営業活動を「つなげモン」 〜",
-      "description": "顧客データや過去の営業履歴から、<span class=\"text-indigo-600 font-bold border-b-2 border-indigo-600\">最適な提案や業務フロー</span>をAIがアシストします",
-      "problems": [
-        "属人的な営業活動への依存",
-        "ルーチン業務での時間ロス"
-      ],
+      "description": "顧客データや過去の営業履歴から、<span class=\"text-indigo-600 font-bold border-b-2 border-indigo-600\">最適な提案や業務フロー</span>をAIがアシストします。",
       "dateAdded": "2026-07-21",
       "button": {
-        "type": "pdf",
-        "url": "slides/ai_adjutant_presentation.pdf",
-        "text": "提案書（PDF）をダウンロード",
-        "icon": "file-down"
-      }
+        "type": "link",
+        "url": "./themes/07-theme/index.html",
+        "text": "特化LPを見る",
+        "icon": "external-link"
+      },
+      "problems": [
+        {
+          "title": "属人的な営業活動への依存",
+          "description": "優秀な営業マンのノウハウが共有されず、個人の力量によって成績が大きく左右されてしまう。",
+          "image": "02-case-history.webp"
+        },
+        {
+          "title": "ルーチン業務での時間ロス",
+          "description": "提案書の作成や過去の事例検索など、営業活動の付帯業務に追われ、本来の顧客との対話時間が削られている。",
+          "image": "03-outdated-procedure.webp"
+        }
+      ]
     }
   ]
 }
