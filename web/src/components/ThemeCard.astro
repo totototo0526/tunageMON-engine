@@ -17,7 +17,18 @@ const c = colorMap[theme.id] || colorMap["01"];
 // Alternating layout
 const isEven = parseInt(theme.id) % 2 === 0;
 const flexRow = isEven ? "md:flex-row-reverse" : "md:flex-row";
-const isNew = theme.isNew === true;
+
+// Check if it's new based on dateAdded (within last 30 days)
+let isNew = theme.isNew === true; // 互換性
+if (theme.dateAdded) {
+    const addedDate = new Date(theme.dateAdded);
+    const now = new Date();
+    const diffTime = Math.abs(now.getTime() - addedDate.getTime());
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+    if (diffDays <= 30) {
+        isNew = true;
+    }
+}
 ---
 
 <div data-theme-id={theme.id}

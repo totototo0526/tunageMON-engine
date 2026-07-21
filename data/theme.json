@@ -65,7 +65,7 @@
         "複数商材戦略のストレステスト不足",
         "サプライチェーンのボトルネック"
       ],
-      "isNew": true,
+      "dateAdded": "2026-07-21",
       "button": {
         "type": "pdf",
         "url": "slides/simulator_presentation.pdf",
@@ -82,7 +82,7 @@
         "属人的な営業活動への依存",
         "ルーチン業務での時間ロス"
       ],
-      "isNew": true,
+      "dateAdded": "2026-07-21",
       "button": {
         "type": "pdf",
         "url": "slides/ai_adjutant_presentation.pdf",
