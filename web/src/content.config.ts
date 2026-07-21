@@ -19,6 +19,12 @@ const themesCollection = defineCollection({
     dateAdded: z.string().optional(),
     image: z.string().optional(),
     layout: z.string().optional(),
+    hero_services: z.array(z.string()).optional(),
+    pricing: z.object({
+      free_trial: z.string().optional(),
+      initial: z.string().optional(),
+      monthly: z.string().optional(),
+    }).optional(),
     button: z.object({
       type: z.string(),
       url: z.string(),

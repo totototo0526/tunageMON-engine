@@ -1,6 +1,7 @@
 ---
 const { theme } = Astro.props;
 ---
+{theme.data.pricing && (
 <section id="pricing" data-screen-label="料金" style="background:#FFFFFF;padding:clamp(72px,9vw,110px) 24px;scroll-margin-top:70px">
   <div style="max-width:1080px;margin:0 auto">
     <div data-fade="0" style="display:flex;align-items:center;gap:14px;margin:0 0 16px">
@@ -8,17 +9,18 @@ const { theme } = Astro.props;
       <span style="width:36px;height:1px;background:#C9C4B6"></span>
     </div>
     <h2 data-fade="0" style="margin:0 0 18px;font-size:clamp(26px,3.6vw,38px);font-weight:900;line-height:1.45;letter-spacing:.03em;color:#1F2430;font-feature-settings:'palt'">料金(本番移行後の費用)</h2>
-    <p data-fade="0" style="margin:0 0 36px;max-width:760px;font-size:15.5px;line-height:2;color:#444B59">トライアル期間中、環境構築や支援にかかる当社への費用は無料です(ChatGPT有料プランなどの実費を除く)。</p>
+    <p data-fade="0" style="margin:0 0 36px;max-width:760px;font-size:15.5px;line-height:2;color:#444B59">{theme.data.pricing.free_trial || 'トライアル期間中、環境構築や支援にかかる当社への費用は無料です(ChatGPT有料プランなどの実費を除く)。'}</p>
 
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:860px;margin:0 0 56px">
       <div data-fade="0" style="background:#F7F5F0;border:1px solid #E4E1D8;border-top:2px solid var(--c-primary);padding:30px 30px 26px">
         <p style="margin:0 0 12px;font-size:14px;font-weight:800;letter-spacing:.08em;color:var(--c-primary)">移行初月</p>
-        <p style="margin:0 0 10px;color:#1F2430"><span style="font-size:clamp(40px,5vw,54px);font-weight:900;line-height:1;color:var(--c-primary)">27</span><span style="font-size:22px;font-weight:900;color:var(--c-primary)">万円〜</span></p>
+        <p style="margin:0 0 10px;color:#1F2430"><span style="font-size:clamp(40px,5vw,54px);font-weight:900;line-height:1;color:var(--c-primary)">{theme.data.pricing.initial || '27'}</span><span style="font-size:22px;font-weight:900;color:var(--c-primary)">万円〜</span></p>
       </div>
       <div data-fade="100" style="background:#F7F5F0;border:1px solid #E4E1D8;border-top:2px solid var(--c-primary);padding:30px 30px 26px">
         <p style="margin:0 0 12px;font-size:14px;font-weight:800;letter-spacing:.08em;color:var(--c-primary)">2ヶ月目以降</p>
-        <p style="margin:0 0 10px;color:#1F2430"><span style="font-size:22px;font-weight:900;color:var(--c-primary)">月々</span><span style="font-size:clamp(40px,5vw,54px);font-weight:900;line-height:1;color:var(--c-primary)">12</span><span style="font-size:22px;font-weight:900;color:var(--c-primary)">万円〜</span></p>
+        <p style="margin:0 0 10px;color:#1F2430"><span style="font-size:22px;font-weight:900;color:var(--c-primary)">月々</span><span style="font-size:clamp(40px,5vw,54px);font-weight:900;line-height:1;color:var(--c-primary)">{theme.data.pricing.monthly || '12'}</span><span style="font-size:22px;font-weight:900;color:var(--c-primary)">万円〜</span></p>
       </div>
     </div>
   </div>
 </section>
+)}
