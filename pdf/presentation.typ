@@ -5,7 +5,7 @@
 )
 
 #set text(
-  font: ("Inter", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "sans-serif"),
+  font: ("Inter", "Noto Sans CJK JP", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "sans-serif"),
   size: 24pt,
   fill: rgb("F8FAFC") // Tailwind slate-50
 )
