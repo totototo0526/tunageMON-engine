@@ -402,12 +402,12 @@
         #v(1em)
         #if "rows" in block and block.rows != none [
           #set text(size: 12pt)
-          #let cols = block.headers.len()
+          #let cols = block.headers.len() + 1
           #table(
             columns: array.range(0, cols).map(x => 1fr),
             align: center + horizon,
             stroke: 0.5pt + rgb("E2E8F0"),
-            ..block.headers.map(h => [#text(weight:"bold", fill: rgb("475569"))[#h]]),
+            [], ..block.headers.map(h => [#text(weight:"bold", fill: rgb("475569"))[#h]]),
             ..block.rows.map(row => {
               let cells = ()
               cells.push([#text(weight:"bold")[#row.label]])
