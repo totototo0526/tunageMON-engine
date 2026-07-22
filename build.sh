@@ -20,7 +20,10 @@ typst compile --root .. --font-path fonts presentation.typ
 if [ $? -eq 0 ]; then
   mkdir -p ../web/public/slides
   cp presentation.pdf ../web/public/slides/simulator_presentation.pdf
-  cp presentation.pdf ../web/public/slides/ai_adjutant_presentation.pdf
+  for theme_file in ../web/src/content/themes/*.md; do
+    theme_id=$(basename "$theme_file" .md)
+    cp presentation.pdf "../web/public/slides/${theme_id}_presentation.pdf"
+  done
   echo "✅ PDFのビルドに成功しました。"
 else
   echo "❌ PDFのビルドに失敗しました。"

@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import AdminPanel from '../components/AdminPanel.astro';
 import '../styles/global.css';
 
 const { frontmatter } = Astro.props;
@@ -28,6 +29,8 @@ const { frontmatter } = Astro.props;
     <!-- プラットフォーム共通フッター -->
     <Footer />
     
+    <AdminPanel themeSlug={frontmatter.id} />
+
     <script is:inline src="../../assets/js/main.js"></script>
 </body>
 

@@ -1,5 +1,6 @@
 ---
 const isPreview = import.meta.env.PUBLIC_IS_PREVIEW !== 'false';
+const { themeSlug = 'simulator' } = Astro.props;
 ---
 
 {isPreview && (
@@ -21,7 +22,7 @@ const isPreview = import.meta.env.PUBLIC_IS_PREVIEW !== 'false';
       
       <div class="space-y-3">
         <!-- PDF Download Button -->
-        <a href="/slides/ai_adjutant_presentation.pdf" target="_blank" class="w-full flex items-center justify-between bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 rounded-lg px-3 py-3 transition group/btn shadow-sm">
+        <a href={`/slides/${themeSlug}_presentation.pdf`} target="_blank" class="w-full flex items-center justify-between bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 rounded-lg px-3 py-3 transition group/btn shadow-sm">
           <div class="flex items-center gap-2 font-bold text-sm">
             <i data-lucide="file-text" class="w-5 h-5"></i>
             営業用 提案スライド (PDF)
