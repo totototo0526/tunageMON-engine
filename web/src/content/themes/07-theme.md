@@ -123,6 +123,7 @@ blocks:
 
         ・宿題:仕様書の修正(担当:営業、期限7/22)'
 - type: BlockReasoningGrid
+  target: web
   title: なぜ、つなげモン No.2で解決できるのか
   items:
   - num: POINT 01

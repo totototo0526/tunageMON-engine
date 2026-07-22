@@ -382,6 +382,7 @@
         },
         {
           "type": "BlockReasoningGrid",
+          "target": "web",
           "title": "なぜ、つなげモン No.2で解決できるのか",
           "items": [
             {

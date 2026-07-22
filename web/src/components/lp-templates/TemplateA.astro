@@ -165,6 +165,7 @@ details[open] span[data-ind]{transform:rotate(45deg)}
     <LPProblems theme={theme} />
     
     {theme.data.blocks && theme.data.blocks.map(block => {
+        if (block.target === 'pdf') return null;
         if (block.type === 'BlockCards') return <BlockCards block={block} />;
         if (block.type === 'BlockBeforeAfter') return <BlockBeforeAfter block={block} />;
         if (block.type === 'BlockFAQ') return <BlockFAQ block={block} />;

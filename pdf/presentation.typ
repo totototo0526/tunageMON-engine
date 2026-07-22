@@ -33,6 +33,16 @@
   return s
 }
 
+// Helper: Image path resolver
+#let resolve-image(p) = {
+  if p == none { return "" }
+  if p.starts-with("/") {
+    return "/web/public" + p
+  } else {
+    return "/web/public/assets/images/" + p
+  }
+}
+
 // ----------------------------------------------------------------------------
 // 表紙 (Title Slide)
 // ----------------------------------------------------------------------------
@@ -85,8 +95,10 @@
   
   box(width: 100%, height: 100%, [
     #set text(size: 16pt)
-    #set par(leading: 1.25em) // 行間を少し詰める
-    #body
+    #set par(leading: 1.25em)
+    #align(horizon)[
+      #body
+    ]
   ])
   
   // Footer
@@ -148,6 +160,7 @@
 
 #if "blocks" in theme and theme.blocks != none [
   #for block in theme.blocks [
+    #if "target" in block and block.target == "web" { continue }
   
     // ----------------------------------------------------------------------------
     // BlockCards
@@ -178,6 +191,10 @@
                   #if "subtitle" in point and point.subtitle != "" [
                     #v(0.5em)
                     #text(size: 13pt, weight: "bold", fill: rgb("C2410C"))[#point.subtitle]
+                  ]
+                  #if "image" in point and point.image != none [
+                    #v(1em)
+                    #align(center)[#image(resolve-image(point.image), width: 100%)]
                   ]
                   #if "desc" in point [
                     #v(1em)
@@ -225,6 +242,10 @@
                   #text(size: 18pt, weight: "bold", fill: rgb("10B981"))[#scenario.after]
                 ]
               )
+              #if "image" in scenario and scenario.image != none [
+                #v(1em)
+                #align(center)[#image(resolve-image(scenario.image), width: 80%)]
+              ]
               #v(1.5em)
               #box(fill: rgb("F1F5F9"), inset: 1.5em, radius: 0.5em, width: 100%)[
                 #text(size: 14pt)[#scenario.desc]
@@ -300,6 +321,10 @@
                   #text(weight: "bold", size: 14pt, fill: rgb("C2410C"))[#item.num]
                   #v(0.5em)
                   #text(weight: "bold", size: 16pt)[#item.title]
+                  #if "image" in item and item.image != none [
+                    #v(1em)
+                    #align(center)[#image(resolve-image(item.image), width: 100%)]
+                  ]
                   #v(0.8em)
                   #text(size: 13pt)[#item.desc]
                 ])
