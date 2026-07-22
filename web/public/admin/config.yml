@@ -1,8 +1,19 @@
+# ==========================================
+# Decap CMS Backend Configuration (Plan A: GitHub)
+# ==========================================
+# チーム運用時は GitHub リポジトリへ直接変更をコミットします。
 backend:
-  name: git-gateway
+  name: github
+  repo: YOUR_GITHUB_USERNAME/tunageMON  # ※お使いの GitHub ユーザー名/リポジトリ名に変更してください
   branch: main
+  # 認証プロキシサービス（OAuth Provider）をご利用の場合は以下をコメント解除して指定します
+  # base_url: https://your-oauth-provider.vercel.app
+  # auth_endpoint: /api/auth
 
+# ローカル開発用サーバー設定
+# `npx decap-server` が起動中の場合は認証不要でローカル保存が優先されます
 local_backend: true
+
 
 media_folder: "web/src/content/themes/image"
 public_folder: "/src/content/themes/image"

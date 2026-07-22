@@ -6,6 +6,7 @@
 - **Fully YAML-Driven Architecture Completed:** Completely eliminated hardcoded HTML from Markdown files. Replaced with dynamic YAML blocks (`BlockChatDemo`, `BlockReasoningGrid`, etc.).
 - **CMS Integration:** Integrated Decap CMS (`public/admin`) to allow local and remote non-technical editing. Astro preview pane disabled for full-screen editing UI.
 - **Universal Output Sync:** Built `build.sh` pipeline to successfully render identical presentation PDFs via Typst alongside the Astro static site using a single YAML source.
+- **Roadmap & GitHub CMS Backend Integration Completed:** Configured Decap CMS for GitHub backend (Plan A) in `config.yml` while maintaining local backend compatibility. Authored full OAuth setup and team operation documentation under `docs/github_cms_backend/`.
 
 ## Core Philosophy
 1. **CMS-Driven Flexibility:** Any newly created theme should only require editing a single Markdown file (`0x-theme.md`). Layout logic stays within Astro components.
@@ -22,5 +23,9 @@
 - [x] Refactor layout sections into standalone Astro components (e.g., `BlockFAQ.astro`, `BlockScenarios.astro`) to enable conditional rendering based on Markdown frontmatter `blocks`.
 - [x] Integrate local CMS to manage the complex YAML block schema.
 - [x] Validate Typst PDF compilation and layout sync against the new unified YAML data structure.
-- [ ] Consolidate newly provided imagery into `web/public/assets/` and bind relative paths within Markdown structures.
-- [ ] Roll out the fully YAML-ized structure to themes `01-theme` to `06-theme` (Currently only `07-theme` is complete).
+- [x] Roll out the fully YAML-ized structure to themes `01-theme` to `06-theme`.
+- [x] Make Header dynamic (context-aware links and dynamic theme counts).
+- [x] Phase 1: Establish safe phased development roadmap & docs (`docs/github_cms_backend/`).
+- [x] Phase 2: Verify asset path references & data generation pipeline (`generate-theme-json.mjs`).
+- [x] Phase 3: Prepare Decap CMS `github` backend configuration & auth options (`github_oauth_setup_guide.md`).
+- [x] Phase 4: Final verification & team operational documentation (`team_operation_guide.md`).
