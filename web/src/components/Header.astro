@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 const themes = await getCollection('themes');
-const themeCount = themes.length;
+const themeCount = themes.map(entry => entry.data).filter(data => !data.hidden).length;
 
 const { isPortal, theme } = Astro.props;
 ---
