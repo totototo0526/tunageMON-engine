@@ -29,3 +29,7 @@
 - [x] Phase 2: Verify asset path references & data generation pipeline (`generate-theme-json.mjs`).
 - [x] Phase 3: Prepare Decap CMS `github` backend configuration & auth options (`github_oauth_setup_guide.md`).
 - [x] Phase 4: Final verification & team operational documentation (`team_operation_guide.md`).
+- [x] VPS Setup 1: Verify documentation & prepare `docs/vps_environment_setup/` (`task.md`, `implementation_plan.md`, `walkthrough.md`).
+- [x] VPS Setup 2: Install node dependencies with Node 22 (`bin/node`, `cd web && npm install`).
+- [x] VPS Setup 3: Verify build pipeline (`./build.sh`, `generate-theme-json.mjs`, Typst PDF compilation, Astro build, Production ZIP).
+- [x] VPS Setup 4: Test & prepare Decap CMS on VPS environment (`npx decap-server` / OAuth proxy).

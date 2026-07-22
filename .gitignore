@@ -16,3 +16,8 @@ yarn-error.log*
 
 # Astro specific
 web/.astro/
+
+# Local binaries & build artifacts
+bin/
+production-build.zip
+

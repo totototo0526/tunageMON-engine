@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# プロジェクトローカルの bin (Node 22, Typst) を優先参照
+export PATH="/var/www/tunageMON-engine/bin:$PATH"
+
 echo "🚀 本番公開用 (Production) のビルドを開始します..."
 
 echo "🔄 Markdownからデータ(theme.json)を生成しています..."
