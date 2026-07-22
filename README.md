@@ -57,7 +57,7 @@ npm run dev
 
 ## デプロイと成果物について
 
-GitHub にプッシュすると、GitHub Actions が自動的に `build.sh` を実行し、GitHub Pages にデプロイします。
+GitHub にプッシュすると、GitHub Actions が自動的に `build.sh` を実行し、VPS（tunagemon.totototo0526.xyz）にデプロイします。
 デプロイされた環境には、以下の2つのモードが存在します。
 
 1.  **プレビュー環境 (ルート直下):**
