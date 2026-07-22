@@ -42,3 +42,228 @@
 
 GitHub Actions によるデプロイ（VPSへの反映）は、プッシュから完了までに時間がかかる（数分〜）ことがあります。
 コードを修正した直後に `curl` 等で検証し、変更が反映されていないように見えても、すぐに「コードが間違っている」と判断せず、Actions の完了を待つか、ローカル（`./build.sh`）でのビルド結果を優先して信頼してください。
+
+---
+
+## 6. Markdownファイル（テーマ）の構造
+
+新しいLPを追加・編集する際は `web/src/content/themes/` にMarkdownファイルを作成します。
+既存の `01-theme.md` が最も標準的な実装例なので、新規作成時はこれを参考にしてください。
+
+### 基本 Frontmatter フィールド
+
+```yaml
+---
+id: "08"                      # 連番。トップ一覧のカードに表示される (必須)
+layout: "template_a"          # 現状この固定値のみ (必須)
+title: "サービス名"             # ページタイトル (必須)
+subtitle: "キャッチコピー"       # サブタイトル (必須)
+description: '説明文。HTML可。' # ヒーロー下の説明文 (必須)
+hidden: true                  # true にするとトップの一覧に表示されない（裏LPなどに使用）
+permalink: "04-theme/detail"  # カスタムURLパス。hidden の裏LPページで使用する
+hero_services:                # ヒーローに表示する特徴リスト（省略可）
+  - "01 特徴その1"
+  - "02 特徴その2"
+pricing:                      # 料金セクション（省略するとセクション自体が非表示）
+  free_trial: "トライアル説明文"
+  initial: "30"               # 初期費用（万円）
+  monthly: "15"               # 月額（万円）
+links:                        # ヒーローのボタン（hidden ページ向け）
+  - text: "親ページに戻る"
+    url: "/themes/04-theme/index.html"
+problems:                     # 「こんな悩みはありませんか」セクション（省略可）
+  - title: "悩みのタイトル"
+    description: "悩みの説明"
+    image: "01-decision.webp" # /assets/images/ 配下のファイル名
+downloads:                    # ヒーロー下に「資料一覧」セクションを追加する（省略可）
+  - label: "資料をダウンロード"
+    file: "/04_presentation.pdf"
+blocks:                       # ページ本体のコンテンツブロック（下記参照）
+  - type: BlockCards
+    ...
+---
+```
+
+---
+
+## 7. 利用可能なブロックコンポーネント一覧
+
+`blocks:` 配列に以下の `type` を指定することで、各セクションを組み合わせてLPを構成できます。
+`subtitle`, `title`, `desc` は全ブロック共通で省略可能です。
+
+### `BlockCards` — カードグリッド（解決策・機能紹介など）
+
+```yaml
+- type: BlockCards
+  subtitle: "02　解決策"
+  title: "セクションタイトル"
+  items:
+    - badge: "Web"         # カード右上に薄く表示される大きな文字（省略可）
+      title: "カードタイトル"
+      subtitle: "小見出し" # 省略可
+      desc: "説明文"
+```
+
+### `BlockBeforeAfter` — 導入前後の変化（3カラムカード）
+
+```yaml
+- type: BlockBeforeAfter
+  title: "導入するとこう変わります"
+  desc: "注釈テキスト（省略可）"
+  items:
+    - tag: "シナリオのタグ（省略可）"
+      before: "導入前の状態"
+      after: "導入後の状態"
+      desc: "詳細説明"
+      image: "image.webp"   # /assets/images/ 配下（省略可）
+```
+
+### `BlockSteps` — ステップ・導入フロー
+
+```yaml
+- type: BlockSteps
+  title: "導入の流れ"
+  items:
+    - title: "ステップ名"
+      desc: "説明文"
+      stepLabel: "STEP"     # 省略可（デフォルト: "STEP"）
+      stepNumber: 1          # 省略可（デフォルト: インデックス+1）
+```
+
+### `BlockFAQ` — よくある質問（アコーディオン）
+
+```yaml
+- type: BlockFAQ
+  title: "よくある質問"
+  items:
+    - q: "質問文"
+      a: "回答文"
+```
+
+### `BlockCTA` — コール・トゥ・アクション帯
+
+```yaml
+- type: BlockCTA
+  theme: "dark"             # "dark"（紺地）または省略（ベージュ地）
+  align: "center"           # "center" または省略（左寄せ）
+  title: "アクション見出し"
+  desc: "補足テキスト（省略可）"
+  button:
+    text: "ボタンテキスト"
+    url: "https://..."
+```
+
+### `BlockText` — テキスト＋カードのフリーフォームセクション
+
+```yaml
+- type: BlockText
+  theme: "dark"              # "dark"（紺地）または省略（白地）
+  title: "左カラムの大見出し（\\n で改行可）"
+  paragraphs:
+    - "段落1"
+    - "段落2"
+  cardsTitle: "カード群の小見出し（省略可）"
+  cards:                     # 省略可
+    - num: "01"
+      title: "カードタイトル"
+      desc: "説明文"
+```
+
+### `BlockList` — 番号付きリスト
+
+```yaml
+- type: BlockList
+  title: "セクションタイトル"
+  items:
+    - num: "01"            # 省略可（デフォルト: 連番）
+      title: "項目タイトル"
+      desc: "説明文"
+```
+
+### `BlockTable` — 比較テーブル
+
+```yaml
+- type: BlockTable
+  title: "セクションタイトル"
+  headers:
+    - "比較軸1"
+    - "比較軸2"
+    - "つなげモン"         # 最後の列がハイライト色になる
+  rows:
+    - label: "行の項目名"
+      values: ["値1", "値2", "値3"]
+  note: "テーブル下の注釈（省略可）"
+```
+
+### `BlockComparisonCards` — 相性グループカード（○/×形式）
+
+```yaml
+- type: BlockComparisonCards
+  title: "セクションタイトル"
+  groups:
+    - type: "positive"     # "positive"（紺枠）または "negative"（グレー枠）
+      title: "グループタイトル"
+      items:
+        - "項目テキスト"
+    - type: "negative"
+      title: "グループタイトル"
+      items:
+        - "項目テキスト"
+```
+
+### `BlockReasoningGrid` — 理由グリッド（画像＋テキスト交互・左右交互レイアウト）
+
+```yaml
+- type: BlockReasoningGrid
+  title: "なぜ選ばれるのか"
+  summary: "まとめのテキスト（省略可）"
+  note: "脚注テキスト（省略可）"
+  items:
+    - num: "POINT 01"
+      title: "理由タイトル"
+      desc: "説明文"
+      image: "image.webp"       # /assets/images/ 配下
+      imageAlt: "代替テキスト"  # 省略可
+```
+
+### `BlockChatDemo` — 社内チャット風デモ表示
+
+```yaml
+- type: BlockChatDemo
+  title: "セクションタイトル"
+  note: "注釈テキスト（省略可）"
+  patterns:
+    - label: "ケースA"
+      title: "パターンのタイトル"
+      messages:
+        - senderName: "田中部長"
+          senderType: "user"      # "user"（グレーアイコン）またはそれ以外（アクセント色）
+          text: "メッセージ本文\n改行も可"
+          prefix: "＞ 引用元テキスト（省略可）"
+```
+
+### `BlockStats` — KPI・数字ハイライト（3カラム）
+
+```yaml
+- type: BlockStats
+  title: "セクションタイトル"
+  desc: "補足テキスト（省略可）"
+  items:
+    - number: "1,200+"
+      label: "導入社数"
+      desc: "補足説明"
+```
+
+### `BlockIntegration` — システム連携図（ハブ＆スポーク）
+
+```yaml
+- type: BlockIntegration
+  title: "すべてを繋ぐハブになる"
+  desc: "説明文（省略可）"
+  center: "つなげモン DB"    # 中央に表示されるハブ名
+  spokes:
+    - name: "Kintone"
+      icon: "☁️"             # 絵文字を使う
+    - name: "会計ソフト"
+      icon: "💰"
+```
