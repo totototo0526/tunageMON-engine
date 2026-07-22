@@ -1,0 +1,45 @@
+# ======================================================
+# TunageMON LP v2 - Nginx 設定サンプル
+# ------------------------------------------------------
+# ドメイン名 `preview.your-domain.com` をお使いのサブドメインに置き換えて使用してください。
+# 設定ファイル配置場所の例: /etc/nginx/sites-available/tunagemon-preview
+# シンボリックリンク: sudo ln -s /etc/nginx/sites-available/tunagemon-preview /etc/nginx/sites-enabled/
+# ======================================================
+
+# 【パターン A: 開発・プレビューサーバーへのリバースプロキシ構成】
+# ※ npm run dev (port 4321) または astro preview をそのまま外部公開する場合
+server {
+    listen 80;
+    server_name preview.your-domain.com; # ※取得したサブドメインに変更してください
+
+    location / {
+        proxy_pass http://127.0.0.1:4321;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+}
+
+# 【パターン B: 静的ビルド成果物 (web/dist/) の直接配信構成（推奨）】
+# ※ `./build.sh` 実行後の高速な静的HTMLプレビューサイトとして配信用
+# server {
+#     listen 80;
+#     server_name preview.your-domain.com;
+# 
+#     root /var/www/tunageMON-engine/web/dist;
+#     index index.html;
+# 
+#     location / {
+#         try_files $uri $uri/ /index.html;
+#     }
+# 
+#     # 静的アセットキャッシュ設定
+#     location /_astro/ {
+#         expires 1y;
+#         add_header Cache-Control "public, no-transform";
+#     }
+# }

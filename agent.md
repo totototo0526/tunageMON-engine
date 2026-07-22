@@ -33,3 +33,6 @@
 - [x] VPS Setup 2: Install node dependencies with Node 22 (`bin/node`, `cd web && npm install`).
 - [x] VPS Setup 3: Verify build pipeline (`./build.sh`, `generate-theme-json.mjs`, Typst PDF compilation, Astro build, Production ZIP).
 - [x] VPS Setup 4: Test & prepare Decap CMS on VPS environment (`npx decap-server` / OAuth proxy).
+- [x] Readiness 1: Initialize docs for readiness verification (`docs/vps_readiness_verification/`).
+- [x] Readiness 2: Test Astro dev server and preview environment (Task 4, HTTP 200 OK verified on port 4321).
+- [x] Readiness 3: Test Decap CMS live editing & local backend saving (Task 2, proxy server verified on port 8081).
