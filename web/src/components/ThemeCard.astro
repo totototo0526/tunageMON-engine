@@ -48,16 +48,28 @@ const dateAdded = theme.dateAdded; // 自動判定用
             </ul>
         )}
         
-        {theme.button && theme.button.type === "link" && (
-            <a href={theme.button.url} class={`inline-flex items-center gap-2 bg-${c.icon.split('-')[0]}-50 text-${c.text} border ${c.border.replace('border-', 'border-opacity-30 border-')} font-bold px-4 py-2 rounded-full text-sm hover:bg-${c.icon.split('-')[0]}-100 transition shadow-sm`}>
-                <i data-lucide={theme.button.icon} class="w-4 h-4"></i> {theme.button.text}
-            </a>
-        )}
-        
-        {theme.button && theme.button.type === "pdf" && (
-            <a href={theme.button.url} target="_blank" class={`inline-flex items-center gap-2 bg-${c.icon.split('-')[0]}-500 text-white font-bold px-5 py-3 rounded-full text-sm hover:bg-${c.icon.split('-')[0]}-600 transition shadow-md`}>
-                <i data-lucide={theme.button.icon} class="w-5 h-5"></i> {theme.button.text}
-            </a>
+        {theme.links ? (
+            <div class="flex flex-wrap gap-3 mt-2">
+                {theme.links.map(link => (
+                    <a href={link.url} target={link.type === 'pdf' ? '_blank' : '_self'} class={`inline-flex items-center gap-2 ${link.type === 'pdf' ? `bg-${c.icon.split('-')[0]}-500 text-white shadow-md hover:bg-${c.icon.split('-')[0]}-600` : `bg-${c.icon.split('-')[0]}-50 text-${c.text} border ${c.border.replace('border-', 'border-opacity-30 border-')} shadow-sm hover:bg-${c.icon.split('-')[0]}-100`} font-bold px-4 py-2 rounded-full text-sm transition`}>
+                        <i data-lucide={link.icon || 'external-link'} class="w-4 h-4"></i> {link.text}
+                    </a>
+                ))}
+            </div>
+        ) : (
+            <>
+                {theme.button && theme.button.type === "link" && (
+                    <a href={theme.button.url} class={`inline-flex items-center gap-2 bg-${c.icon.split('-')[0]}-50 text-${c.text} border ${c.border.replace('border-', 'border-opacity-30 border-')} font-bold px-4 py-2 rounded-full text-sm hover:bg-${c.icon.split('-')[0]}-100 transition shadow-sm mt-2`}>
+                        <i data-lucide={theme.button.icon} class="w-4 h-4"></i> {theme.button.text}
+                    </a>
+                )}
+                
+                {theme.button && theme.button.type === "pdf" && (
+                    <a href={theme.button.url} target="_blank" class={`inline-flex items-center gap-2 bg-${c.icon.split('-')[0]}-500 text-white font-bold px-5 py-3 rounded-full text-sm hover:bg-${c.icon.split('-')[0]}-600 transition shadow-md mt-2`}>
+                        <i data-lucide={theme.button.icon} class="w-5 h-5"></i> {theme.button.text}
+                    </a>
+                )}
+            </>
         )}
     </div>
     <div class="md:w-1/2 bg-slate-50 rounded-2xl p-6 border border-slate-100 w-full flex items-center justify-center gap-4 overflow-hidden min-h-[200px]">

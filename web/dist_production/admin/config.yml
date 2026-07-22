@@ -1,0 +1,220 @@
+# ==========================================
+# Decap CMS Backend Configuration (Plan A: GitHub)
+# ==========================================
+# チーム運用時は GitHub リポジトリへ直接変更をコミットします。
+backend:
+  name: github
+  repo: totototo0526/tunageMON-engine
+  branch: main
+  base_url: https://tunagemon.totototo0526.xyz
+  auth_endpoint: auth
+
+# ローカル開発用サーバー設定
+# `npx decap-server` が起動中の場合は認証不要でローカル保存が優先されます
+local_backend: true
+
+
+media_folder: "web/public/assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "themes"
+    label: "Themes / LPs"
+    folder: "web/src/content/themes"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - {label: "ID", name: "id", widget: "string"}
+      - {label: "Layout", name: "layout", widget: "string", default: "template_a"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Subtitle", name: "subtitle", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Main Image", name: "main_image", widget: "image", required: false}
+      - label: "Hero Services"
+        name: "hero_services"
+        widget: "list"
+        required: false
+      - label: "Downloads"
+        name: "downloads"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Label", name: "label", widget: "string", hint: "例：資料ダウンロード"}
+          - {label: "File", name: "file", widget: "file", hint: "PDFなどのファイルをアップロード"}
+      - label: "Pricing"
+        name: "pricing"
+        widget: "object"
+        required: false
+        fields:
+          - {label: "Free Trial", name: "free_trial", widget: "string", required: false}
+          - {label: "Initial Cost", name: "initial", widget: "string", required: false}
+          - {label: "Monthly Cost", name: "monthly", widget: "string", required: false}
+      - label: "Blocks"
+        name: "blocks"
+        widget: "list"
+        types:
+          - label: "Text Block"
+            name: "BlockText"
+            widget: "object"
+            fields:
+              - {label: "Type", name: "type", widget: "hidden", default: "BlockText"}
+              - {label: "Title", name: "title", widget: "string", required: false}
+              - {label: "Subtitle", name: "subtitle", widget: "string", required: false}
+              - {label: "Theme", name: "theme", widget: "select", options: ["light", "dark"], default: "light", required: false}
+              - {label: "Paragraphs", name: "paragraphs", widget: "list", required: false}
+          - label: "CTA Block"
+            name: "BlockCTA"
+            widget: "object"
+            fields:
+              - {label: "Type", name: "type", widget: "hidden", default: "BlockCTA"}
+              - {label: "Title", name: "title", widget: "string", required: false}
+              - {label: "Description", name: "desc", widget: "text", required: false}
+              - {label: "Theme", name: "theme", widget: "select", options: ["light", "dark"], default: "light", required: false}
+          - label: "Before/After Block"
+            name: "BlockBeforeAfter"
+            widget: "object"
+            fields:
+              - {label: "Type", name: "type", widget: "hidden", default: "BlockBeforeAfter"}
+              - {label: "Title", name: "title", widget: "string", required: false}
+              - {label: "Subtitle", name: "subtitle", widget: "string", required: false}
+              - {label: "Description", name: "desc", widget: "text", required: false}
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Tag", name: "tag", widget: "string"}
+                  - {label: "Before", name: "before", widget: "string"}
+                  - {label: "After", name: "after", widget: "string"}
+                  - {label: "Description", name: "desc", widget: "text"}
+                  - {label: "Image", name: "image", widget: "image", required: false}
+          - label: "Cards Block"
+            name: "BlockCards"
+            widget: "object"
+            fields:
+              - {label: "Type", name: "type", widget: "hidden", default: "BlockCards"}
+              - {label: "Title", name: "title", widget: "string", required: false}
+              - {label: "Subtitle", name: "subtitle", widget: "string", required: false}
+              - {label: "Description", name: "desc", widget: "text", required: false}
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Badge", name: "badge", widget: "string", required: false}
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Subtitle", name: "subtitle", widget: "string", required: false}
+                  - {label: "Description", name: "desc", widget: "text", required: false}
+          - label: "Chat Demo Block"
+            name: "BlockChatDemo"
+            widget: "object"
+            fields:
+              - {label: "Type", name: "type", widget: "hidden", default: "BlockChatDemo"}
+              - {label: "Title", name: "title", widget: "string", required: false}
+              - {label: "Note", name: "note", widget: "string", required: false}
+              - label: "Patterns"
+                name: "patterns"
+                widget: "list"
+                fields:
+                  - {label: "Label", name: "label", widget: "string"}
+                  - {label: "Title", name: "title", widget: "string"}
+                  - label: "Messages"
+                    name: "messages"
+                    widget: "list"
+                    fields:
+                      - {label: "Sender Name", name: "senderName", widget: "string"}
+                      - {label: "Sender Type", name: "senderType", widget: "select", options: ["user", "ai"]}
+                      - {label: "Prefix", name: "prefix", widget: "string", required: false}
+                      - {label: "Text", name: "text", widget: "text"}
+          - label: "Comparison Cards Block"
+            name: "BlockComparisonCards"
+            widget: "object"
+            fields:
+              - {label: "Type", name: "type", widget: "hidden", default: "BlockComparisonCards"}
+              - {label: "Title", name: "title", widget: "string", required: false}
+              - {label: "Subtitle", name: "subtitle", widget: "string", required: false}
+              - label: "Groups"
+                name: "groups"
+                widget: "list"
+                fields:
+                  - {label: "Group Title", name: "title", widget: "string"}
+                  - {label: "Role", name: "role", widget: "string", required: false}
+                  - {label: "Target", name: "target", widget: "string", required: false}
+                  - label: "Items"
+                    name: "items"
+                    widget: "list"
+                    fields:
+                      - {label: "Type", name: "type", widget: "select", options: ["bad", "good"]}
+                      - {label: "Text", name: "text", widget: "string"}
+          - label: "FAQ Block"
+            name: "BlockFAQ"
+            widget: "object"
+            fields:
+              - {label: "Type", name: "type", widget: "hidden", default: "BlockFAQ"}
+              - {label: "Title", name: "title", widget: "string", required: false}
+              - {label: "Subtitle", name: "subtitle", widget: "string", required: false}
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Question", name: "q", widget: "string"}
+                  - {label: "Answer", name: "a", widget: "text"}
+          - label: "List Block"
+            name: "BlockList"
+            widget: "object"
+            fields:
+              - {label: "Type", name: "type", widget: "hidden", default: "BlockList"}
+              - {label: "Title", name: "title", widget: "string", required: false}
+              - {label: "Subtitle", name: "subtitle", widget: "string", required: false}
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Description", name: "desc", widget: "text", required: false}
+          - label: "Reasoning Grid Block"
+            name: "BlockReasoningGrid"
+            widget: "object"
+            fields:
+              - {label: "Type", name: "type", widget: "hidden", default: "BlockReasoningGrid"}
+              - {label: "Title", name: "title", widget: "string", required: false}
+              - {label: "Summary", name: "summary", widget: "text", required: false}
+              - {label: "Note", name: "note", widget: "string", required: false}
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Number", name: "num", widget: "string"}
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Description", name: "desc", widget: "text"}
+                  - {label: "Image", name: "image", widget: "image", required: false}
+                  - {label: "Image Alt", name: "imageAlt", widget: "string", required: false}
+          - label: "Steps Block"
+            name: "BlockSteps"
+            widget: "object"
+            fields:
+              - {label: "Type", name: "type", widget: "hidden", default: "BlockSteps"}
+              - {label: "Title", name: "title", widget: "string", required: false}
+              - {label: "Subtitle", name: "subtitle", widget: "string", required: false}
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Description", name: "desc", widget: "text"}
+          - label: "Table Block"
+            name: "BlockTable"
+            widget: "object"
+            fields:
+              - {label: "Type", name: "type", widget: "hidden", default: "BlockTable"}
+              - {label: "Title", name: "title", widget: "string", required: false}
+              - {label: "Subtitle", name: "subtitle", widget: "string", required: false}
+              - {label: "Headers", name: "headers", widget: "list", required: false}
+              - label: "Rows"
+                name: "rows"
+                widget: "list"
+                fields:
+                  - label: "Cells"
+                    name: "cells"
+                    widget: "list"
+      - {label: "Body", name: "body", widget: "markdown", required: false}

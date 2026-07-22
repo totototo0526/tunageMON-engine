@@ -5,10 +5,19 @@ import TemplateA from '../../components/lp-templates/TemplateA.astro';
 
 export async function getStaticPaths() {
   const themes = await getCollection('themes');
-  return themes.map(theme => ({
-    params: { slug: theme.id },
-    props: { theme },
-  }));
+  return themes.map(theme => {
+    // permalink があればそれを使用（末尾が .html なら拡張子を外したパスをslugにする等。今回は themes/ 以下のパスとみなす）
+    // 例: permalink: "05-theme/detail"
+    let slug = theme.id;
+    if (theme.data.permalink) {
+        // "themes/xxx" のように指定されていた場合、"themes/" を削る。
+        slug = theme.data.permalink.replace(/^themes\//, '').replace(/\.html$/, '');
+    }
+    return {
+      params: { slug },
+      props: { theme },
+    };
+  });
 }
 
 const { theme } = Astro.props;
