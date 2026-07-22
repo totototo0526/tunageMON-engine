@@ -1,25 +1,93 @@
 ---
-
 id: "05"
 layout: "template_a"
 title: "つなげモン IoT"
-subtitle: "〜 ハードと「つなげモン」 〜"
-description: '制御装置やセンサー等の<span class="text-red-600 font-bold border-b-2 border-red-600">ハードウェア（IoT）</span>とつなげます。工場の機械の稼働ログや異常データを自動で収集し、目視確認なしに現場を可視化します。'
+subtitle: "工場の「勘と経験」を、圧倒的な「データ」に変える。"
+description: '工場の生産設備やセンサー等の<span class="text-red-600 font-bold border-b-2 border-red-600">ハードウェア（IoT）</span>と自社システムを直結させます。古い機械でも後付けセンサーでデータを収集し、目視確認なしに工場の稼働状況をリアルタイムで可視化します。'
+hero_services:
+  - "01 古い生産設備への後付けセンサー対応"
+  - "02 異常発生時のスマホへの即時アラート通知"
+  - "03 稼働率や歩留まりのリアルタイム・ダッシュボード"
+pricing:
+  free_trial: "まずは1つのラインにセンサーを設置し、データの取れ高や精度を無償で検証するPoC（概念実証）をご用意しています。"
+  initial: "150"
+  monthly: "50"
 button:
   type: "link"
   url: "./themes/05-theme/index.html"
   text: "特化LPを見る"
   icon: "external-link"
 problems:
-  - title: "機械の稼働状況がブラックボックス"
-    description: "工場でどの機械がいつ止まったか、稼働率がどうなっているか、現場に行かないと分からない。"
-    image: "01-decision.webp"
-  - title: "異常発生時の対応の遅れ"
-    description: "機器の異常や故障が起きた際、発見が遅れて生産ライン全体に大きな影響を与えてしまう。"
-    image: "02-case-history.webp"
+  - title: "機械がいつ止まったか分からない"
+    description: "工場の機械がチョコ停（一時停止）しても、担当者が現場に行くまで気づかず、生産計画に遅れが生じている。"
+    image: "01-manufacturing-exception-review.webp"
+  - title: "紙の稼働日報によるタイムラグ"
+    description: "機械の稼働時間や生産個数を、作業員がストップウォッチで計って紙に記録しており、正確性に欠ける。"
+    image: "03-manual.webp"
+  - title: "職人の「勘」に依存した異常検知"
+    description: "「機械の音がいつもと違う」というベテランの感覚に頼っており、若手では故障の予兆に気づけない。"
+    image: "02-memory.webp"
 blocks:
-- type: BlockText
-  paragraphs:
-  - Web用の詳細テキストをここに記述します。
+  - type: BlockStats
+    subtitle: "01"
+    title: "IoT化がもたらす圧倒的な現場改善"
+    desc: "※以下は支援内容に基づく想定イメージです。"
+    items:
+      - number: "80%"
+        label: "ダウンタイム削減"
+        desc: "故障の予兆を事前に検知し、機械が完全に停止する前にメンテナンスを行います。"
+      - number: "0分"
+        label: "異常気づき遅れ"
+        desc: "ランプやアラームだけでなく、担当者のスマホ・スマートウォッチに直接通知します。"
+      - number: "24h"
+        label: "無人監視の実現"
+        desc: "夜間や休日でもセンサーが工場の状態を監視し続け、異常があれば即座に管理者を呼び出します。"
+
+  - type: BlockIntegration
+    subtitle: "02"
+    title: "古い機械も最新システムとつながる"
+    desc: "「つなげモン IoT」は、特殊なプロトコルを持つ工場設備と、クラウドシステムを繋ぐ強力な架け橋になります。"
+    center: "つなげモン IoT"
+    spokes:
+      - name: "温度・振動センサー"
+        icon: "🌡️"
+      - name: "PLC（制御装置）"
+        icon: "⚙️"
+      - name: "生産管理システム"
+        icon: "🏭"
+      - name: "Kintone/AWS"
+        icon: "☁️"
+      - name: "LINE WORKS"
+        icon: "💬"
+
+  - type: BlockBeforeAfter
+    subtitle: "03"
+    title: "現場のビフォー・アフター"
+    desc: "※以下は支援内容に基づく想定イメージです。"
+    items:
+      - tag: "異常検知のスピード"
+        before: "パトランプが回っても、広い工場では誰も気づかない"
+        after: "異常発生から0.5秒で、担当者のスマホにプッシュ通知"
+        desc: "これまでは機械のパトランプを目視で確認する必要がありましたが、システム直結により、設備の異常信号をキャッチした瞬間にチャットツールへ自動通知。対応スピードが劇的に向上しました。"
+        image: "01-policy.webp"
+
+  - type: BlockSteps
+    subtitle: "04"
+    title: "導入までの3ステップ"
+    items:
+      - title: "【Step1】センサーの後付け（1日）"
+        desc: "既存の機械を改造する必要はありません。外付けの電流センサーや振動センサーを後付けするだけで、データ収集の準備が完了します。"
+      - title: "【Step2】データの収集と分析（2週間）"
+        desc: "センサーから上がってくるデータを蓄積し、「正常時」の波形をシステムに学習させます。"
+      - title: "【Step3】リアルタイム監視の開始"
+        desc: "ダッシュボードによる稼働状況の可視化と、異常値が出た際のアラート通知の運用をスタートします。"
+
+  - type: BlockCTA
+    theme: "dark"
+    title: "工場の「今」を、手元のスマホで確認しませんか。"
+    desc: "まずは1台の機械から。センサーの無料貸出とテスト運用をご相談ください。"
+    button:
+      text: "IoT導入を相談する"
+      url: "https://www.k-sp.co.jp/admin/std/contact/new"
 ---
 
