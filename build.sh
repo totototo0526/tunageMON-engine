@@ -40,6 +40,7 @@ fi
 echo "🌐 Web (プレビュー用Astro) のビルドを実行中..."
 cd web
 export PUBLIC_IS_PREVIEW=true
+export BASE_PATH=/
 npm run build
 if [ $? -eq 0 ]; then
   echo "✅ Webのビルドに成功しました。"

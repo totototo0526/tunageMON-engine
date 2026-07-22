@@ -13,7 +13,7 @@ const { frontmatter } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <title>{frontmatter.title} | つなげモン</title>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script is:inline src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 
@@ -27,6 +27,8 @@ const { frontmatter } = Astro.props;
 
     <!-- プラットフォーム共通フッター -->
     <Footer />
+    
+    <script is:inline src="../../assets/js/main.js"></script>
 </body>
 
 </html>

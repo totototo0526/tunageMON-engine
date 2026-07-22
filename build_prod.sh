@@ -33,8 +33,12 @@ rm -rf dist/slides/
 # もし他にも消したい社内用フォルダがあればここに追記
 
 echo "🔗 ローカルでもCSSが効くようにパスを相対パスに変換しています..."
-find dist -name "*.html" -exec sed -i 's|href="/|href="./|g' {} +
-find dist -name "*.html" -exec sed -i 's|src="/|src="./|g' {} +
+find dist -maxdepth 1 -name "*.html" -exec sed -i 's|href="/|href="./|g' {} +
+find dist -maxdepth 1 -name "*.html" -exec sed -i 's|src="/|src="./|g' {} +
+
+# themes/*/ 階層などの深いHTML用
+find dist/themes -name "*.html" -exec sed -i 's|href="/|href="../../|g' {} +
+find dist/themes -name "*.html" -exec sed -i 's|src="/|src="../../|g' {} +
 
 # ZIP化
 echo "📦 本番用コードをZIP化しています..."
