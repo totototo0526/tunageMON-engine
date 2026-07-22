@@ -68,16 +68,16 @@
 #let slide(title: "", subtitle: "", body) = {
   set page(
     background: rect(width: 100%, height: 100%, fill: rgb("FFFFFF")),
-    margin: (top: 4.5em, bottom: 2.5em, left: 3.5em, right: 3.5em)
+    margin: (top: 4.5em, bottom: 2em, left: 3em, right: 3em)
   )
   set text(fill: rgb("1E293B")) // slate-800
   
   // Header
-  place(top + left, dy: -3em, [
-    #text(size: 28pt, weight: "bold", fill: rgb("1E293B"))[#truncate(title, max-len: 40)]
+  place(top + left, dy: -3.5em, [
+    #text(size: 28pt, weight: "bold", fill: rgb("1E293B"))[#title]
     #if subtitle != "" [
       #h(1em)
-      #text(size: 18pt, weight: "bold", fill: rgb("F97316"))[#truncate(subtitle, max-len: 40)]
+      #text(size: 18pt, weight: "bold", fill: rgb("F97316"))[#subtitle]
     ]
     #v(0.5em)
     #line(length: 100%, stroke: 2pt + rgb("F97316"))
@@ -106,10 +106,10 @@
   // HTMLタグを除去してプレーンテキスト化
   #let clean-desc = theme.description.replace(regex("<[^>]+>"), "")
   #par(leading: 1.5em)[
-    #text(size: 22pt, weight: "bold")[#truncate(clean-desc, max-len: 120)]
+    #text(size: 20pt, weight: "bold")[#clean-desc]
   ]
   
-  #v(2em)
+  #v(1.5em)
   
   #grid(
     columns: (1fr, 1fr),
@@ -118,9 +118,12 @@
       #box(fill: rgb("FFF7ED"), inset: 1.5em, radius: 1em, width: 100%, height: 100%, [
         #text(weight: "bold", fill: rgb("C2410C"))[■ よくある課題]
         #v(1em)
+        #set text(size: 14pt)
         #if "problems" in theme and theme.problems != none [
           #for p in theme.problems [
-            - #truncate(p, max-len: 60)
+            #text(weight: "bold")[・ #p.title] \
+            #text(fill: rgb("475569"))[#p.description]
+            #v(1em)
           ]
         ] else [
           - 情報の分断と二重入力
@@ -132,9 +135,12 @@
       #box(fill: rgb("F8FAFC"), inset: 1.5em, radius: 1em, width: 100%, height: 100%, [
         #text(weight: "bold", fill: rgb("0F172A"))[■ つなげモンが提供する価値]
         #v(1em)
-        - システムと現場をシームレスに連携
-        - データの二重入力をなくし、自動化を実現
-        - リアルタイムな情報共有で意思決定を加速
+        #set text(size: 14pt)
+        ・ システムと現場をシームレスに連携 \
+        #v(1em)
+        ・ データの二重入力をなくし、自動化を実現 \
+        #v(1em)
+        ・ リアルタイムな情報共有で意思決定を加速 \
       ])
     ]
   )
@@ -156,7 +162,7 @@
           #slide(title: theme.title, subtitle: sub)[
             #v(1em)
             #if "desc" in block and block.desc != "" and i == 0 [
-              #text(size: 16pt, fill: rgb("475569"))[#truncate(block.desc, max-len: 100)]
+              #text(size: 16pt, fill: rgb("475569"))[#block.desc]
               #v(1em)
             ]
             #grid(
@@ -168,14 +174,14 @@
                     #text(size: 36pt, weight: "bold", fill: rgb("E2E8F0"))[#point.badge]
                     #v(-1.5em)
                   ]
-                  #text(size: 18pt, weight: "bold", fill: rgb("1E293B"))[#truncate(point.title, max-len: 40)]
+                  #text(size: 18pt, weight: "bold", fill: rgb("1E293B"))[#point.title]
                   #if "subtitle" in point and point.subtitle != "" [
                     #v(0.5em)
-                    #text(size: 14pt, weight: "bold", fill: rgb("C2410C"))[#truncate(point.subtitle, max-len: 40)]
+                    #text(size: 14pt, weight: "bold", fill: rgb("C2410C"))[#point.subtitle]
                   ]
                   #if "desc" in point [
                     #v(1em)
-                    #text(size: 14pt)[#truncate(point.desc, max-len: 120)]
+                    #text(size: 14pt)[#point.desc]
                   ]
                 ])
               ])
@@ -189,7 +195,7 @@
     // ----------------------------------------------------------------------------
     ] else if block.type == "BlockBeforeAfter" [
       #if "items" in block and block.items != none [
-        #let chunked = chunks(block.items, 2)
+        #let chunked = chunks(block.items, 1) // ★1スライド1件に変更
         #for (i, c) in chunked.enumerate() [
           #let sub = block.title
           #if chunked.len() > 1 { sub = sub + " (" + str(i + 1) + "/" + str(chunked.len()) + ")" }
@@ -197,10 +203,10 @@
           #slide(title: theme.title, subtitle: sub)[
             #v(1em)
             #for scenario in c [
-              #box(fill: rgb("FFF7ED"), inset: 0.5em, radius: 0.5em)[
-                #text(size: 14pt, weight: "bold", fill: rgb("C2410C"))[#truncate(scenario.tag, max-len: 30)]
+              #box(fill: rgb("FFF7ED"), inset: 0.8em, radius: 0.5em)[
+                #text(size: 16pt, weight: "bold", fill: rgb("C2410C"))[#scenario.tag]
               ]
-              #v(0.5em)
+              #v(1em)
               #grid(
                 columns: (1fr, auto, 1fr),
                 align: horizon,
@@ -208,7 +214,7 @@
                 [
                   #text(size: 16pt, fill: rgb("64748B"))[導入前]
                   #v(0.5em)
-                  #text(size: 18pt, weight: "bold")[#truncate(scenario.before, max-len: 60)]
+                  #text(size: 20pt, weight: "bold")[#scenario.before]
                 ],
                 [
                   #text(size: 28pt, fill: rgb("94A3B8"))[→]
@@ -216,14 +222,13 @@
                 [
                   #text(size: 16pt, fill: rgb("64748B"))[導入後]
                   #v(0.5em)
-                  #text(size: 18pt, weight: "bold", fill: rgb("10B981"))[#truncate(scenario.after, max-len: 60)]
+                  #text(size: 20pt, weight: "bold", fill: rgb("10B981"))[#scenario.after]
                 ]
               )
-              #v(1em)
-              #box(fill: rgb("F1F5F9"), inset: 1em, radius: 0.5em, width: 100%)[
-                #text(size: 14pt)[#truncate(scenario.desc, max-len: 120)]
-              ]
               #v(1.5em)
+              #box(fill: rgb("F1F5F9"), inset: 1.5em, radius: 0.5em, width: 100%)[
+                #text(size: 16pt)[#scenario.desc]
+              ]
             ]
           ]
         ]
@@ -234,7 +239,7 @@
     // ----------------------------------------------------------------------------
     ] else if block.type == "BlockChatDemo" [
       #if "patterns" in block and block.patterns != none [
-        #let chunked = chunks(block.patterns, 2)
+        #let chunked = chunks(block.patterns, 1) // ★1スライド1件に変更
         #for (i, c) in chunked.enumerate() [
           #let sub = block.title
           #if chunked.len() > 1 { sub = sub + " (" + str(i + 1) + "/" + str(chunked.len()) + ")" }
@@ -242,28 +247,31 @@
           #slide(title: theme.title, subtitle: sub)[
             #v(1em)
             #grid(
-              columns: (1fr, 1fr),
+              columns: (1fr), // 1列で広く使う
               gutter: 1.5em,
               ..c.map(pattern => [
-                #box(fill: rgb("F8FAFC"), inset: 1.5em, radius: 1em, width: 100%, height: 100%, [
-                  #text(size: 16pt, weight: "bold", fill: rgb("1E293B"))[#truncate(pattern.label, max-len: 20): #truncate(pattern.title, max-len: 30)]
-                  #v(1em)
-                  // メッセージは長すぎると溢れるため最大3件までに制限
-                  #for msg in pattern.messages.slice(0, calc.min(3, pattern.messages.len())) [
+                #box(fill: rgb("F8FAFC"), inset: 2em, radius: 1em, width: 100%, height: 100%, [
+                  #text(size: 20pt, weight: "bold", fill: rgb("1E293B"))[#pattern.label: #pattern.title]
+                  #v(1.5em)
+                  #for msg in pattern.messages [
                     #if msg.senderType == "user" [
-                      #box(fill: rgb("E2E8F0"), inset: 0.8em, radius: 0.5em, width: 100%)[
-                        #text(size: 12pt, weight: "bold")[#truncate(msg.senderName, max-len: 20)]
+                      #box(fill: rgb("E2E8F0"), inset: 1em, radius: 0.5em, width: 80%)[
+                        #text(size: 14pt, weight: "bold")[#msg.senderName]
                         #v(0.5em)
-                        #text(size: 14pt)[#if "prefix" in msg { [#text(fill: rgb("64748B"))[#msg.prefix] ] } #truncate(msg.text, max-len: 60)]
+                        #text(size: 16pt)[#if "prefix" in msg { [#text(fill: rgb("64748B"))[#msg.prefix] ] } #msg.text]
                       ]
                     ] else [
-                      #box(fill: rgb("FFF7ED"), stroke: 1pt + rgb("F97316"), inset: 0.8em, radius: 0.5em, width: 100%)[
-                        #text(size: 12pt, weight: "bold", fill: rgb("C2410C"))[#truncate(msg.senderName, max-len: 20)]
-                        #v(0.5em)
-                        #text(size: 14pt)[#truncate(msg.text, max-len: 80)]
+                      #align(right)[
+                        #box(fill: rgb("FFF7ED"), stroke: 1pt + rgb("F97316"), inset: 1em, radius: 0.5em, width: 80%)[
+                          #align(left)[
+                            #text(size: 14pt, weight: "bold", fill: rgb("C2410C"))[#msg.senderName]
+                            #v(0.5em)
+                            #text(size: 16pt)[#msg.text]
+                          ]
+                        ]
                       ]
                     ]
-                    #v(0.5em)
+                    #v(1em)
                   ]
                 ])
               ])
@@ -291,9 +299,9 @@
                 #box(stroke: 1pt + rgb("E2E8F0"), inset: 1.5em, radius: 1em, width: 100%, height: 100%, [
                   #text(weight: "bold", size: 16pt, fill: rgb("C2410C"))[#item.num]
                   #v(0.5em)
-                  #text(weight: "bold", size: 16pt)[#truncate(item.title, max-len: 30)]
+                  #text(weight: "bold", size: 16pt)[#item.title]
                   #v(0.5em)
-                  #text(size: 12pt)[#truncate(item.desc, max-len: 120)]
+                  #text(size: 14pt)[#item.desc]
                 ])
               ])
             )
@@ -306,7 +314,7 @@
     // ----------------------------------------------------------------------------
     ] else if block.type == "BlockFAQ" [
       #if "items" in block and block.items != none [
-        #let chunked = chunks(block.items, 3)
+        #let chunked = chunks(block.items, 2) // ★1スライド2件に変更
         #for (i, c) in chunked.enumerate() [
           #let sub = block.title
           #if chunked.len() > 1 { sub = sub + " (" + str(i + 1) + "/" + str(chunked.len()) + ")" }
@@ -317,10 +325,10 @@
               columns: (1fr),
               gutter: 1.5em,
               ..c.map(item => [
-                #box(width: 100%, stroke: (bottom: 1pt + rgb("E2E8F0")), inset: (bottom: 1em))[
-                  #text(weight: "bold", size: 18pt, fill: rgb("1E293B"))[Q. #truncate(item.q, max-len: 60)]
-                  #v(0.5em)
-                  #text(size: 16pt, fill: rgb("475569"))[A. #truncate(item.a, max-len: 120)]
+                #box(width: 100%, stroke: (bottom: 1pt + rgb("E2E8F0")), inset: (bottom: 1.5em))[
+                  #text(weight: "bold", size: 18pt, fill: rgb("1E293B"))[Q. #item.q]
+                  #v(0.8em)
+                  #text(size: 16pt, fill: rgb("475569"))[A. #item.a]
                 ]
               ])
             )
@@ -333,7 +341,7 @@
     // ----------------------------------------------------------------------------
     ] else if block.type == "BlockSteps" [
       #if "items" in block and block.items != none [
-        #let chunked = chunks(block.items, 4)
+        #let chunked = chunks(block.items, 3) // 4 -> 3件に減らす
         #for (i, c) in chunked.enumerate() [
           #let t = if "title" in block { block.title } else { "フロー" }
           #let sub = t
@@ -345,11 +353,11 @@
               columns: (1fr),
               gutter: 1em,
               ..c.map(item => [
-                #box(fill: rgb("F8FAFC"), inset: 1em, radius: 0.5em, width: 100%, [
-                  #text(size: 16pt, weight: "bold", fill: rgb("1E293B"))[#truncate(item.title, max-len: 60)]
+                #box(fill: rgb("F8FAFC"), inset: 1.5em, radius: 0.5em, width: 100%, [
+                  #text(size: 18pt, weight: "bold", fill: rgb("1E293B"))[#item.title]
                   #v(0.5em)
                   #if "desc" in item and item.desc != none [
-                    #text(size: 14pt)[#truncate(item.desc, max-len: 120)]
+                    #text(size: 16pt)[#item.desc]
                   ]
                 ])
               ])
@@ -366,19 +374,18 @@
       #slide(title: theme.title, subtitle: t)[
         #v(1em)
         #if "rows" in block and block.rows != none [
-          // Tableは列数が不定のため、そのまま出力。ただしはみ出し防止でフォントを小さくする
-          #set text(size: 12pt)
+          #set text(size: 14pt)
           #let cols = block.headers.len()
           #table(
             columns: array.range(0, cols).map(x => 1fr),
             align: center + horizon,
             stroke: 0.5pt + rgb("E2E8F0"),
-            ..block.headers.map(h => [#text(weight:"bold", fill: rgb("475569"))[#truncate(h, max-len: 20)]]),
+            ..block.headers.map(h => [#text(weight:"bold", fill: rgb("475569"))[#h]]),
             ..block.rows.map(row => {
               let cells = ()
-              cells.push([#text(weight:"bold")[#truncate(row.label, max-len: 20)]])
+              cells.push([#text(weight:"bold")[#row.label]])
               for v in row.values {
-                cells.push([#text()[#truncate(v, max-len: 20)]])
+                cells.push([#text()[#v]])
               }
               return cells
             }).flatten()
@@ -391,7 +398,7 @@
     // ----------------------------------------------------------------------------
     ] else if block.type == "BlockList" [
       #if "items" in block and block.items != none [
-        #let chunked = chunks(block.items, 4)
+        #let chunked = chunks(block.items, 3) // 4 -> 3
         #for (i, c) in chunked.enumerate() [
           #let t = if "title" in block { block.title } else { "リスト" }
           #let sub = t
@@ -401,13 +408,13 @@
             #v(1em)
             #grid(
               columns: (1fr),
-              gutter: 1em,
+              gutter: 1.5em,
               ..c.map(item => [
-                #box(width: 100%, stroke: (bottom: 1pt + rgb("E2E8F0")), inset: (bottom: 0.5em))[
-                  #text(weight: "bold", size: 16pt, fill: rgb("1E293B"))[#truncate(item.title, max-len: 60)]
-                  #v(0.5em)
+                #box(width: 100%, stroke: (bottom: 1pt + rgb("E2E8F0")), inset: (bottom: 1em))[
+                  #text(weight: "bold", size: 18pt, fill: rgb("1E293B"))[#item.title]
+                  #v(0.8em)
                   #if "desc" in item and item.desc != none [
-                    #text(size: 14pt, fill: rgb("475569"))[#truncate(item.desc, max-len: 120)]
+                    #text(size: 16pt, fill: rgb("475569"))[#item.desc]
                   ]
                 ]
               ])
@@ -421,12 +428,12 @@
     // ----------------------------------------------------------------------------
     ] else if block.type == "BlockCTA" [
       #slide(title: theme.title, subtitle: "次へのアクション")[
-        #v(2em)
+        #v(3em)
         #align(center)[
-          #text(size: 28pt, weight: "bold")[#if "title" in block { truncate(block.title, max-len: 40) } else { "" }]
-          #v(1em)
+          #text(size: 28pt, weight: "bold")[#if "title" in block { block.title } else { "" }]
+          #v(1.5em)
           #if "desc" in block and block.desc != none [
-            #text(size: 18pt, fill: rgb("475569"))[#truncate(block.desc, max-len: 120)]
+            #text(size: 20pt, fill: rgb("475569"))[#block.desc]
           ]
         ]
       ]
@@ -436,7 +443,6 @@
     // ----------------------------------------------------------------------------
     ] else if block.type == "BlockComparisonCards" [
       #if "groups" in block and block.groups != none [
-        // 比較カードは通常2つなのでそのまま出力
         #let t = if "title" in block { block.title } else { "相性" }
         #slide(title: theme.title, subtitle: t)[
           #v(1em)
@@ -445,11 +451,10 @@
             gutter: 2em,
             ..block.groups.map(group => [
               #box(fill: if group.type == "positive" { rgb("F8FAFC") } else { rgb("FEF2F2") }, inset: 1.5em, radius: 1em, width: 100%, height: 100%, [
-                #text(size: 20pt, weight: "bold", fill: if group.type == "positive" { rgb("0F172A") } else { rgb("991B1B") })[#truncate(group.title, max-len: 40)]
+                #text(size: 20pt, weight: "bold", fill: if group.type == "positive" { rgb("0F172A") } else { rgb("991B1B") })[#group.title]
                 #v(1em)
-                // アイテム数は最大5個までに制限
-                #for item in group.items.slice(0, calc.min(5, group.items.len())) [
-                  #text(size: 14pt)[・ #truncate(item, max-len: 60)]
+                #for item in group.items [
+                  #text(size: 16pt)[・ #item]
                   #v(0.5em)
                 ]
               ])
@@ -463,7 +468,7 @@
     // ----------------------------------------------------------------------------
     ] else if block.type == "BlockText" [
       #if "paragraphs" in block and block.paragraphs != none [
-        #let chunked = chunks(block.paragraphs, 3) // 3段落ずつ分割
+        #let chunked = chunks(block.paragraphs, 2) // 3 -> 2段落
         #for (i, c) in chunked.enumerate() [
           #let t = if "title" in block { block.title } else { "テキスト" }
           #let sub = t
@@ -472,8 +477,8 @@
           #slide(title: theme.title, subtitle: sub)[
             #v(1em)
             #for p in c [
-              #text(size: 16pt, fill: rgb("1E293B"))[#truncate(p, max-len: 200)]
-              #v(1em)
+              #text(size: 18pt, fill: rgb("1E293B"))[#p]
+              #v(1.5em)
             ]
           ]
         ]
