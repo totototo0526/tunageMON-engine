@@ -459,6 +459,82 @@
       ]
       
     // ----------------------------------------------------------------------------
+    // BlockStats
+    // ----------------------------------------------------------------------------
+    ] else if block.type == "BlockStats" [
+      #slide(title: theme.title, subtitle: block.title)[
+        #v(1em)
+        #if "desc" in block and block.desc != none [
+          #align(center)[#text(size: 14pt, fill: rgb("475569"))[#block.desc]]
+          #v(2em)
+        ]
+        #let cols = block.items.len()
+        #grid(
+          columns: array.range(0, cols).map(x => 1fr),
+          gutter: 2em,
+          ..block.items.map(item => {
+            box(fill: rgb("F8FAFC"), stroke: 1pt + rgb("E2E8F0"), inset: 2em, radius: 1em, width: 100%, [
+              #align(center)[
+                #text(size: 42pt, weight: "bold", fill: rgb("2563EB"))[#item.number]
+                #v(1em)
+                #text(size: 16pt, weight: "bold", fill: rgb("1E293B"))[#item.label]
+                #v(1em)
+                #text(size: 14pt, fill: rgb("64748B"))[#item.desc]
+              ]
+            ])
+          })
+        )
+      ]
+    // ----------------------------------------------------------------------------
+    // BlockIntegration
+    // ----------------------------------------------------------------------------
+    ] else if block.type == "BlockIntegration" [
+      #slide(title: theme.title, subtitle: block.title)[
+        #v(1em)
+        #if "desc" in block and block.desc != none [
+          #align(center)[#text(size: 14pt, fill: rgb("475569"))[#block.desc]]
+          #v(3em)
+        ]
+        
+        #align(center)[
+          #box(width: 80%, [
+            #grid(
+              columns: (1fr, auto, 1fr),
+              align: center + horizon,
+              gutter: 3em,
+              [
+                // 左側のシステム（前半）
+                #let half = int(block.spokes.len() / 2)
+                #grid(columns: (1fr), gutter: 1.5em,
+                  ..block.spokes.slice(0, half).map(spoke => {
+                    box(fill: white, stroke: 2pt + rgb("CBD5E1"), inset: 1em, radius: 0.5em, width: 100%, [
+                      #text(size: 16pt, weight: "bold", fill: rgb("475569"))[#spoke.icon #spoke.name]
+                    ])
+                  })
+                )
+              ],
+              [
+                // 中央のハブ
+                #box(fill: rgb("4F46E5"), inset: 2.5em, radius: 1em, [
+                  #text(size: 24pt, weight: "bold", fill: white)[#block.center]
+                ])
+              ],
+              [
+                // 右側のシステム（後半）
+                #let half = int(block.spokes.len() / 2)
+                #grid(columns: (1fr), gutter: 1.5em,
+                  ..block.spokes.slice(half, block.spokes.len()).map(spoke => {
+                    box(fill: white, stroke: 2pt + rgb("CBD5E1"), inset: 1em, radius: 0.5em, width: 100%, [
+                      #text(size: 16pt, weight: "bold", fill: rgb("475569"))[#spoke.icon #spoke.name]
+                    ])
+                  })
+                )
+              ]
+            )
+          ])
+        ]
+      ]
+    // ----------------------------------------------------------------------------
     // BlockCTA
     // ----------------------------------------------------------------------------
     ] else if block.type == "BlockCTA" [

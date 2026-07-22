@@ -2,6 +2,8 @@
 import LPHero from './LPHero.astro';
 import LPProblems from './LPProblems.astro';
 import LPPricing from './LPPricing.astro';
+import BlockStats from './BlockStats.astro';
+import BlockIntegration from './BlockIntegration.astro';
 
 import BlockCards from '../lp-blocks/BlockCards.astro';
 import BlockBeforeAfter from '../lp-blocks/BlockBeforeAfter.astro';
@@ -177,6 +179,8 @@ details[open] span[data-ind]{transform:rotate(45deg)}
         if (block.type === 'BlockText') return <BlockText block={block} />;
         if (block.type === 'BlockChatDemo') return <BlockChatDemo block={block} />;
         if (block.type === 'BlockReasoningGrid') return <BlockReasoningGrid block={block} />;
+        if (block.type === 'BlockStats') return <BlockStats block={block} />;
+        if (block.type === 'BlockIntegration') return <BlockIntegration block={block} />;
         return null;
     })}
 
