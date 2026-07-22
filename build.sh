@@ -37,10 +37,21 @@ npm run build
 if [ $? -eq 0 ]; then
   echo "✅ Webのビルドに成功しました。"
   # 生成された本番用ZIPをプレビューサイトのルートに配置してダウンロード可能にする
-  mv ../production-build.zip dist/
+  if [ -f "../production-build.zip" ]; then
+    echo "ZIPファイルを配置します"
+    cp ../production-build.zip dist/
+  else
+    echo "⚠️ 警告: production-build.zip が見つかりません！"
+  fi
   
   # 退避しておいた本番用成果物を、プレビュー環境の /production/ サブディレクトリに配置する
-  mv dist_production dist/production
+  if [ -d "dist_production" ]; then
+    echo "本番用ディレクトリを /production に配置します"
+    cp -r dist_production dist/production
+    rm -rf dist_production
+  else
+    echo "⚠️ 警告: dist_production ディレクトリが見つかりません！"
+  fi
 else
   echo "❌ Webのビルドに失敗しました。"
   exit 1
