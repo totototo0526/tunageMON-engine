@@ -36,10 +36,12 @@
 // Helper: Image path resolver
 #let resolve-image(p) = {
   if p == none { return "" }
+  // Typst does not support webp natively, so fallback to png if exists
+  let p_png = p.replace(".webp", ".png")
   if p.starts-with("/") {
-    return "/web/public" + p
+    return "/web/public" + p_png
   } else {
-    return "/web/public/assets/images/" + p
+    return "/web/public/assets/images/" + p_png
   }
 }
 
