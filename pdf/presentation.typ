@@ -114,50 +114,36 @@
 // ----------------------------------------------------------------------------
 #let theme = json("temp_theme.json")
 
-#slide(title: theme.title, subtitle: theme.subtitle)[
-  #v(1em)
-  
-  // HTMLタグを除去してプレーンテキスト化
-  #let clean-desc = theme.description.replace(regex("<[^>]+>"), "")
-  #par(leading: 1.3em)[
-    #text(size: 18pt, weight: "bold")[#clean-desc]
-  ]
-  
-  #v(1.5em)
-  
-  #grid(
-    columns: (1fr, 1fr),
-    gutter: 2em,
-    [
-      #box(fill: rgb("FFF7ED"), inset: 1.5em, radius: 1em, width: 100%, height: 100%, [
-        #text(weight: "bold", fill: rgb("C2410C"))[■ よくある課題]
-        #v(1em)
-        #set text(size: 13pt)
-        #if "problems" in theme and theme.problems != none [
-          #for p in theme.problems [
-            #text(weight: "bold")[・ #p.title] \
-            #text(fill: rgb("475569"))[#p.description]
-            #v(1em)
-          ]
-        ] else [
-          - 情報の分断と二重入力
-          - アナログ作業による効率低下
-        ]
-      ])
-    ],
-    [
-      #box(fill: rgb("F8FAFC"), inset: 1.5em, radius: 1em, width: 100%, height: 100%, [
-        #text(weight: "bold", fill: rgb("0F172A"))[■ つなげモンが提供する価値]
-        #v(1em)
-        #set text(size: 13pt)
-        ・ システムと現場をシームレスに連携 \
-        #v(1em)
-        ・ データの二重入力をなくし、自動化を実現 \
-        #v(1em)
-        ・ リアルタイムな情報共有で意思決定を加速 \
-      ])
+#slide(title: theme.title, subtitle: "よくある課題")[
+  #v(2em)
+  #box(fill: rgb("FFF7ED"), inset: 2em, radius: 1em, width: 100%, [
+    #text(weight: "bold", size: 18pt, fill: rgb("C2410C"))[■ 現場や経営が抱える課題]
+    #v(1.5em)
+    #if "problems" in theme and theme.problems != none [
+      #for p in theme.problems [
+        #text(weight: "bold", size: 16pt)[・ #p.title] \
+        #text(size: 14pt, fill: rgb("475569"))[#p.description]
+        #v(1.5em)
+      ]
+    ] else [
+      - 情報の分断と二重入力
+      - アナログ作業による効率低下
     ]
-  )
+  ])
+]
+
+#slide(title: theme.title, subtitle: "提供する価値")[
+  #v(2em)
+  #box(fill: rgb("F8FAFC"), inset: 2em, radius: 1em, width: 100%, [
+    #text(weight: "bold", size: 18pt, fill: rgb("0F172A"))[■ つなげモンが提供する価値]
+    #v(1.5em)
+    #set text(size: 16pt)
+    ・ システムと現場をシームレスに連携 \
+    #v(1.5em)
+    ・ データの二重入力をなくし、自動化を実現 \
+    #v(1.5em)
+    ・ リアルタイムな情報共有で意思決定を加速 \
+  ])
 ]
 
 #if "blocks" in theme and theme.blocks != none [
@@ -222,35 +208,57 @@
           #slide(title: theme.title, subtitle: sub)[
             #v(1em)
             #for scenario in c [
-              #box(fill: rgb("FFF7ED"), inset: 0.8em, radius: 0.5em)[
-                #text(size: 14pt, weight: "bold", fill: rgb("C2410C"))[#scenario.tag]
-              ]
-              #v(1em)
-              #grid(
-                columns: (1fr, auto, 1fr),
-                align: horizon,
-                gutter: 1.5em,
-                [
-                  #text(size: 14pt, fill: rgb("64748B"))[導入前]
-                  #v(0.5em)
-                  #text(size: 18pt, weight: "bold")[#scenario.before]
-                ],
-                [
-                  #text(size: 24pt, fill: rgb("94A3B8"))[→]
-                ],
-                [
-                  #text(size: 14pt, fill: rgb("64748B"))[導入後]
-                  #v(0.5em)
-                  #text(size: 18pt, weight: "bold", fill: rgb("10B981"))[#scenario.after]
-                ]
-              )
               #if "image" in scenario and scenario.image != none [
+                // 2ペイン
+                #grid(columns: (1fr, 1fr), gutter: 2em,
+                  [
+                    #box(fill: rgb("FFF7ED"), inset: 0.8em, radius: 0.5em)[
+                      #text(size: 14pt, weight: "bold", fill: rgb("C2410C"))[#scenario.tag]
+                    ]
+                    #v(1em)
+                    #grid(
+                      columns: (1fr, auto, 1fr), align: horizon, gutter: 1em,
+                      [#text(size: 12pt, fill: rgb("64748B"))[導入前] #v(0.3em) #text(size: 16pt, weight: "bold")[#scenario.before]],
+                      [#text(size: 18pt, fill: rgb("94A3B8"))[→]],
+                      [#text(size: 12pt, fill: rgb("64748B"))[導入後] #v(0.3em) #text(size: 16pt, weight: "bold", fill: rgb("10B981"))[#scenario.after]]
+                    )
+                    #v(1.5em)
+                    #box(fill: rgb("F1F5F9"), inset: 1.5em, radius: 0.5em, width: 100%)[
+                      #text(size: 13pt)[#scenario.desc]
+                    ]
+                  ],
+                  [
+                    #align(center + horizon)[#image(resolve-image(scenario.image), width: 100%)]
+                  ]
+                )
+              ] else [
+                // 既存の1ペイン
+                #box(fill: rgb("FFF7ED"), inset: 0.8em, radius: 0.5em)[
+                  #text(size: 14pt, weight: "bold", fill: rgb("C2410C"))[#scenario.tag]
+                ]
                 #v(1em)
-                #align(center)[#image(resolve-image(scenario.image), width: 80%)]
-              ]
-              #v(1.5em)
-              #box(fill: rgb("F1F5F9"), inset: 1.5em, radius: 0.5em, width: 100%)[
-                #text(size: 14pt)[#scenario.desc]
+                #grid(
+                  columns: (1fr, auto, 1fr),
+                  align: horizon,
+                  gutter: 1.5em,
+                  [
+                    #text(size: 14pt, fill: rgb("64748B"))[導入前]
+                    #v(0.5em)
+                    #text(size: 18pt, weight: "bold")[#scenario.before]
+                  ],
+                  [
+                    #text(size: 24pt, fill: rgb("94A3B8"))[→]
+                  ],
+                  [
+                    #text(size: 14pt, fill: rgb("64748B"))[導入後]
+                    #v(0.5em)
+                    #text(size: 18pt, weight: "bold", fill: rgb("10B981"))[#scenario.after]
+                  ]
+                )
+                #v(1.5em)
+                #box(fill: rgb("F1F5F9"), inset: 1.5em, radius: 0.5em, width: 100%)[
+                  #text(size: 14pt)[#scenario.desc]
+                ]
               ]
             ]
           ]
@@ -510,6 +518,43 @@
           ]
         ]
       ]
+    ]
+  ]
+]
+
+// ----------------------------------------------------------------------------
+// 費用の目安 (Pricing)
+// ----------------------------------------------------------------------------
+#if "pricing" in theme and theme.pricing != none [
+  #slide(title: theme.title, subtitle: "費用の目安")[
+    #v(2em)
+    #grid(
+      columns: (1fr, 1fr),
+      gutter: 3em,
+      [
+        #box(fill: rgb("F8FAFC"), stroke: 2pt + rgb("1E293B"), inset: 2.5em, radius: 1em, width: 100%, [
+          #text(size: 18pt, weight: "bold", fill: rgb("475569"))[初期費用]
+          #v(1em)
+          #text(size: 42pt, weight: "bold", fill: rgb("0F172A"))[#theme.pricing.initial]
+          #text(size: 18pt, weight: "bold", fill: rgb("0F172A"))[万円〜]
+        ])
+      ],
+      [
+        #box(fill: rgb("F8FAFC"), stroke: 2pt + rgb("F97316"), inset: 2.5em, radius: 1em, width: 100%, [
+          #text(size: 18pt, weight: "bold", fill: rgb("C2410C"))[月額費用]
+          #v(1em)
+          #text(size: 42pt, weight: "bold", fill: rgb("9A3412"))[#theme.pricing.monthly]
+          #text(size: 18pt, weight: "bold", fill: rgb("9A3412"))[万円〜]
+        ])
+      ]
+    )
+    #if "free_trial" in theme.pricing and theme.pricing.free_trial != "" [
+      #v(4em)
+      #box(fill: rgb("FFF7ED"), inset: 2em, radius: 1em, width: 100%, [
+        #text(size: 18pt, weight: "bold", fill: rgb("C2410C"))[無料トライアルについて]
+        #v(1em)
+        #text(size: 16pt)[#theme.pricing.free_trial]
+      ])
     ]
   ]
 ]
