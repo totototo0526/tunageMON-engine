@@ -30,6 +30,7 @@ cp -r web/dist web/dist_production
 # 3. Astro (Web/Preview) のビルド
 echo "🌐 Web (プレビュー用Astro) のビルドを実行中..."
 cd web
+rm -rf node_modules/.astro
 export PUBLIC_IS_PREVIEW=true
 export BASE_PATH=/
 npm run build
