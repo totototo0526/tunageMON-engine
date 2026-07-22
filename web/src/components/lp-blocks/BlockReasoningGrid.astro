@@ -7,7 +7,7 @@ const { block } = Astro.props;
   <div class="reason-list">
     {block.items && block.items.map((item, i) => (
     <article class={`reason-row ${i % 2 !== 0 ? 'is-even' : ''}`} data-fade="0">
-      <div class="reason-visual"><img src={item.image} alt={item.imageAlt} width="1448" height="1086" loading="lazy" decoding="async" /></div>
+      <div class="reason-visual"><img src={item.image.startsWith('/') || item.image.startsWith('http') || item.image.startsWith('.') ? item.image : `/assets/images/${item.image}`} alt={item.imageAlt} width="1448" height="1086" loading="lazy" decoding="async" /></div>
       <div class="reason-content"><span class="reason-number">{item.num}</span><h4>{item.title}</h4><p>{item.desc}</p></div>
     </article>
     ))}

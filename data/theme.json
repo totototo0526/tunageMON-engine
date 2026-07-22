@@ -378,42 +378,42 @@
               "num": "POINT 01",
               "title": "会社の方針を最初に覚え込ませる",
               "desc": "導入時に、言葉遣い・優先順位・やってはいけないことをAIへ設定します。誰が話しかけても、会社の方針に沿った同じ振る舞いで応えます。",
-              "image": "../../assets/reasons/01-policy.webp",
+              "image": "/assets/images/01-policy.webp",
               "imageAlt": "人が会社の方針を説明し、AIが優先順位や確認条件を整理しているイメージ"
             },
             {
               "num": "POINT 02",
               "title": "記憶が消えない",
               "desc": "AIは、保存された過去のやり取り・決定・経緯を必要なときに検索して呼び出します。「先月のあの件」も、担当者に聞かずAIに聞けます。人が確認した内容は共有台帳に残るので、担当者が入れ替わっても同じ考え方で仕事が進みます。属人化した記憶が、会社の記憶に変わります。",
-              "image": "../../assets/reasons/02-memory.webp",
+              "image": "/assets/images/02-memory.webp",
               "imageAlt": "AIが過去の会話や決定の記録から必要な経緯を探し、人へ渡しているイメージ"
             },
             {
               "num": "POINT 03",
               "title": "うまくいったやり方を、自分で手順書にする",
               "desc": "一度うまく処理できた仕事は、AIが手順として整理し、人の確認を経て共有台帳に残します。次から同じ品質で繰り返せるため、「マニュアルを作る時間がない」会社でも、日々の業務をこなすだけで手順書が育ちます。",
-              "image": "../../assets/reasons/03-manual.webp",
+              "image": "/assets/images/03-manual.webp",
               "imageAlt": "人が確認した仕事の流れをAIが手順に整理し、別の社員が活用しているイメージ"
             },
             {
               "num": "POINT 04",
               "title": "整理した結果を、共有台帳に書き込む",
               "desc": "AIは、集めた経緯・決めたこと・手順を整理し、人の確認を経て共有台帳へ記録します。AIとのやり取りの中に埋もれず、台帳を開けば誰でも同じ情報にたどり着けます。AIが整理し、人が確かめ、台帳に残す——この循環が全体の仕組みです。",
-              "image": "../../assets/reasons/04-ledger.webp",
+              "image": "/assets/images/04-ledger.webp",
               "imageAlt": "AIが整理した情報を人が確認し、共有台帳へ記録して社員が閲覧するイメージ"
             },
             {
               "num": "POINT 05",
               "title": "決まった仕事は決まった時間に",
               "desc": "日次の進捗まとめ、期限前のリマインド、定例前の資料集めなど、繰り返しの仕事はAIが決まった時間に実行し、普段のチャットに届けます。",
-              "image": "../../assets/reasons/05-schedule.webp",
+              "image": "/assets/images/05-schedule.webp",
               "imageAlt": "AIが決まった時間に進捗や期限、定例資料を準備して社員へ届けるイメージ"
             },
             {
               "num": "POINT 06",
               "title": "勝手に確定しない",
               "desc": "AIは人に代わって決めるのではなく、判断材料を整え、実行を支える副官のような役割です。AIが独断で外部へメールを送ったり、数字を確定したりすることはありません。送る・決めるは人が行います。",
-              "image": "../../assets/reasons/06-human-approval.webp",
+              "image": "/assets/images/06-human-approval.webp",
               "imageAlt": "AIが下書きと判断材料を人へ渡し、人が確認して送信や実行を決めるイメージ"
             }
           ],

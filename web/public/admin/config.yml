@@ -14,8 +14,8 @@ backend:
 local_backend: true
 
 
-media_folder: "web/src/content/themes/image"
-public_folder: "/src/content/themes/image"
+media_folder: "web/public/assets/images"
+public_folder: "/assets/images"
 
 collections:
   - name: "themes"

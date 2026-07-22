@@ -16,7 +16,7 @@ const { theme } = Astro.props;
          const delay = index * 80;
          return (
            <article class="problem-card" data-fade={delay}>
-             <div class="problem-card-media"><img src={`../../assets/problems/cards/${img}`} alt={title} width="1672" height="941" loading="lazy" decoding="async" /></div>
+             <div class="problem-card-media"><img src={img.startsWith('/') || img.startsWith('http') || img.startsWith('.') ? img : `/assets/images/${img}`} alt={title} width="1672" height="941" loading="lazy" decoding="async" /></div>
              <div class="problem-card-body"><h3>{title}</h3><p>{desc}</p></div>
            </article>
          );
