@@ -16,8 +16,23 @@ import BlockComparisonCards from '../lp-blocks/BlockComparisonCards.astro';
 import BlockText from '../lp-blocks/BlockText.astro';
 import BlockChatDemo from '../lp-blocks/BlockChatDemo.astro';
 import BlockReasoningGrid from '../lp-blocks/BlockReasoningGrid.astro';
+import * as yaml from 'js-yaml';
 
 const { theme } = Astro.props;
+
+// AI生成等のraw_yamlが存在する場合はパースして上書き適用する
+if (theme.data.raw_yaml) {
+  try {
+    const parsed = yaml.load(theme.data.raw_yaml);
+    if (parsed && typeof parsed === 'object') {
+      // 既存の theme.data に対して、パースされたプロパティを上書きマージする
+      // ※id, layout などの基本項目はそのまま残す想定
+      theme.data = { ...theme.data, ...parsed };
+    }
+  } catch (e) {
+    console.error("YAML Parse Error in raw_yaml:", e);
+  }
+}
 ---
 
 <style is:global>

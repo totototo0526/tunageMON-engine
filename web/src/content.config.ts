@@ -20,6 +20,7 @@ const themesCollection = defineCollection({
     image: z.string().optional(),
     layout: z.string().optional(),
     hidden: z.boolean().optional(),
+    raw_yaml: z.string().optional(),
     permalink: z.string().optional(),
     links: z.array(z.object({
       text: z.string(),

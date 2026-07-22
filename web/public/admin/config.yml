@@ -28,6 +28,22 @@ collections:
     fields:
       - {label: "ID", name: "id", widget: "string"}
       - {label: "Layout", name: "layout", widget: "string", default: "template_a"}
+      - {label: "Hidden (裏LP設定)", name: "hidden", widget: "boolean", required: false, default: false}
+      - {label: "Permalink (カスタムURL)", name: "permalink", widget: "string", required: false, hint: "例: 04-theme/detail"}
+      - label: "Links (外部/詳細リンク)"
+        name: "links"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Text", name: "text", widget: "string"}
+          - {label: "URL", name: "url", widget: "string"}
+          - {label: "Type", name: "type", widget: "select", options: ["link", "pdf"], default: "link", required: false}
+          - {label: "Icon", name: "icon", widget: "string", required: false}
+      - label: "Advanced: AI生成YAML (一括上書き用)"
+        name: "raw_yaml"
+        widget: "text"
+        required: false
+        hint: "AIが出力したYAMLをここに貼り付けると、下のBlocksやDownloadsなどを上書きしてレイアウトが生成されます。"
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Subtitle", name: "subtitle", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
