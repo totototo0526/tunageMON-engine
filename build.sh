@@ -10,25 +10,10 @@ cd web
 node scripts/generate-theme-json.mjs
 cd ..
 
-# 1. Typst (PDF) のビルド
-# ※ 現状はまだJSONとの完全な動的バインディング（Rust等）ではなく、
-# モックアップの .typ をコンパイルするのみのプレースホルダーです。
-echo "📄 プレゼン用PDF (Typst) のビルドを実行中..."
-cd pdf
-# CI環境でダウンロードしたフォントを読み込むために --font-path を追加
-typst compile --root .. --font-path fonts presentation.typ
-if [ $? -eq 0 ]; then
-  mkdir -p ../web/public/slides
-  cp presentation.pdf ../web/public/slides/simulator_presentation.pdf
-  for theme_file in ../web/src/content/themes/*.md; do
-    theme_id=$(basename "$theme_file" .md)
-    cp presentation.pdf "../web/public/slides/${theme_id}_presentation.pdf"
-  done
-  echo "✅ PDFのビルドに成功しました。"
-else
-  echo "❌ PDFのビルドに失敗しました。"
-  exit 1
-fi
+# 1.5 プレゼン用PDFの動的自動生成 (テーマごと)
+echo "📄 テーマ別PDF (Typst) の自動生成を実行中..."
+cd web
+node scripts/generate-pdfs.mjs
 cd ..
 
 # 2. 本番用エクスポート (ZIP) の生成
