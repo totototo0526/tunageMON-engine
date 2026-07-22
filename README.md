@@ -10,6 +10,7 @@
 *   **Webジェネレーター:** [Astro](https://astro.build/) (v4系)
 *   **PDFジェネレーター:** [Typst](https://typst.app/)
 *   **スタイリング:** Tailwind CSS (v4)
+*   **CMS（GUI編集）:** [Decap CMS](https://decapcms.org/)
 *   **自動化:** GitHub Actions (ビルド・デプロイ)
 
 ## ディレクトリ構成
@@ -22,7 +23,8 @@
 │   │   ├── components/     # Astroコンポーネント（LPの各ブロック）
 │   │   ├── layouts/        # ページレイアウト（LPLayoutなど）
 │   │   └── pages/          # 動的ルーティング ([...slug].astro)
-│   ├── public/           # 画像、CSS、JS、Typst用テンプレートなど
+│   ├── public/
+│   │   └── admin/          # Decap CMS の設定ファイル (config.yml)
 │   ├── scripts/          # MDからJSON、PDFを生成するNodeスクリプト
 │   ├── astro.config.mjs  # Astro設定
 │   └── package.json
@@ -33,11 +35,36 @@
 
 ## 使い方
 
-### 1. 記事（テーマ）の追加・編集
-新しいLPや提案書を作成するには、`web/src/content/themes/` ディレクトリに新しいMarkdownファイルを作成します（例: `08-theme.md`）。
-Frontmatter（ファイルの先頭の `---` で囲まれた部分）に、タイトルや必要なブロック構成を記述します。
+### 方法A: 管理UI（Decap CMS）での編集【推奨】
 
-### 2. ローカルでの開発とプレビュー
+コードに触れず、GUIでLP内容を編集する方法です。
+
+**URL:** `https://tunagemon.totototo0526.xyz/admin/`
+
+#### ログイン方法
+GitHub アカウントでOAuth認証を行います。初回はGitHubへのアクセス許可を求められます。
+
+#### 手順
+1. ログイン後、左のサイドバーから **「Themes / LPs」** を選択します。
+2. 一覧から編集したいLPを選ぶか、**「New Themes / LPs」** で新規作成します。
+3. フォームに必要な情報を入力し、**「Publish」** を押すとGitHubに直接コミットされます。
+4. コミット後、数分でGitHub Actionsのデプロイが走り、サイトに反映されます。
+
+#### AIを使った一括入力（`raw_yaml` フィールド）
+
+管理UI内に **「Advanced: AI生成YAML (一括上書き用)」** というフィールドがあります。
+このフィールドに、AIが出力したYAML形式のfrontmatterを貼り付けると、Blocksなどのフォームを丸ごと上書きしてレイアウトを生成できます。
+詳しいYAMLの書き方は [`.agents/AGENTS.md`](.agents/AGENTS.md) のブロックコンポーネント一覧を参照してください。
+
+---
+
+### 方法B: Markdownファイルを直接編集
+
+`web/src/content/themes/` ディレクトリにMarkdownファイルを直接作成・編集します（例: `08-theme.md`）。
+Frontmatter（ファイルの先頭の `---` で囲まれた部分）に、タイトルや必要なブロック構成を記述します。
+利用可能なブロックコンポーネントの一覧は [`.agents/AGENTS.md`](.agents/AGENTS.md) を参照してください。
+
+### 方法C: ローカルでの開発とプレビュー
 ローカルでプレビューサーバーを立ち上げるには以下のコマンドを実行します。
 （※事前に Node.js v22 以上がインストールされている必要があります）
 
@@ -47,7 +74,7 @@ npm install
 npm run dev
 ```
 
-### 3. 本番用ビルドとPDF生成
+### 方法D: 本番用ビルドとPDF生成
 手元で本番と同じビルド（PDF生成、本番用HTML、ZIPファイルの作成）を行うには、プロジェクトルートで以下のコマンドを実行します。
 
 ```bash
