@@ -510,7 +510,7 @@
     {
       "id": "04",
       "layout": "template_a",
-      "title": "つなげモン DB",
+      "title": "つなげモン ハブ",
       "subtitle": "バラバラのExcelを、全社でつながるデータベースへ。",
       "description": "社内に点在する<span class=\"text-blue-600 font-bold border-b-2 border-blue-600\">数十個のExcelやスプレッドシート</span>を統合し、一つのデータベースとして機能させます。基幹システムを入れ替えることなく、部署間の情報分断を解消します。",
       "hero_services": [
