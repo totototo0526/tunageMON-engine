@@ -15,7 +15,7 @@ const { frontmatter } = Astro.props;
     <meta name="robots" content="noindex, nofollow">
     <title>{frontmatter.title} | つなげモン</title>
     <script is:inline src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
 <body class="font-sans text-slate-800 bg-white">
@@ -31,7 +31,7 @@ const { frontmatter } = Astro.props;
     
     <AdminPanel themeSlug={frontmatter.id} />
 
-    <script is:inline src="../../assets/js/main.js"></script>
+    <script is:inline src="/assets/js/main.js"></script>
 </body>
 
 </html>
