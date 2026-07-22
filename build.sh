@@ -36,6 +36,9 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
+# 本番用ビルドの成果物を一時的に退避しておく（プレビュー用のビルドで上書きされるため）
+cp -r web/dist web/dist_production
+
 # 3. Astro (Web/Preview) のビルド
 echo "🌐 Web (プレビュー用Astro) のビルドを実行中..."
 cd web
@@ -46,6 +49,9 @@ if [ $? -eq 0 ]; then
   echo "✅ Webのビルドに成功しました。"
   # 生成された本番用ZIPをプレビューサイトのルートに配置してダウンロード可能にする
   mv ../production-build.zip dist/
+  
+  # 退避しておいた本番用成果物を、プレビュー環境の /production/ サブディレクトリに配置する
+  mv dist_production dist/production
 else
   echo "❌ Webのビルドに失敗しました。"
   exit 1
