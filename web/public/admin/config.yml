@@ -4,11 +4,10 @@
 # チーム運用時は GitHub リポジトリへ直接変更をコミットします。
 backend:
   name: github
-  repo: YOUR_GITHUB_USERNAME/tunageMON  # ※お使いの GitHub ユーザー名/リポジトリ名に変更してください
+  repo: totototo0526/tunageMON-engine
   branch: main
-  # 認証プロキシサービス（OAuth Provider）をご利用の場合は以下をコメント解除して指定します
-  # base_url: https://your-oauth-provider.vercel.app
-  # auth_endpoint: /api/auth
+  base_url: https://tunagemon.totototo0526.xyz
+  auth_endpoint: auth
 
 # ローカル開発用サーバー設定
 # `npx decap-server` が起動中の場合は認証不要でローカル保存が優先されます
@@ -32,6 +31,7 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Subtitle", name: "subtitle", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
+      - {label: "Main Image", name: "main_image", widget: "image", required: false}
       - label: "Hero Services"
         name: "hero_services"
         widget: "list"
@@ -81,7 +81,7 @@ collections:
                   - {label: "Before", name: "before", widget: "string"}
                   - {label: "After", name: "after", widget: "string"}
                   - {label: "Description", name: "desc", widget: "text"}
-                  - {label: "Image", name: "image", widget: "string", required: false}
+                  - {label: "Image", name: "image", widget: "image", required: false}
           - label: "Cards Block"
             name: "BlockCards"
             widget: "object"
@@ -180,7 +180,7 @@ collections:
                   - {label: "Number", name: "num", widget: "string"}
                   - {label: "Title", name: "title", widget: "string"}
                   - {label: "Description", name: "desc", widget: "text"}
-                  - {label: "Image URL", name: "image", widget: "string", required: false}
+                  - {label: "Image", name: "image", widget: "image", required: false}
                   - {label: "Image Alt", name: "imageAlt", widget: "string", required: false}
           - label: "Steps Block"
             name: "BlockSteps"
