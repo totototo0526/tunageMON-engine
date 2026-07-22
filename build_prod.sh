@@ -37,8 +37,12 @@ find dist -maxdepth 1 -name "*.html" -exec sed -i 's|href="/|href="./|g' {} +
 find dist -maxdepth 1 -name "*.html" -exec sed -i 's|src="/|src="./|g' {} +
 
 # themes/*/ 階層などの深いHTML用
-find dist/themes -name "*.html" -exec sed -i 's|href="/|href="../../|g' {} +
-find dist/themes -name "*.html" -exec sed -i 's|src="/|src="../../|g' {} +
+find dist/themes -mindepth 2 -maxdepth 2 -name "*.html" -exec sed -i 's|href="/|href="../../|g' {} +
+find dist/themes -mindepth 2 -maxdepth 2 -name "*.html" -exec sed -i 's|src="/|src="../../|g' {} +
+
+# themes/*/*/ 階層 (permalink等で深くなった場合) 用
+find dist/themes -mindepth 3 -maxdepth 3 -name "*.html" -exec sed -i 's|href="/|href="../../../|g' {} +
+find dist/themes -mindepth 3 -maxdepth 3 -name "*.html" -exec sed -i 's|src="/|src="../../../|g' {} +
 
 # ZIP化
 echo "📦 本番用コードをZIP化しています..."

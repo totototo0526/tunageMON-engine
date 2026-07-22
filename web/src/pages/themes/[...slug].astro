@@ -10,9 +10,9 @@ export async function getStaticPaths() {
     // 例: permalink: "05-theme/detail"
     let slug = theme.id;
     if (theme.data.permalink) {
-        // "themes/xxx" のように指定されていた場合、"themes/" を削る。
         slug = theme.data.permalink.replace(/^themes\//, '').replace(/\.html$/, '');
     }
+    console.log(`[DEBUG Astro Route] ID: ${theme.id}, Permalink: ${theme.data.permalink}, Slug: ${slug}`);
     return {
       params: { slug },
       props: { theme },

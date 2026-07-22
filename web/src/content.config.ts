@@ -19,6 +19,18 @@ const themesCollection = defineCollection({
     dateAdded: z.string().optional(),
     image: z.string().optional(),
     layout: z.string().optional(),
+    hidden: z.boolean().optional(),
+    permalink: z.string().optional(),
+    links: z.array(z.object({
+      text: z.string(),
+      url: z.string(),
+      type: z.string().optional(),
+      icon: z.string().optional(),
+    })).optional(),
+    downloads: z.array(z.object({
+      label: z.string().optional(),
+      file: z.string()
+    })).optional(),
     hero_services: z.array(z.string()).optional(),
     pricing: z.object({
       free_trial: z.string().optional(),
