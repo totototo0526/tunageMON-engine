@@ -36,6 +36,13 @@ collections:
         name: "hero_services"
         widget: "list"
         required: false
+      - label: "Downloads"
+        name: "downloads"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Label", name: "label", widget: "string", hint: "例：資料ダウンロード"}
+          - {label: "File", name: "file", widget: "file", hint: "PDFなどのファイルをアップロード"}
       - label: "Pricing"
         name: "pricing"
         widget: "object"

@@ -5,9 +5,14 @@ title: つなげモン AI副官（No.2）
 subtitle: 事業の判断と実行をスピードアップ。
 description: 今までどおりの仕事をAIと進めるだけで、商談の経緯や案件の状況、各業務の手順が、社内で共有できる形に整理されていきます。
 hero_services:
-- 専用AI（AI副官）の環境構築
-- 定期ヒアリングで実行結果を確認し、改善策を一緒に検討
-- 社内担当者への運用方法、AI・IT指導
+- 01専用AI(AI副官)の環境構築
+- 02定期ヒアリングで実行結果を確認し、改善策を一緒に検討
+- 03社内担当者への運用方法、AI・IT指導
+downloads:
+- label: 特化LP導入事例集（PDF）
+  file: sample.pdf
+- label: 詳細仕様書（PDF）
+  file: spec.pdf
 pricing:
   free_trial: トライアル期間中、環境構築や支援にかかる当社への費用は無料です(ChatGPT有料プランなどの実費を除く)。
   initial: '27'
