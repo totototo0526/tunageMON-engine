@@ -9,7 +9,7 @@ const isBuild = process.env.npm_lifecycle_event === 'build';
 // https://astro.build/config
 export default defineConfig({
   site: process.env.SITE_URL || 'https://totototo0526.github.io',
-  base: process.env.BASE_PATH || '/',
+  base: process.env.BASE_PATH || undefined,
   integrations: [react()],
   vite: {
     plugins: [tailwindcss()]
