@@ -30,8 +30,7 @@
 // Helper: String truncate function
 #let truncate(s, max-len: 80) = {
   if s == none { return "" }
-  let s_str = str(s)
-  if s_str.len() > max-len { s_str.slice(0, max-len) + "..." } else { s_str }
+  return s
 }
 
 // ----------------------------------------------------------------------------
