@@ -31,7 +31,7 @@ const { theme } = Astro.props;
              {dl.label || '資料ダウンロード'}
            </a>
         ))}
-        {theme.data.links && theme.data.links.length > 0 && theme.data.links.map(link => (
+        {theme.data.links && theme.data.links.length > 0 && theme.data.links.filter((l: any) => l.text !== "詳細を確認する").map((link: any) => (
            <a href={link.url} target={link.type === 'pdf' ? '_blank' : '_self'} style="display:inline-flex;align-items:center;gap:8px;background:#FFFFFF;color:var(--c-primary);border:1px solid var(--c-primary);font-size:16px;font-weight:700;letter-spacing:.06em;padding:15px 30px;border-radius:3px;text-decoration:none;transition:background .2s ease" style-hover="background:#F2F1EC">
              {link.text}
            </a>
