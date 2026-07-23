@@ -8,11 +8,12 @@ hero_services:
 - 01専用AI(AI副官)の環境構築
 - 02定期ヒアリングで実行結果を確認し、改善策を一緒に検討
 - 03社内担当者への運用方法、AI・IT指導
-downloads:
-- label: 導入事例集（PDF）
-  file: sample.pdf
-- label: 詳細仕様書（PDF）
-  file: spec.pdf
+# TODO: PDF等の資料の準備ができたら以下のコメントアウトを外してください
+# downloads:
+# - label: 導入事例集（PDF）
+#   file: sample.pdf
+# - label: 詳細仕様書（PDF）
+#   file: spec.pdf
 pricing:
   free_trial: トライアル期間中、環境構築や支援にかかる当社への費用は無料です(ChatGPT有料プランなどの実費を除く)。
   initial: '27'
