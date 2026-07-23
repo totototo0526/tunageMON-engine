@@ -8,10 +8,6 @@ hero_services:
   - "01 古い生産設備への後付けセンサー対応"
   - "02 異常発生時のスマホへの即時アラート通知"
   - "03 稼働率や歩留まりのリアルタイム・ダッシュボード"
-pricing:
-  free_trial: "まずは1つのラインにセンサーを設置し、データの取れ高や精度を無償で検証するPoC（概念実証）をご用意しています。"
-  initial: "150"
-  monthly: "50"
 button:
   type: "link"
   url: "./themes/05-theme/index.html"
@@ -40,17 +36,17 @@ diagram_html: |
 blocks:
   - type: BlockStats
     subtitle: "01"
-    title: "IoT化がもたらす圧倒的な現場改善"
+    title: "期待できる現場改善"
     desc: "※以下は支援内容に基づく想定イメージです。"
     items:
-      - number: "80%"
-        label: "ダウンタイム削減"
+      - number: "大幅減"
+        label: "ダウンタイム"
         desc: "故障の予兆を事前に検知し、機械が完全に停止する前にメンテナンスを行います。"
-      - number: "0分"
-        label: "異常気づき遅れ"
+      - number: "即時"
+        label: "異常の通知"
         desc: "ランプやアラームだけでなく、担当者のスマホ・スマートウォッチに直接通知します。"
       - number: "24h"
-        label: "無人監視の実現"
+        label: "無人監視"
         desc: "夜間や休日でもセンサーが工場の状態を監視し続け、異常があれば即座に管理者を呼び出します。"
 
   - type: BlockIntegration
@@ -60,15 +56,15 @@ blocks:
     center: "つなげモン IoT"
     spokes:
       - name: "温度・振動センサー"
-        icon: "🌡️"
+        icon: ""
       - name: "PLC（制御装置）"
-        icon: "⚙️"
+        icon: ""
       - name: "生産管理システム"
-        icon: "🏭"
+        icon: ""
       - name: "Kintone/AWS"
-        icon: "☁️"
+        icon: ""
       - name: "LINE WORKS"
-        icon: "💬"
+        icon: ""
 
   - type: BlockBeforeAfter
     subtitle: "03"
@@ -80,6 +76,14 @@ blocks:
         after: "異常発生から0.5秒で、担当者のスマホにプッシュ通知"
         desc: "これまでは機械のパトランプを目視で確認する必要がありましたが、システム直結により、設備の異常信号をキャッチした瞬間にチャットツールへ自動通知。対応スピードが劇的に向上しました。"
         image: "01-policy.webp"
+      - tag: "歩留まり・品質の安定"
+        before: "不良品が多発してから、数時間後にようやく機械を止める"
+        after: "振動センサーの異常値で、不良が出る前にアラート通知"
+        desc: "後付けの振動・温度センサーが「いつもと違う波形」を検知。熟練工の勘に頼っていた故障の予兆をデータで捉え、不良品を大量生産してしまう前に対策が打てるようになりました。"
+      - tag: "稼働日報の自動化"
+        before: "作業員が手書きで日報を作成し、翌日にExcelへ手打ち"
+        after: "PLCから直接データを取得し、リアルタイムにグラフ化"
+        desc: "各機械の稼働時間や生産個数を、制御装置（PLC）から直接データベースへ送信。事務所のモニターに工場の「今」が常に表示され、日報作成の手間もゼロになりました。"
 
   - type: BlockSteps
     subtitle: "04"
@@ -95,7 +99,7 @@ blocks:
   - type: BlockCTA
     theme: "dark"
     title: "工場の「今」を、手元のスマホで確認しませんか。"
-    desc: "まずは1台の機械から。センサーの無料貸出とテスト運用をご相談ください。"
+    desc: "まずは1台の機械から。貴社の設備環境に合わせた最適なIoT化プランをご提案いたします。"
     button:
       text: "IoT導入を相談する"
       url: "https://www.k-sp.co.jp/admin/std/contact/new"
