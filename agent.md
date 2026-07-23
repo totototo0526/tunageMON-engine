@@ -36,3 +36,6 @@
 - [x] Readiness 1: Initialize docs for readiness verification (`docs/vps_readiness_verification/`).
 - [x] Readiness 2: Test Astro dev server and preview environment (Task 4, HTTP 200 OK verified on port 4321).
 - [x] Readiness 3: Test Decap CMS live editing & local backend saving (Task 2, proxy server verified on port 8081).
+
+## Future Roadmap / Ideas
+- **Template B (Use Case Layouts):** Investigate abstracting highly-custom HTML (e.g., Use Case pages with flow diagrams, mockups) into reusable CMS blocks (`Template B`). Currently on hold to avoid premature optimization before the initial LP release. Will re-evaluate the optimal abstraction pattern after more custom pages are developed.
