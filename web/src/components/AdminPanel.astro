@@ -1,6 +1,6 @@
 ---
 const isPreview = import.meta.env.PUBLIC_IS_PREVIEW !== 'false';
-const { themeSlug = 'simulator' } = Astro.props;
+const { themeSlug = 'simulator', hidePdf = false } = Astro.props;
 ---
 
 {isPreview && (
@@ -22,6 +22,7 @@ const { themeSlug = 'simulator' } = Astro.props;
       
       <div class="space-y-3">
         <!-- PDF Download Button -->
+        {!hidePdf && (
         <a href={`/slides/${themeSlug}_presentation.pdf`} target="_blank" class="w-full flex items-center justify-between bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 rounded-lg px-3 py-3 transition group/btn shadow-sm">
           <div class="flex items-center gap-2 font-bold text-sm">
             <i data-lucide="file-text" class="w-5 h-5"></i>
@@ -29,6 +30,7 @@ const { themeSlug = 'simulator' } = Astro.props;
           </div>
           <i data-lucide="external-link" class="w-4 h-4 opacity-50 group-hover/btn:opacity-100 transition"></i>
         </a>
+        )}
 
         <!-- ZIP Download Button -->
         <a href="/production-build.zip" class="w-full flex items-center justify-between bg-orange-50 hover:bg-orange-100 text-orange-700 border border-orange-200 rounded-lg px-3 py-3 transition group/btn shadow-sm">
