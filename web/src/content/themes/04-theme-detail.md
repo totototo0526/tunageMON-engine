@@ -3,7 +3,7 @@ id: "04-detail"
 layout: "template_a"
 title: "つなげモン ハブ（詳細資料）"
 subtitle: "システム連携の裏側と技術仕様について"
-description: 'このページは「つなげモン ハブ」の技術的な詳細やセキュリティ要件について記載した<span class="text-purple-600 font-bold border-b-2 border-purple-600">非公開の特化LP</span>です。'
+description: 'このページは「つなげモン ハブ」の技術的な詳細やセキュリティ要件について記載した<span class="text-purple-600 font-bold border-b-2 border-purple-600">非公開の詳細ページ</span>です。'
 hidden: true
 permalink: "04-theme/detail"
 links:

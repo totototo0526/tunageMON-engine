@@ -15,7 +15,7 @@ pricing:
 button:
   type: "link"
   url: "./themes/05-theme/index.html"
-  text: "特化LPを見る"
+  text: "詳細を確認する"
   icon: "external-link"
 problems:
   - title: "機械がいつ止まったか分からない"

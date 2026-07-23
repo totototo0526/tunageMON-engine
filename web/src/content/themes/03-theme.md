@@ -15,7 +15,7 @@ pricing:
 button:
   type: "link"
   url: "./themes/03-theme/index.html"
-  text: "特化LPを見る"
+  text: "詳細を確認する"
   icon: "external-link"
 problems:
   - title: "終わらない「事務所での打ち直し」"

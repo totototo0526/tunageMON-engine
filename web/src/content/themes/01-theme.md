@@ -15,7 +15,7 @@ pricing:
 button:
   type: "link"
   url: "./themes/01-theme/index.html"
-  text: "特化LPを見る"
+  text: "詳細を確認する"
   icon: "external-link"
 problems:
   - title: "電話・FAXでの受発注による非効率"

@@ -9,7 +9,7 @@ hero_services:
 - 02定期ヒアリングで実行結果を確認し、改善策を一緒に検討
 - 03社内担当者への運用方法、AI・IT指導
 downloads:
-- label: 特化LP導入事例集（PDF）
+- label: 導入事例集（PDF）
   file: sample.pdf
 - label: 詳細仕様書（PDF）
   file: spec.pdf
@@ -21,7 +21,7 @@ dateAdded: '2026-07-21'
 button:
   type: link
   url: ./themes/07-theme/index.html
-  text: 特化LPを見る
+  text: 詳細を確認する
   icon: external-link
 problems:
 - title: 経営・営業状況のブラックボックス化
