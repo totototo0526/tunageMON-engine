@@ -4,10 +4,7 @@ const { theme } = Astro.props;
 {theme.data.pricing && (
 <section id="pricing" data-screen-label="料金" style="background:#FFFFFF;padding:clamp(72px,9vw,110px) 24px;scroll-margin-top:70px">
   <div style="max-width:1080px;margin:0 auto">
-    <div data-fade="0" style="display:flex;align-items:center;gap:14px;margin:0 0 16px">
-      <span style="font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--c-accent)">02</span>
-      <span style="width:36px;height:1px;background:#C9C4B6"></span>
-    </div>
+
     <h2 data-fade="0" style="margin:0 0 18px;font-size:clamp(26px,3.6vw,38px);font-weight:900;line-height:1.45;letter-spacing:.03em;color:#1F2430;font-feature-settings:'palt'">料金(本番移行後の費用)</h2>
     <p data-fade="0" style="margin:0 0 36px;max-width:760px;font-size:15.5px;line-height:2;color:#444B59">{theme.data.pricing.free_trial || 'トライアル期間中、環境構築や支援にかかる当社への費用は無料です(ChatGPT有料プランなどの実費を除く)。'}</p>
 
