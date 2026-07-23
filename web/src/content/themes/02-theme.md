@@ -27,6 +27,24 @@ problems:
   - title: "顧客をお待たせするレスポンスの遅れ"
     description: "情報が分散しているため、過去の履歴を探すのに時間がかかり、結果的に顧客への回答が遅れてクレームに繋がる。"
     image: "04-isolated-ai-use.webp"
+diagram_html: |
+  <div class="flex flex-col gap-2 z-10 w-24">
+      <div class="bg-white py-2 px-3 rounded-lg shadow-sm text-center flex items-center justify-center gap-2 border-l-4 border-blue-400">
+          <i data-lucide="mail" class="w-4 h-4 text-slate-500"></i><span class="text-[10px] font-bold">Mail</span>
+      </div>
+      <div class="bg-white py-2 px-3 rounded-lg shadow-sm text-center flex items-center justify-center gap-2 border-l-4 border-green-500">
+          <i data-lucide="message-circle" class="w-4 h-4 text-green-500"></i><span class="text-[10px] font-bold">LINE</span>
+      </div>
+      <div class="bg-white py-2 px-3 rounded-lg shadow-sm text-center flex items-center justify-center gap-2 border-l-4 border-slate-400">
+          <i data-lucide="printer" class="w-4 h-4 text-slate-500"></i><span class="text-[10px] font-bold">FAX</span>
+      </div>
+  </div>
+  <div class="h-1 bg-green-200 w-8 flex-shrink-0"></div>
+  <div class="bg-orange-500 text-white p-4 rounded-full shadow-lg z-10"><i data-lucide="filter" class="w-6 h-6"></i></div>
+  <div class="h-1 bg-slate-300 w-8 flex-shrink-0"></div>
+  <div class="bg-slate-800 text-white p-4 rounded-xl shadow-md text-center z-10 w-28 border-b-4 border-slate-900">
+      <i data-lucide="database" class="w-8 h-8 text-green-400 mx-auto mb-2"></i><span class="text-[10px] font-bold">対応履歴DB</span>
+  </div>
 blocks:
   - type: BlockText
     paragraphs:

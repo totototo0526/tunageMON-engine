@@ -33,6 +33,16 @@ problems:
 - title: 引継ぎや過去経緯の調査による負担
   description: 担当者が不在の際や引き継ぎ時に、過去のメールや資料を漁って経緯を確認するのに膨大な時間がかかっている。
   image: 02-case-history.webp
+diagram_html: |
+  <div class="bg-white p-4 rounded-xl shadow-sm text-center z-10 w-24 border border-slate-200">
+      <i data-lucide="users" class="w-8 h-8 text-indigo-400 mx-auto mb-2"></i><span class="text-[10px] font-bold">営業チーム</span>
+  </div>
+  <div class="h-1 bg-indigo-200 w-8 flex-shrink-0 relative"><i data-lucide="arrow-right-left" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-indigo-500 w-4 h-4"></i></div>
+  <div class="bg-slate-800 text-white p-4 rounded-full shadow-lg z-10"><i data-lucide="bot" class="w-6 h-6 text-indigo-300"></i></div>
+  <div class="h-1 bg-indigo-200 w-8 flex-shrink-0 relative"><i data-lucide="arrow-right-left" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-indigo-500 w-4 h-4"></i></div>
+  <div class="bg-indigo-50 text-indigo-800 p-4 rounded-xl shadow-md text-center z-10 w-28 border-b-4 border-indigo-200">
+      <i data-lucide="contact" class="w-8 h-8 text-indigo-500 mx-auto mb-2"></i><span class="text-[10px] font-bold">顧客対応</span>
+  </div>
 blocks:
 - type: BlockCards
   subtitle: 02　解決策

@@ -27,6 +27,14 @@ problems:
   - title: "進捗や納期の「言った・言わない」"
     description: "電話での納期回答や仕様変更の連絡が記録に残らず、後になって「聞いていない」「いつ送ってくれるのか」といったトラブルが絶えない。"
     image: "03-outdated-procedure.webp"
+diagram_html: |
+  <div class="bg-white p-4 rounded-xl shadow-sm text-center z-10 w-24"><i data-lucide="building-2" class="w-8 h-8 text-blue-500 mx-auto mb-2"></i><span class="text-[10px] font-bold">取引先</span></div>
+  <div class="h-1 bg-blue-200 w-12 flex-shrink-0"></div>
+  <div class="bg-orange-500 text-white p-4 rounded-full shadow-lg z-10"><i data-lucide="workflow" class="w-6 h-6"></i></div>
+  <div class="h-1 bg-slate-300 w-12 flex-shrink-0"></div>
+  <div class="bg-slate-800 text-white p-4 rounded-xl shadow-md text-center z-10 w-28 border-b-4 border-slate-900">
+      <i data-lucide="database" class="w-8 h-8 text-blue-400 mx-auto mb-2"></i><span class="text-[10px] font-bold">自社DB</span>
+  </div>
 blocks:
   - type: BlockCards
     subtitle: "02　解決策"

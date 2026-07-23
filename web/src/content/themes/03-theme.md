@@ -27,6 +27,16 @@ problems:
   - title: "「今、在庫ある？」が誰にも分からない"
     description: "紙のデータがシステムに入力されるのは翌日。営業から「在庫ある？」と聞かれても、現場に見に行かないと確実な数字が出せない。"
     image: "01-decision.webp"
+diagram_html: |
+  <div class="bg-slate-800 p-4 rounded-2xl shadow-sm text-center z-10 w-24 border-2 border-slate-700">
+      <i data-lucide="scan-barcode" class="w-8 h-8 text-yellow-400 mx-auto mb-2"></i><span class="text-[10px] font-bold text-white">スマホアプリ</span>
+  </div>
+  <div class="h-1 bg-yellow-200 w-12 flex-shrink-0 relative"><i data-lucide="wifi" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-yellow-500 w-4 h-4 transform rotate-90"></i></div>
+  <div class="bg-orange-500 text-white p-4 rounded-full shadow-lg z-10"><i data-lucide="smartphone-nfc" class="w-6 h-6"></i></div>
+  <div class="h-1 bg-slate-300 w-12 flex-shrink-0"></div>
+  <div class="bg-slate-800 text-white p-4 rounded-xl shadow-md text-center z-10 w-28 border-b-4 border-slate-900">
+      <i data-lucide="database" class="w-8 h-8 text-yellow-400 mx-auto mb-2"></i><span class="text-[10px] font-bold">在庫管理DB</span>
+  </div>
 blocks:
   - type: BlockText
     paragraphs:

@@ -27,6 +27,16 @@ problems:
   - title: "見えないサプライチェーンの弱点"
     description: "原材料の遅延や為替変動など、外部要因が変化した際に自社の利益率がどう変動するのか、直前まで分からない。"
     image: "04-isolated-ai-use.webp"
+diagram_html: |
+  <div class="bg-white p-4 rounded-xl shadow-sm text-center z-10 w-24 border border-slate-200">
+      <i data-lucide="line-chart" class="w-8 h-8 text-orange-500 mx-auto mb-2"></i><span class="text-[10px] font-bold">事業データ</span>
+  </div>
+  <div class="h-1 bg-orange-200 w-8 flex-shrink-0 relative"><i data-lucide="chevron-right" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-orange-500 w-4 h-4"></i></div>
+  <div class="bg-slate-800 text-white p-4 rounded-full shadow-lg z-10"><i data-lucide="brain-circuit" class="w-6 h-6 text-orange-400"></i></div>
+  <div class="h-1 bg-orange-200 w-8 flex-shrink-0 relative"><i data-lucide="chevron-right" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-orange-500 w-4 h-4"></i></div>
+  <div class="bg-orange-100 text-orange-800 p-4 rounded-xl shadow-md text-center z-10 w-28 border-b-4 border-orange-200">
+      <i data-lucide="target" class="w-8 h-8 text-orange-600 mx-auto mb-2"></i><span class="text-[10px] font-bold">最適解・KPI</span>
+  </div>
 blocks:
   - type: BlockText
     paragraphs:

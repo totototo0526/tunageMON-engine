@@ -27,6 +27,16 @@ problems:
   - title: "職人の「勘」に依存した異常検知"
     description: "「機械の音がいつもと違う」というベテランの感覚に頼っており、若手では故障の予兆に気づけない。"
     image: "02-memory.webp"
+diagram_html: |
+  <div class="bg-slate-700 text-white p-4 rounded-xl shadow-sm text-center z-10 w-24 border-b-4 border-slate-900">
+      <i data-lucide="factory" class="w-8 h-8 text-red-400 mx-auto mb-2"></i><span class="text-[10px] font-bold">制御装置等</span>
+  </div>
+  <div class="border-t-2 border-dashed border-red-300 w-12 flex-shrink-0 relative"><i data-lucide="rss" class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 text-red-500 w-4 h-4 bg-slate-50"></i></div>
+  <div class="bg-orange-500 text-white p-4 rounded-full shadow-lg z-10"><i data-lucide="radio" class="w-6 h-6"></i></div>
+  <div class="h-1 bg-slate-300 w-12 flex-shrink-0"></div>
+  <div class="bg-slate-800 text-white p-4 rounded-xl shadow-md text-center z-10 w-28 border-b-4 border-slate-900">
+      <i data-lucide="database" class="w-8 h-8 text-red-400 mx-auto mb-2"></i><span class="text-[10px] font-bold">生産管理DB</span>
+  </div>
 blocks:
   - type: BlockStats
     subtitle: "01"

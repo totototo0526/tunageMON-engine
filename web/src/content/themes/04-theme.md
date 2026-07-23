@@ -27,6 +27,21 @@ problems:
   - title: "経営数字が出るのが翌月中旬"
     description: "データがバラバラなため、経営会議用の資料をまとめるのに膨大な工数がかかり、スピーディな意思決定ができない。"
     image: "03-outdated-procedure.webp"
+diagram_html: |
+  <div class="flex flex-col gap-2 z-10 w-24">
+      <div class="bg-white py-2 px-2 rounded-lg shadow-sm text-center flex flex-col items-center justify-center border border-slate-200">
+          <i data-lucide="cloud" class="w-5 h-5 text-blue-400 mb-1"></i><span class="text-[9px] font-bold">Salesforce等</span>
+      </div>
+      <div class="bg-white py-2 px-2 rounded-lg shadow-sm text-center flex flex-col items-center justify-center border border-slate-200">
+          <i data-lucide="layers" class="w-5 h-5 text-yellow-500 mb-1"></i><span class="text-[9px] font-bold">Kintone等</span>
+      </div>
+  </div>
+  <div class="h-1 bg-purple-200 w-8 flex-shrink-0 relative"><i data-lucide="arrow-right-left" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-purple-500 w-4 h-4"></i></div>
+  <div class="bg-orange-500 text-white p-4 rounded-full shadow-lg z-10"><i data-lucide="cable" class="w-6 h-6 transform rotate-90"></i></div>
+  <div class="h-1 bg-purple-200 w-8 flex-shrink-0 relative"><i data-lucide="arrow-right-left" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-purple-500 w-4 h-4"></i></div>
+  <div class="bg-slate-800 text-white p-4 rounded-xl shadow-md text-center z-10 w-28 border-b-4 border-slate-900">
+      <i data-lucide="database" class="w-8 h-8 text-purple-400 mx-auto mb-2"></i><span class="text-[10px] font-bold">基幹システム</span>
+  </div>
 blocks:
   - type: BlockStats
     subtitle: "01"
