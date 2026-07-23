@@ -40,6 +40,7 @@
           "image": "03-outdated-procedure.webp"
         }
       ],
+      "diagram_html": "<div class=\"bg-white p-4 rounded-xl shadow-sm text-center z-10 w-24\"><i data-lucide=\"building-2\" class=\"w-8 h-8 text-blue-500 mx-auto mb-2\"></i><span class=\"text-[10px] font-bold\">取引先</span></div>\n<div class=\"h-1 bg-blue-200 w-12 flex-shrink-0\"></div>\n<div class=\"bg-orange-500 text-white p-4 rounded-full shadow-lg z-10\"><i data-lucide=\"workflow\" class=\"w-6 h-6\"></i></div>\n<div class=\"h-1 bg-slate-300 w-12 flex-shrink-0\"></div>\n<div class=\"bg-slate-800 text-white p-4 rounded-xl shadow-md text-center z-10 w-28 border-b-4 border-slate-900\">\n    <i data-lucide=\"database\" class=\"w-8 h-8 text-blue-400 mx-auto mb-2\"></i><span class=\"text-[10px] font-bold\">自社DB</span>\n</div>\n",
       "blocks": [
         {
           "type": "BlockCards",
@@ -214,6 +215,7 @@
           "image": "04-isolated-ai-use.webp"
         }
       ],
+      "diagram_html": "<div class=\"flex flex-col gap-2 z-10 w-24\">\n    <div class=\"bg-white py-2 px-3 rounded-lg shadow-sm text-center flex items-center justify-center gap-2 border-l-4 border-blue-400\">\n        <i data-lucide=\"mail\" class=\"w-4 h-4 text-slate-500\"></i><span class=\"text-[10px] font-bold\">Mail</span>\n    </div>\n    <div class=\"bg-white py-2 px-3 rounded-lg shadow-sm text-center flex items-center justify-center gap-2 border-l-4 border-green-500\">\n        <i data-lucide=\"message-circle\" class=\"w-4 h-4 text-green-500\"></i><span class=\"text-[10px] font-bold\">LINE</span>\n    </div>\n    <div class=\"bg-white py-2 px-3 rounded-lg shadow-sm text-center flex items-center justify-center gap-2 border-l-4 border-slate-400\">\n        <i data-lucide=\"printer\" class=\"w-4 h-4 text-slate-500\"></i><span class=\"text-[10px] font-bold\">FAX</span>\n    </div>\n</div>\n<div class=\"h-1 bg-green-200 w-8 flex-shrink-0\"></div>\n<div class=\"bg-orange-500 text-white p-4 rounded-full shadow-lg z-10\"><i data-lucide=\"filter\" class=\"w-6 h-6\"></i></div>\n<div class=\"h-1 bg-slate-300 w-8 flex-shrink-0\"></div>\n<div class=\"bg-slate-800 text-white p-4 rounded-xl shadow-md text-center z-10 w-28 border-b-4 border-slate-900\">\n    <i data-lucide=\"database\" class=\"w-8 h-8 text-green-400 mx-auto mb-2\"></i><span class=\"text-[10px] font-bold\">対応履歴DB</span>\n</div>\n",
       "blocks": [
         {
           "type": "BlockText",
@@ -378,6 +380,7 @@
           "image": "01-decision.webp"
         }
       ],
+      "diagram_html": "<div class=\"bg-slate-800 p-4 rounded-2xl shadow-sm text-center z-10 w-24 border-2 border-slate-700\">\n    <i data-lucide=\"scan-barcode\" class=\"w-8 h-8 text-yellow-400 mx-auto mb-2\"></i><span class=\"text-[10px] font-bold text-white\">スマホアプリ</span>\n</div>\n<div class=\"h-1 bg-yellow-200 w-12 flex-shrink-0 relative\"><i data-lucide=\"wifi\" class=\"absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-yellow-500 w-4 h-4 transform rotate-90\"></i></div>\n<div class=\"bg-orange-500 text-white p-4 rounded-full shadow-lg z-10\"><i data-lucide=\"smartphone-nfc\" class=\"w-6 h-6\"></i></div>\n<div class=\"h-1 bg-slate-300 w-12 flex-shrink-0\"></div>\n<div class=\"bg-slate-800 text-white p-4 rounded-xl shadow-md text-center z-10 w-28 border-b-4 border-slate-900\">\n    <i data-lucide=\"database\" class=\"w-8 h-8 text-yellow-400 mx-auto mb-2\"></i><span class=\"text-[10px] font-bold\">在庫管理DB</span>\n</div>\n",
       "blocks": [
         {
           "type": "BlockText",
@@ -582,6 +585,7 @@
           "image": "03-outdated-procedure.webp"
         }
       ],
+      "diagram_html": "<div class=\"flex flex-col gap-2 z-10 w-24\">\n    <div class=\"bg-white py-2 px-2 rounded-lg shadow-sm text-center flex flex-col items-center justify-center border border-slate-200\">\n        <i data-lucide=\"cloud\" class=\"w-5 h-5 text-blue-400 mb-1\"></i><span class=\"text-[9px] font-bold\">Salesforce等</span>\n    </div>\n    <div class=\"bg-white py-2 px-2 rounded-lg shadow-sm text-center flex flex-col items-center justify-center border border-slate-200\">\n        <i data-lucide=\"layers\" class=\"w-5 h-5 text-yellow-500 mb-1\"></i><span class=\"text-[9px] font-bold\">Kintone等</span>\n    </div>\n</div>\n<div class=\"h-1 bg-purple-200 w-8 flex-shrink-0 relative\"><i data-lucide=\"arrow-right-left\" class=\"absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-purple-500 w-4 h-4\"></i></div>\n<div class=\"bg-orange-500 text-white p-4 rounded-full shadow-lg z-10\"><i data-lucide=\"cable\" class=\"w-6 h-6 transform rotate-90\"></i></div>\n<div class=\"h-1 bg-purple-200 w-8 flex-shrink-0 relative\"><i data-lucide=\"arrow-right-left\" class=\"absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-purple-500 w-4 h-4\"></i></div>\n<div class=\"bg-slate-800 text-white p-4 rounded-xl shadow-md text-center z-10 w-28 border-b-4 border-slate-900\">\n    <i data-lucide=\"database\" class=\"w-8 h-8 text-purple-400 mx-auto mb-2\"></i><span class=\"text-[10px] font-bold\">基幹システム</span>\n</div>\n",
       "blocks": [
         {
           "type": "BlockStats",
@@ -730,6 +734,7 @@
           "image": "02-memory.webp"
         }
       ],
+      "diagram_html": "<div class=\"bg-slate-700 text-white p-4 rounded-xl shadow-sm text-center z-10 w-24 border-b-4 border-slate-900\">\n    <i data-lucide=\"factory\" class=\"w-8 h-8 text-red-400 mx-auto mb-2\"></i><span class=\"text-[10px] font-bold\">制御装置等</span>\n</div>\n<div class=\"border-t-2 border-dashed border-red-300 w-12 flex-shrink-0 relative\"><i data-lucide=\"rss\" class=\"absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 text-red-500 w-4 h-4 bg-slate-50\"></i></div>\n<div class=\"bg-orange-500 text-white p-4 rounded-full shadow-lg z-10\"><i data-lucide=\"radio\" class=\"w-6 h-6\"></i></div>\n<div class=\"h-1 bg-slate-300 w-12 flex-shrink-0\"></div>\n<div class=\"bg-slate-800 text-white p-4 rounded-xl shadow-md text-center z-10 w-28 border-b-4 border-slate-900\">\n    <i data-lucide=\"database\" class=\"w-8 h-8 text-red-400 mx-auto mb-2\"></i><span class=\"text-[10px] font-bold\">生産管理DB</span>\n</div>\n",
       "blocks": [
         {
           "type": "BlockStats",
@@ -868,6 +873,7 @@
           "image": "04-isolated-ai-use.webp"
         }
       ],
+      "diagram_html": "<div class=\"bg-white p-4 rounded-xl shadow-sm text-center z-10 w-24 border border-slate-200\">\n    <i data-lucide=\"line-chart\" class=\"w-8 h-8 text-orange-500 mx-auto mb-2\"></i><span class=\"text-[10px] font-bold\">事業データ</span>\n</div>\n<div class=\"h-1 bg-orange-200 w-8 flex-shrink-0 relative\"><i data-lucide=\"chevron-right\" class=\"absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-orange-500 w-4 h-4\"></i></div>\n<div class=\"bg-slate-800 text-white p-4 rounded-full shadow-lg z-10\"><i data-lucide=\"brain-circuit\" class=\"w-6 h-6 text-orange-400\"></i></div>\n<div class=\"h-1 bg-orange-200 w-8 flex-shrink-0 relative\"><i data-lucide=\"chevron-right\" class=\"absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-orange-500 w-4 h-4\"></i></div>\n<div class=\"bg-orange-100 text-orange-800 p-4 rounded-xl shadow-md text-center z-10 w-28 border-b-4 border-orange-200\">\n    <i data-lucide=\"target\" class=\"w-8 h-8 text-orange-600 mx-auto mb-2\"></i><span class=\"text-[10px] font-bold\">最適解・KPI</span>\n</div>\n",
       "blocks": [
         {
           "type": "BlockText",
@@ -1006,6 +1012,7 @@
           "image": "02-case-history.webp"
         }
       ],
+      "diagram_html": "<div class=\"bg-white p-4 rounded-xl shadow-sm text-center z-10 w-24 border border-slate-200\">\n    <i data-lucide=\"users\" class=\"w-8 h-8 text-indigo-400 mx-auto mb-2\"></i><span class=\"text-[10px] font-bold\">営業チーム</span>\n</div>\n<div class=\"h-1 bg-indigo-200 w-8 flex-shrink-0 relative\"><i data-lucide=\"arrow-right-left\" class=\"absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-indigo-500 w-4 h-4\"></i></div>\n<div class=\"bg-slate-800 text-white p-4 rounded-full shadow-lg z-10\"><i data-lucide=\"bot\" class=\"w-6 h-6 text-indigo-300\"></i></div>\n<div class=\"h-1 bg-indigo-200 w-8 flex-shrink-0 relative\"><i data-lucide=\"arrow-right-left\" class=\"absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-indigo-500 w-4 h-4\"></i></div>\n<div class=\"bg-indigo-50 text-indigo-800 p-4 rounded-xl shadow-md text-center z-10 w-28 border-b-4 border-indigo-200\">\n    <i data-lucide=\"contact\" class=\"w-8 h-8 text-indigo-500 mx-auto mb-2\"></i><span class=\"text-[10px] font-bold\">顧客対応</span>\n</div>\n",
       "blocks": [
         {
           "type": "BlockCards",
