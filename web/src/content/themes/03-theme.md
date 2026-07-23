@@ -14,11 +14,11 @@ pricing:
   monthly: "10"
 links:
   - text: "詳細を確認する"
-    url: "./themes/03-theme/index.html"
+    url: "/themes/03-theme/index.html"
     type: "link"
     icon: "external-link"
   - text: "利用イメージを見る"
-    url: "./themes/03-theme/usecase/index.html"
+    url: "/themes/03-theme/usecase/index.html"
     type: "link"
     icon: "image"
 problems:
