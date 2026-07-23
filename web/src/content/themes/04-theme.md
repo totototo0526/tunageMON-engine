@@ -8,10 +8,6 @@ hero_services:
   - "01 脱Excel・スプレッドシートの完全データベース化"
   - "02 既存の基幹システムや会計ソフトとのハブ機能"
   - "03 経営状況をリアルタイムで可視化するダッシュボード"
-pricing:
-  free_trial: "1ヶ月間のテスト運用環境をご提供し、現在のExcelデータがどれだけ綺麗にシステム化されるか実感いただけます。"
-  initial: "80"
-  monthly: "35"
 button:
   type: "link"
   url: "./themes/04-theme/index.html"
@@ -106,7 +102,7 @@ blocks:
   - type: BlockCTA
     theme: "dark"
     title: "Excel集計で徹夜するのは、もう終わりにしませんか。"
-    desc: "1ヶ月のテスト運用環境で、社内のデータが一つに繋がる感動を体験してください。"
+    desc: "貴社の業務フローや既存のExcelファイルをヒアリングのうえ、最適なデータベース統合プランとお見積りをご提案いたします。"
     button:
       text: "DB統合を相談する"
       url: "https://www.k-sp.co.jp/admin/std/contact/new"
