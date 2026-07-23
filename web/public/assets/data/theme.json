@@ -579,17 +579,17 @@
         {
           "title": "「最新版」がどれか分からないExcel",
           "description": "各部署が独自のフォーマットでExcelを作成。ファイル名に「最新版」「最終版２」が付き、本当のデータがどれか分からない。",
-          "image": "01-decision.webp"
+          "image": "theme04_prob1.png"
         },
         {
           "title": "手作業のシステム間転記",
           "description": "販売管理から出力したCSVを、経理が別のExcelにコピペして会計ソフトにアップロードする、虚無な作業が毎日発生している。",
-          "image": "02-case-history.webp"
+          "image": "theme04_prob2.png"
         },
         {
           "title": "経営数字が出るのが翌月中旬",
           "description": "データがバラバラなため、経営会議用の資料をまとめるのに膨大な工数がかかり、スピーディな意思決定ができない。",
-          "image": "03-outdated-procedure.webp"
+          "image": "theme04_prob3.png"
         }
       ],
       "diagram_html": "<div class=\"flex flex-col gap-2 z-10 w-24\">\n    <div class=\"bg-white py-2 px-2 rounded-lg shadow-sm text-center flex flex-col items-center justify-center border border-slate-200\">\n        <i data-lucide=\"cloud\" class=\"w-5 h-5 text-blue-400 mb-1\"></i><span class=\"text-[9px] font-bold\">Salesforce等</span>\n    </div>\n    <div class=\"bg-white py-2 px-2 rounded-lg shadow-sm text-center flex flex-col items-center justify-center border border-slate-200\">\n        <i data-lucide=\"layers\" class=\"w-5 h-5 text-yellow-500 mb-1\"></i><span class=\"text-[9px] font-bold\">Kintone等</span>\n    </div>\n</div>\n<div class=\"h-1 bg-purple-200 w-8 flex-shrink-0 relative\"><i data-lucide=\"arrow-right-left\" class=\"absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-purple-500 w-4 h-4\"></i></div>\n<div class=\"bg-orange-500 text-white p-4 rounded-full shadow-lg z-10\"><i data-lucide=\"cable\" class=\"w-6 h-6 transform rotate-90\"></i></div>\n<div class=\"h-1 bg-purple-200 w-8 flex-shrink-0 relative\"><i data-lucide=\"arrow-right-left\" class=\"absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-purple-500 w-4 h-4\"></i></div>\n<div class=\"bg-slate-800 text-white p-4 rounded-xl shadow-md text-center z-10 w-28 border-b-4 border-slate-900\">\n    <i data-lucide=\"database\" class=\"w-8 h-8 text-purple-400 mx-auto mb-2\"></i><span class=\"text-[10px] font-bold\">基幹システム</span>\n</div>\n",
