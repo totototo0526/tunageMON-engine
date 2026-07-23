@@ -17,13 +17,13 @@ button:
 problems:
   - title: "「新商品を出すと現場がパンクする」"
     description: "経営陣が新規事業を打ち出すたびに、物流や製造現場にどれだけの負荷がかかるか事前に計算できず、現場が疲弊している。"
-    image: "05-schedule.webp"
+    image: "theme06_prob1.png"
   - title: "Excelでの限界予測"
     description: "数パターンのシナリオをExcelで計算しているが、変数が多すぎて数式が壊れ、複雑なシミュレーションが不可能な状態。"
-    image: "01-decision.webp"
+    image: "theme06_prob2.png"
   - title: "見えないサプライチェーンの弱点"
     description: "原材料の遅延や為替変動など、外部要因が変化した際に自社の利益率がどう変動するのか、直前まで分からない。"
-    image: "04-isolated-ai-use.webp"
+    image: "theme06_prob3.png"
 diagram_html: |
   <div class="bg-white p-4 rounded-xl shadow-sm text-center z-10 w-24 border border-slate-200">
       <i data-lucide="line-chart" class="w-8 h-8 text-orange-500 mx-auto mb-2"></i><span class="text-[10px] font-bold">事業データ</span>
@@ -63,15 +63,15 @@ blocks:
       - num: "POINT 01"
         title: "自社データに最適化されたAIモデル"
         desc: "一般的なAI予測ツールとは異なり、御社独自の生産能力、リードタイム、原価構造を完全に学習した専用モデルを構築します。"
-        image: "hero-ai-banto.webp"
+        image: "theme06_feat1.png"
       - num: "POINT 02"
         title: "ボトルネックの自動発見機能"
         desc: "目標売上を入力すると、「3ヶ月後に第2倉庫の保管スペースが足りなくなる」といった未来のボトルネックをAIが先に指摘してくれます。"
-        image: "03-service-shared-ai-workflow.webp"
+        image: "theme06_feat2.png"
       - num: "POINT 03"
         title: "経営陣が使いやすいダッシュボード"
         desc: "複雑な計算結果を、利益率や稼働率といった分かりやすいグラフで表示。「A案」と「B案」の比較もワンクリックで行えます。"
-        image: "02-wholesale-shared-status.webp"
+        image: "theme06_feat3.png"
 
   - type: BlockSteps
     subtitle: "03"
