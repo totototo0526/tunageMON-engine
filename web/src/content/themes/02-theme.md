@@ -125,7 +125,7 @@ blocks:
   - type: BlockCTA
     theme: "dark"
     title: "自社に合った窓口一元化の方法をご提案します"
-    desc: "貴社の業務フローや既存システムをヒアリングのうえ、最適な構築プランとお見積りを作成いたします。"
+    desc: "現在の業務フローやシステム環境をヒアリングし、最適なプランとお見積りをご提案します。"
     button:
       text: "まずは無料で相談する"
       url: "https://www.k-sp.co.jp/admin/std/contact/new"
