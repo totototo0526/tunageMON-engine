@@ -4,7 +4,7 @@ layout: "template_a"
 title: "つなげモン シミュレータ"
 subtitle: "経営の「たられば」を、データとシミュレーションで証明する。"
 description: '新規事業や複数商材展開におけるリスクを統合し、<span class="text-orange-600 font-bold border-b-2 border-orange-600">機械学習を用いた最適化シミュレーション</span>を提供します。既存のサプライチェーンや財務データをもとに、未来のボトルネックを可視化します。'
-isNew: true
+dateAdded: '2026-07-24'
 hero_services:
   - "01 新規商材追加時のサプライチェーン負荷テスト"
   - "02 過去の実績データに基づく機械学習による需要予測モデリング"
