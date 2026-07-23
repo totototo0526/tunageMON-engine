@@ -21,6 +21,7 @@ const themesCollection = defineCollection({
     layout: z.string().optional(),
     hidden: z.boolean().optional(),
     raw_yaml: z.string().optional(),
+    diagram_html: z.string().optional(),
     permalink: z.string().optional(),
     links: z.array(z.object({
       text: z.string(),
