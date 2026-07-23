@@ -16,13 +16,13 @@ button:
 problems:
   - title: "「最新版」がどれか分からないExcel"
     description: "各部署が独自のフォーマットでExcelを作成。ファイル名に「最新版」「最終版２」が付き、本当のデータがどれか分からない。"
-    image: "01-decision.webp"
+    image: "theme04_prob1.png"
   - title: "手作業のシステム間転記"
     description: "販売管理から出力したCSVを、経理が別のExcelにコピペして会計ソフトにアップロードする、虚無な作業が毎日発生している。"
-    image: "02-case-history.webp"
+    image: "theme04_prob2.png"
   - title: "経営数字が出るのが翌月中旬"
     description: "データがバラバラなため、経営会議用の資料をまとめるのに膨大な工数がかかり、スピーディな意思決定ができない。"
-    image: "03-outdated-procedure.webp"
+    image: "theme04_prob3.png"
 diagram_html: |
   <div class="flex flex-col gap-2 z-10 w-24">
       <div class="bg-white py-2 px-2 rounded-lg shadow-sm text-center flex flex-col items-center justify-center border border-slate-200">
