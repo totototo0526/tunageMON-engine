@@ -12,11 +12,15 @@ pricing:
   free_trial: "まずは1台のスマホで、実際の倉庫での読み取りスピードと使い勝手をお試しいただけます。"
   initial: "20"
   monthly: "10"
-button:
-  type: "link"
-  url: "./themes/03-theme/index.html"
-  text: "詳細を確認する"
-  icon: "external-link"
+links:
+  - text: "詳細を確認する"
+    url: "./themes/03-theme/index.html"
+    type: "link"
+    icon: "external-link"
+  - text: "利用イメージを見る"
+    url: "./themes/03-theme/usecase/index.html"
+    type: "link"
+    icon: "image"
 problems:
   - title: "終わらない「事務所での打ち直し」"
     description: "現場では紙の野帳（バインダー）に手書き。夕方事務所に戻ってから、疲れた体で数時間かけてExcelやシステムに手打ちしている。"
