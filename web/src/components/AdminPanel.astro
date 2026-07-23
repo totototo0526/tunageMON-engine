@@ -1,6 +1,6 @@
 ---
 const isPreview = import.meta.env.PUBLIC_IS_PREVIEW !== 'false';
-const { themeSlug = 'simulator', hidePdf = false } = Astro.props;
+const { themeSlug = 'simulator', hidePdf = false, hideZip = false } = Astro.props;
 ---
 
 {isPreview && (
@@ -33,14 +33,18 @@ const { themeSlug = 'simulator', hidePdf = false } = Astro.props;
         )}
 
         <!-- ZIP Download Button -->
-        <a href="/production-build.zip" class="w-full flex items-center justify-between bg-orange-50 hover:bg-orange-100 text-orange-700 border border-orange-200 rounded-lg px-3 py-3 transition group/btn shadow-sm">
-          <div class="flex items-center gap-2 font-bold text-sm">
-            <i data-lucide="package" class="w-5 h-5"></i>
-            本番用コード (ZIP)
-          </div>
-          <i data-lucide="download" class="w-4 h-4 opacity-50 group-hover/btn:opacity-100 transition"></i>
-        </a>
-        <p class="text-[10px] text-slate-400 px-1 leading-tight">※社外秘の提案書(PDF)や裏側データを除外した、自社サイト公開用のクリーンなHTML群がダウンロードできます。</p>
+        {!hideZip && (
+        <>
+          <a href="/production-build.zip" class="w-full flex items-center justify-between bg-orange-50 hover:bg-orange-100 text-orange-700 border border-orange-200 rounded-lg px-3 py-3 transition group/btn shadow-sm">
+            <div class="flex items-center gap-2 font-bold text-sm">
+              <i data-lucide="package" class="w-5 h-5"></i>
+              本番用コード (ZIP)
+            </div>
+            <i data-lucide="download" class="w-4 h-4 opacity-50 group-hover/btn:opacity-100 transition"></i>
+          </a>
+          <p class="text-[10px] text-slate-400 px-1 leading-tight">※社外秘の提案書(PDF)や裏側データを除外した、自社サイト公開用のクリーンなHTML群がダウンロードできます。</p>
+        </>
+        )}
       </div>
     </div>
   </div>

@@ -29,7 +29,7 @@ const { frontmatter } = Astro.props;
     <!-- プラットフォーム共通フッター -->
     <Footer />
     
-    <AdminPanel themeSlug={frontmatter.id} />
+    <AdminPanel themeSlug={frontmatter.id} hideZip={true} />
 
     <script is:inline src="/assets/js/main.js"></script>
 </body>
