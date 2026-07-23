@@ -182,7 +182,7 @@
                   ]
                   #if "image" in point and point.image != none [
                     #v(1em)
-                    #align(center)[#image(resolve-image(point.image), width: 100%)]
+                    #align(center)[#image(resolve-image(point.image), width: 100%, height: 7em, fit: "contain")]
                   ]
                   #if "desc" in point [
                     #v(1em)
@@ -228,7 +228,7 @@
                     ]
                   ],
                   [
-                    #align(center + horizon)[#image(resolve-image(scenario.image), width: 100%)]
+                    #align(center + horizon)[#image(resolve-image(scenario.image), width: 100%, height: 15em, fit: "contain")]
                   ]
                 )
               ] else [
@@ -333,7 +333,7 @@
                   #text(weight: "bold", size: 16pt)[#item.title]
                   #if "image" in item and item.image != none [
                     #v(1em)
-                    #align(center)[#image(resolve-image(item.image), width: 100%)]
+                    #align(center)[#image(resolve-image(item.image), width: 100%, height: 8em, fit: "contain")]
                   ]
                   #v(0.8em)
                   #text(size: 13pt)[#item.desc]
@@ -603,33 +603,33 @@
 // ----------------------------------------------------------------------------
 #if "pricing" in theme and theme.pricing != none [
   #slide(title: theme.title, subtitle: "費用の目安")[
-    #v(2em)
+    #v(1.5em)
     #grid(
       columns: (1fr, 1fr),
       gutter: 3em,
       [
-        #box(fill: rgb("F8FAFC"), stroke: 2pt + rgb("1E293B"), inset: 2.5em, radius: 1em, width: 100%, [
-          #text(size: 18pt, weight: "bold", fill: rgb("475569"))[初期費用]
-          #v(1em)
-          #text(size: 42pt, weight: "bold", fill: rgb("0F172A"))[#theme.pricing.initial]
-          #text(size: 18pt, weight: "bold", fill: rgb("0F172A"))[万円〜]
+        #box(fill: rgb("F8FAFC"), stroke: 2pt + rgb("1E293B"), inset: 2em, radius: 1em, width: 100%, [
+          #text(size: 16pt, weight: "bold", fill: rgb("475569"))[初期費用]
+          #v(0.8em)
+          #text(size: 36pt, weight: "bold", fill: rgb("0F172A"))[#theme.pricing.initial]
+          #text(size: 16pt, weight: "bold", fill: rgb("0F172A"))[万円〜]
         ])
       ],
       [
-        #box(fill: rgb("F8FAFC"), stroke: 2pt + rgb("F97316"), inset: 2.5em, radius: 1em, width: 100%, [
-          #text(size: 18pt, weight: "bold", fill: rgb("C2410C"))[月額費用]
-          #v(1em)
-          #text(size: 42pt, weight: "bold", fill: rgb("9A3412"))[#theme.pricing.monthly]
-          #text(size: 18pt, weight: "bold", fill: rgb("9A3412"))[万円〜]
+        #box(fill: rgb("F8FAFC"), stroke: 2pt + rgb("F97316"), inset: 2em, radius: 1em, width: 100%, [
+          #text(size: 16pt, weight: "bold", fill: rgb("C2410C"))[月額費用]
+          #v(0.8em)
+          #text(size: 36pt, weight: "bold", fill: rgb("9A3412"))[#theme.pricing.monthly]
+          #text(size: 16pt, weight: "bold", fill: rgb("9A3412"))[万円〜]
         ])
       ]
     )
     #if "free_trial" in theme.pricing and theme.pricing.free_trial != "" [
-      #v(4em)
-      #box(fill: rgb("FFF7ED"), inset: 2em, radius: 1em, width: 100%, [
-        #text(size: 18pt, weight: "bold", fill: rgb("C2410C"))[無料トライアルについて]
-        #v(1em)
-        #text(size: 16pt)[#theme.pricing.free_trial]
+      #v(2em)
+      #box(fill: rgb("FFF7ED"), inset: 1.5em, radius: 1em, width: 100%, [
+        #text(size: 16pt, weight: "bold", fill: rgb("C2410C"))[無料トライアルについて]
+        #v(0.8em)
+        #text(size: 14pt)[#theme.pricing.free_trial]
       ])
     ]
   ]
