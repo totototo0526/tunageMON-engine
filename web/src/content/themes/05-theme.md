@@ -16,13 +16,13 @@ button:
 problems:
   - title: "機械がいつ止まったか分からない"
     description: "工場の機械がチョコ停（一時停止）しても、担当者が現場に行くまで気づかず、生産計画に遅れが生じている。"
-    image: "01-manufacturing-exception-review.webp"
+    image: "theme05_prob1.png"
   - title: "紙の稼働日報によるタイムラグ"
     description: "機械の稼働時間や生産個数を、作業員がストップウォッチで計って紙に記録しており、正確性に欠ける。"
-    image: "03-manual.webp"
+    image: "theme05_prob2.png"
   - title: "職人の「勘」に依存した異常検知"
     description: "「機械の音がいつもと違う」というベテランの感覚に頼っており、若手では故障の予兆に気づけない。"
-    image: "02-memory.webp"
+    image: "theme05_prob3.png"
 diagram_html: |
   <div class="bg-slate-700 text-white p-4 rounded-xl shadow-sm text-center z-10 w-24 border-b-4 border-slate-900">
       <i data-lucide="factory" class="w-8 h-8 text-red-400 mx-auto mb-2"></i><span class="text-[10px] font-bold">制御装置等</span>
@@ -75,15 +75,17 @@ blocks:
         before: "パトランプが回っても、広い工場では誰も気づかない"
         after: "異常発生から0.5秒で、担当者のスマホにプッシュ通知"
         desc: "これまでは機械のパトランプを目視で確認する必要がありましたが、システム直結により、設備の異常信号をキャッチした瞬間にチャットツールへ自動通知。対応スピードが劇的に向上しました。"
-        image: "01-policy.webp"
+        image: "theme05_case1.png"
       - tag: "歩留まり・品質の安定"
         before: "不良品が多発してから、数時間後にようやく機械を止める"
         after: "振動センサーの異常値で、不良が出る前にアラート通知"
         desc: "後付けの振動・温度センサーが「いつもと違う波形」を検知。熟練工の勘に頼っていた故障の予兆をデータで捉え、不良品を大量生産してしまう前に対策が打てるようになりました。"
+        image: "theme05_case2.png"
       - tag: "稼働日報の自動化"
         before: "作業員が手書きで日報を作成し、翌日にExcelへ手打ち"
         after: "PLCから直接データを取得し、リアルタイムにグラフ化"
         desc: "各機械の稼働時間や生産個数を、制御装置（PLC）から直接データベースへ送信。事務所のモニターに工場の「今」が常に表示され、日報作成の手間もゼロになりました。"
+        image: "theme05_case3.png"
 
   - type: BlockSteps
     subtitle: "04"
