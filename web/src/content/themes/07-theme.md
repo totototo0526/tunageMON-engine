@@ -18,7 +18,7 @@ pricing:
   free_trial: トライアル期間中、環境構築や支援にかかる当社への費用は無料です(ChatGPT有料プランなどの実費を除く)。
   initial: '27'
   monthly: '12'
-dateAdded: '2026-07-21'
+dateAdded: '2026-08-01'
 button:
   type: link
   url: ./themes/07-theme/index.html
@@ -46,7 +46,7 @@ diagram_html: |
   </div>
 blocks:
 - type: BlockCards
-  subtitle: 02　解決策
+  subtitle: 02　
   title: AI × 共有台帳 × 定着支援
   items:
   - badge: AI
