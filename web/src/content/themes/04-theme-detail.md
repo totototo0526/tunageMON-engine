@@ -6,6 +6,7 @@ subtitle: "システム連携の裏側と技術仕様について"
 description: 'このページは「つなげモン ハブ」の技術的な詳細やセキュリティ要件について記載した<span class="text-purple-600 font-bold border-b-2 border-purple-600">非公開の詳細ページ</span>です。'
 hidden: true
 permalink: "04-theme/detail"
+draft: true
 links:
   - text: "親ページに戻る"
     url: "/themes/04-theme/index.html"

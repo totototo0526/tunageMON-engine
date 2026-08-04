@@ -15,7 +15,7 @@ export async function getStaticPaths() {
     if (theme.data.permalink) {
         slug = theme.data.permalink.replace(/^themes\//, '').replace(/\.html$/, '');
     }
-    console.log(`[DEBUG Astro Route] ID: ${theme.id}, Permalink: ${theme.data.permalink}, Slug: ${slug}`);
+    console.log(`[DEBUG Astro Route] ID: ${theme.id}, Permalink: ${theme.data.permalink}, Slug: ${slug}, isPreview: ${isPreview}, draft: ${theme.data.draft}`);
     return {
       params: { slug },
       props: { theme },

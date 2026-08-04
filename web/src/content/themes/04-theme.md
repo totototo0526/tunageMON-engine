@@ -1,6 +1,5 @@
 ---
 id: "04"
-draft: true
 layout: "template_a"
 title: "つなげモン ハブ"
 subtitle: "バラバラのExcelを、全社でつながるデータベースへ。"

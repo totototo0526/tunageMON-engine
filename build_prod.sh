@@ -21,6 +21,9 @@ export PUBLIC_IS_PREVIEW=false
 export BASE_PATH=/
 export SITE_URL=https://www.k-sp.co.jp
 
+# Astroのキャッシュクリア (本番ビルドとプレビュービルドで状態が混ざるのを防ぐ)
+rm -rf node_modules/.astro
+
 npm run build
 if [ $? -ne 0 ]; then
   echo "❌ 本番用Webのビルドに失敗しました。"
