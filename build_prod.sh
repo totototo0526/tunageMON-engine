@@ -50,6 +50,7 @@ find dist/themes -mindepth 3 -maxdepth 3 -name "*.html" -exec sed -i 's|src="/|s
 # ZIP化
 echo "📦 本番用コードをZIP化しています..."
 cd dist
+rm -f ../../production-build.zip
 zip -r ../../production-build.zip ./*
 cd ../..
 
