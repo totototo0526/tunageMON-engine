@@ -7,9 +7,10 @@ import AdminPanel from '../components/AdminPanel.astro';
 import { getCollection } from 'astro:content';
 
 const themeEntries = await getCollection('themes');
-const themes = themeEntries
-    .map(entry => entry.data)
-    .filter(data => !data.hidden);
+const isPreview = import.meta.env.PUBLIC_IS_PREVIEW === 'true';
+const activeEntries = isPreview ? themeEntries : themeEntries.filter(entry => !entry.data.draft);
+// indexページの一覧には hidden: true のものは出さない。さらに本番では draft: true のものは出さない。
+const themes = activeEntries.map(entry => entry.data).filter(data => !data.hidden);
 themes.sort((a, b) => parseInt(a.id) - parseInt(b.id));
 ---
 <!DOCTYPE html>

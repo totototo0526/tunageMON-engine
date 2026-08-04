@@ -12,6 +12,7 @@ export default config({
       format: { data: 'yaml' },
       schema: {
         id: fields.slug({ name: { label: 'ID (e.g. 07-theme)' } }),
+        draft: fields.checkbox({ label: 'Draft (下書き)', description: '本番ビルド(Production)では非公開になります', defaultValue: false }),
         layout: fields.text({ label: 'Layout (e.g. template_a)', defaultValue: 'template_a' }),
         title: fields.text({ label: 'Title' }),
         subtitle: fields.text({ label: 'Subtitle' }),
