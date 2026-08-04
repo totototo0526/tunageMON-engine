@@ -13,7 +13,7 @@ const topUrl = Astro.site ? new URL(import.meta.env.BASE_URL, Astro.site).href :
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         <div class="flex items-center gap-2">
             <i data-lucide="network" class="w-8 h-8 text-orange-500"></i>
-            <a href={topUrl} class="text-2xl font-black tracking-tight text-slate-800 hover:opacity-80 transition">つなげモン<span
+            <a href="https://tsunage-mon.jp/" class="text-2xl font-black tracking-tight text-slate-800 hover:opacity-80 transition">つなげモン<span
                     class="text-sm font-bold text-slate-500 ml-2">シリーズ</span></a>
         </div>
         <div class="hidden md:flex gap-6 items-center font-bold text-sm text-slate-600">
@@ -25,7 +25,7 @@ const topUrl = Astro.site ? new URL(import.meta.env.BASE_URL, Astro.site).href :
                 </>
             ) : (
                 <>
-                    <a href={topUrl} class="hover:text-orange-500 transition flex items-center gap-1"><i data-lucide="arrow-left" class="w-4 h-4"></i> トップページへ</a>
+                    <a href="https://tsunage-mon.jp/" class="hover:text-orange-500 transition flex items-center gap-1"><i data-lucide="arrow-left" class="w-4 h-4"></i> トップページへ</a>
                     <span class="text-slate-300">|</span>
                     <span class="text-slate-800">{theme?.title}</span>
                 </>
