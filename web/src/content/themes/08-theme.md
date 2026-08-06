@@ -1,5 +1,6 @@
 ---
 id: "08"
+isNew: true
 layout: "template_a"
 title: "つなげモン サポート（仮）"
 subtitle: "「ITの悩み」を丸投げ。あなたは本業に集中してください。"
