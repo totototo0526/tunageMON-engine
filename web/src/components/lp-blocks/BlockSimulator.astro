@@ -1,0 +1,27 @@
+---
+import WastedTimeCalculator from '../react/WastedTimeCalculator';
+
+const { block } = Astro.props;
+---
+
+<section class="py-16 px-4 bg-slate-100 border-y border-slate-200">
+  <div class="max-w-5xl mx-auto">
+    
+    {block.title && (
+      <div class="text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-4" style="font-feature-settings: 'palt'">
+          {block.title}
+        </h2>
+        {block.desc && (
+          <p class="text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
+            {block.desc}
+          </p>
+        )}
+      </div>
+    )}
+
+    {/* Reactコンポーネントをクライアントサイドでハイドレーションさせるために client:load を付与 */}
+    <WastedTimeCalculator client:load />
+
+  </div>
+</section>

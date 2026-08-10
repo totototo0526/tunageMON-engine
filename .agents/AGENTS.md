@@ -307,3 +307,11 @@ blocks:                       # ページ本体のコンテンツブロック（
     - name: "会計ソフト"
       icon: "💰"
 ```
+
+### `BlockSimulator` — インタラクティブなシミュレーター（React）
+
+```yaml
+- type: BlockSimulator
+  title: "真のムダ時間コスト計算機" # 省略可
+  desc: "自社の隠れたムダコストを算出します" # 省略可
+```
