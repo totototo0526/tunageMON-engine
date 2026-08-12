@@ -9,11 +9,15 @@ hero_services:
   - "01 新規商材追加時のサプライチェーン負荷テスト"
   - "02 過去の実績データに基づく機械学習による需要予測モデリング"
   - "03 最悪のシナリオ（リスク）を事前に洗い出すストレステスト"
-button:
-  type: "link"
-  url: "/themes/simulator-hub/index.html"
-  text: "無料シミュレーター一覧へ"
-  icon: "external-link"
+links:
+  - type: "link"
+    url: "./themes/06-theme/index.html"
+    text: "詳細を確認する"
+    icon: "external-link"
+  - type: "link"
+    url: "/themes/simulator-hub/index.html"
+    text: "無料シミュレーター一覧へ"
+    icon: "calculator"
 problems:
   - title: "「新商品を出すと現場がパンクする」"
     description: "経営陣が新規事業を打ち出すたびに、物流や製造現場にどれだけの負荷がかかるか事前に計算できず、現場が疲弊している。"
