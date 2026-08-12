@@ -282,14 +282,14 @@ export default function TeleapoCalculator() {
             {cpaDifference > 0 && (
               <div className="mt-4 bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl p-6 border border-orange-200 text-center relative overflow-hidden group">
                 <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <h4 className="text-lg font-black text-orange-800 mb-2">プロに外注するのが正解です</h4>
+                <h4 className="text-lg font-black text-orange-800 mb-2">自社で消耗する前に、外注のリアルを知る</h4>
                 <p className="text-sm text-orange-700 font-medium mb-4 leading-relaxed">
-                  代行業者の単価には、「リスト精査」「NG理由の分析」「スクリプト改善」などのデータ運用費がすべて含まれています。<br/>
-                  自社で消耗し続ける前に、最適な外注先へのご相談を承ります。
+                  代行業者の単価には、「リスト精査」「NG理由の分析」「スクリプト改善」などの運用費がすべて含まれています。<br/>
+                  失敗しない外注先の選び方をまとめたチェックリスト（PDF）を無料で配布中です。
                 </p>
-                <a href="https://www.k-sp.co.jp/admin/std/contact/new" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:-translate-y-1">
-                  無料相談を申し込む
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                <a href="#download-form" className="inline-flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:-translate-y-1">
+                  業者選定チェックリストをダウンロード
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                 </a>
               </div>
             )}
