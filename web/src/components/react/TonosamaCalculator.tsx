@@ -178,7 +178,7 @@ export default function TonosamaCalculator() {
                     <label className="block text-sm font-bold text-slate-700">その赤字注文の「平均単価」</label>
                     <span className="text-lg font-black text-orange-700">{formatCurrency(averageMicroLotValue)} <span className="text-sm font-bold text-slate-500">円</span></span>
                   </div>
-                  <input type="range" min="500" max={maxMicroLotValue} step="100" value={averageMicroLotValue} onChange={(e) => setAverageMicroLotValue(Number(e.target.value))} className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-orange-500" />
+                  <input type="range" min="0" max={maxMicroLotValue} step="10" value={averageMicroLotValue} onChange={(e) => setAverageMicroLotValue(Number(e.target.value))} className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-orange-500" />
                 </div>
               </div>
             </div>
