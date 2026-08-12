@@ -314,4 +314,6 @@ blocks:                       # ページ本体のコンテンツブロック（
 - type: BlockSimulator
   title: "真のムダ時間コスト計算機" # 省略可
   desc: "自社の隠れたムダコストを算出します" # 省略可
+  simulatorType: "wasted-time"   # 表示するシミュレーターの種類（省略時は wasted-time）
+                                 # 選択肢: "teleapo", "tonosama", "subscription", "fax", "apology", "wasted-time"
 ```

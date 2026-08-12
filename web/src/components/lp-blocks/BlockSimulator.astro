@@ -1,7 +1,15 @@
 ---
 import WastedTimeCalculator from '../react/WastedTimeCalculator';
+import TeleapoCalculator from '../react/TeleapoCalculator';
+import TonosamaCalculator from '../react/TonosamaCalculator';
+import SubscriptionCalculator from '../react/SubscriptionCalculator';
+import FaxCalculator from '../react/FaxCalculator';
+import ApologyCalculator from '../react/ApologyCalculator';
 
 const { block } = Astro.props;
+
+// Default to 'wasted-time' if not specified
+const type = block.simulatorType || 'wasted-time';
 ---
 
 <section class="py-16 px-4 bg-slate-100 border-y border-slate-200">
@@ -21,7 +29,12 @@ const { block } = Astro.props;
     )}
 
     {/* Reactコンポーネントをクライアントサイドでハイドレーションさせるために client:load を付与 */}
-    <WastedTimeCalculator client:load />
+    {type === 'wasted-time' && <WastedTimeCalculator client:load />}
+    {type === 'teleapo' && <TeleapoCalculator client:load />}
+    {type === 'tonosama' && <TonosamaCalculator client:load />}
+    {type === 'subscription' && <SubscriptionCalculator client:load />}
+    {type === 'fax' && <FaxCalculator client:load />}
+    {type === 'apology' && <ApologyCalculator client:load />}
 
   </div>
 </section>
