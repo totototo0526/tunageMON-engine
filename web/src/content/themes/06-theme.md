@@ -11,8 +11,8 @@ hero_services:
   - "03 最悪のシナリオ（リスク）を事前に洗い出すストレステスト"
 button:
   type: "link"
-  url: "./themes/06-theme/index.html"
-  text: "詳細を確認する"
+  url: "/themes/simulator-hub/index.html"
+  text: "無料シミュレーター一覧へ"
   icon: "external-link"
 problems:
   - title: "「新商品を出すと現場がパンクする」"
