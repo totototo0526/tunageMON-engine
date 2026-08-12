@@ -55,6 +55,12 @@ export default function SubscriptionCalculator() {
 
   const formatCurrency = (value: number) => Math.floor(value).toLocaleString();
 
+  // グラフ用ヘルパー
+  const graphMaxMonths = Math.max(36, breakEvenMonths + 12);
+  const graphMaxY = Math.max(actualOneTimeLtv * 1.5, (subPrice * 10000) * graphMaxMonths);
+  const getX = (month: number) => `${(month / graphMaxMonths) * 100}%`;
+  const getY = (value: number) => `${100 - (value / graphMaxY) * 100}%`;
+
   return (
     <div className="w-full max-w-5xl mx-auto p-4 sm:p-8">
       <div className="bg-white/70 backdrop-blur-xl border border-white/50 shadow-2xl rounded-3xl overflow-hidden relative">
@@ -171,19 +177,89 @@ export default function SubscriptionCalculator() {
               )}
             </div>
 
-            {/* 損益分岐点 */}
-            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex items-center justify-between">
-              <div>
-                <p className="text-sm font-bold text-slate-500">損益分岐点（元が取れる時期）</p>
-                <p className="text-xs text-slate-400 mt-1">契約から売り切りの売上を超えるまで</p>
+            {/* 損益分岐点とグラフ */}
+            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <p className="text-sm font-bold text-slate-500">損益分岐点（クロスオーバー）</p>
+                  <p className="text-xs text-slate-400 mt-1">契約から売り切りの売上を超えるまで</p>
+                </div>
+                <div className="text-right">
+                  <span className="text-2xl font-black text-indigo-900">{breakEvenMonths}</span>
+                  <span className="text-sm font-bold text-slate-500 ml-1">ヶ月</span>
+                  {breakEvenYears > 0 && (
+                    <p className="text-xs font-bold text-indigo-600 mt-1">
+                      （約 {breakEvenYears}年{breakEvenRemainingMonths > 0 ? `と${breakEvenRemainingMonths}ヶ月` : ''}）
+                    </p>
+                  )}
+                </div>
               </div>
-              <div className="text-right">
-                <span className="text-2xl font-black text-indigo-900">{breakEvenMonths}</span>
-                <span className="text-sm font-bold text-slate-500 ml-1">ヶ月</span>
-                {breakEvenYears > 0 && (
-                  <p className="text-xs font-bold text-indigo-600 mt-1">
-                    （約 {breakEvenYears}年{breakEvenRemainingMonths > 0 ? `と${breakEvenRemainingMonths}ヶ月` : ''}）
-                  </p>
+
+              {/* グラフ描画エリア */}
+              <div className="relative w-full h-32 mt-4 bg-slate-50 rounded-lg border border-slate-100 overflow-hidden">
+                {/* グラフ目盛り（背景） */}
+                <div className="absolute inset-0 flex flex-col justify-between p-2">
+                  <div className="w-full border-t border-slate-200 border-dashed"></div>
+                  <div className="w-full border-t border-slate-200 border-dashed"></div>
+                  <div className="w-full border-t border-slate-200 border-dashed"></div>
+                </div>
+
+                <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                  {/* 売り切りの線（横ばい） */}
+                  <line 
+                    x1="0" 
+                    y1={getY(actualOneTimeLtv)} 
+                    x2="100%" 
+                    y2={getY(actualOneTimeLtv)} 
+                    stroke="#4338ca" /* indigo-700 */
+                    strokeWidth="3"
+                    strokeDasharray="6,4"
+                  />
+                  {/* サブスクの線（右肩上がり） */}
+                  <line 
+                    x1="0" 
+                    y1="100%" 
+                    x2="100%" 
+                    y2={getY((subPrice * 10000) * graphMaxMonths)} 
+                    stroke="#c026d3" /* fuchsia-600 */
+                    strokeWidth="3"
+                  />
+                  {/* 損益分岐点の交点マーク */}
+                  {breakEvenMonths <= graphMaxMonths && (
+                    <circle 
+                      cx={getX(breakEvenMonths)} 
+                      cy={getY(actualOneTimeLtv)} 
+                      r="6" 
+                      fill="#f59e0b" /* amber-500 */
+                      stroke="#fff"
+                      strokeWidth="2"
+                    />
+                  )}
+                </svg>
+                
+                {/* 凡例 */}
+                <div className="absolute top-2 left-2 flex flex-col gap-1">
+                  <div className="flex items-center gap-1">
+                    <div className="w-3 h-1 border-t-2 border-dashed border-indigo-700"></div>
+                    <span className="text-[10px] font-bold text-slate-500">売り切り</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <div className="w-3 h-1 bg-fuchsia-600"></div>
+                    <span className="text-[10px] font-bold text-slate-500">サブスク</span>
+                  </div>
+                </div>
+                
+                {/* 交点のラベル */}
+                {breakEvenMonths <= graphMaxMonths && (
+                  <div 
+                    className="absolute text-[10px] font-black text-amber-600 bg-amber-50 px-1 rounded shadow-sm"
+                    style={{ 
+                      left: `calc(${getX(breakEvenMonths)} - 10px)`, 
+                      top: `calc(${getY(actualOneTimeLtv)} + 10px)` 
+                    }}
+                  >
+                    逆転!
+                  </div>
                 )}
               </div>
             </div>
@@ -191,7 +267,7 @@ export default function SubscriptionCalculator() {
             {/* CTA */}
             {isSubBetter && (
               <div className="mt-2 text-center">
-                <a href="#download-form" className="inline-flex w-full items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-white font-bold py-4 px-6 rounded-xl shadow-md transition-transform transform hover:-translate-y-1">
+                <a href="#download-form" className="inline-flex w-full sm:w-auto items-center justify-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-black py-4 px-8 rounded-full shadow-lg transition-transform transform hover:-translate-y-1">
                   失敗しないサブスク化・SaaS化の事業計画をDL
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                 </a>
