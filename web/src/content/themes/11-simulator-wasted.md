@@ -47,5 +47,5 @@ blocks:
     desc: "シミュレーターで表示された「ムダ時間」をそのまま訴えても上司は動いてくれません。稟議を通しやすくするための説得テンプレート集（PDF）を無料で配布しています。"
     button:
       text: "見えない赤字対策ガイドをDL（無料）"
-      url: "/16_presentation.pdf"
+      url: "/slides/16_presentation.pdf"
 ---

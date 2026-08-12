@@ -47,5 +47,5 @@ blocks:
     desc: "シミュレーションの結果はいかがでしたか？自社に合ったモデルを見極めるための、価格設定とシステム構築のノウハウをまとめました。"
     button:
       text: "見えない赤字対策ガイドをDL（無料）"
-      url: "/16_presentation.pdf"
+      url: "/slides/16_presentation.pdf"
 ---
