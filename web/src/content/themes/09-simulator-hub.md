@@ -26,4 +26,12 @@ blocks:
         title: "不要サブスクのチリツモコスト計算機"
         desc: "誰も使っていないSaaSアカウント。放置していると数年でどれだけの金額になるかを可視化します。"
         url: "/themes/simulators/subscription/index.html"
+      - badge: "NEW"
+        title: "バックオフィスの隠れ赤字チェッカー"
+        desc: "売上が上がっているのに儲からない原因は「極小ロットのタダ働き」です。受発注の事務コストによる赤字を計算します。"
+        url: "/themes/simulators/tonosama/index.html"
+      - badge: "NEW"
+        title: "謝罪・ミス対応コスト（ごめんなさい計算機）"
+        desc: "FAX見間違いなどのアナログなミスによる、謝罪対応の人件費とお詫び経費の年間マイナスコストを算出します。"
+        url: "/themes/simulators/apology/index.html"
 ---
