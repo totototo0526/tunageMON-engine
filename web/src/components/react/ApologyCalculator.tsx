@@ -199,11 +199,16 @@ export default function ApologyCalculator() {
                     {complaintsPerMonth}件のクレームの裏には、年間 <strong className="text-white">{formatCurrency(internalMistakesPerMonth * 12)}件</strong> の「社内で事前に見つけた隠れミス」があります。<br/>
                     現場は日々、このダブルチェックと修正作業に追われています。
                   </p>
-                  <div className="flex items-end gap-2 bg-white/10 p-3 rounded-lg border border-white/10">
+                  <div className="flex flex-col sm:flex-row items-end gap-2 bg-white/10 p-3 rounded-lg border border-white/10 mt-2">
                     <span className="text-sm font-bold text-slate-300 mb-1">見えない人件費:</span>
-                    <span className="text-2xl font-black text-rose-400">{formatCurrency(displayHiddenLaborCost)}</span>
-                    <span className="text-sm font-bold text-rose-300 mb-1">円 / 年</span>
+                    <div className="flex items-end gap-1">
+                      <span className="text-2xl font-black text-rose-400">{formatCurrency(displayHiddenLaborCost)}</span>
+                      <span className="text-sm font-bold text-rose-300 mb-1">円 / 年</span>
+                    </div>
                   </div>
+                  <p className="text-[10px] text-slate-400 mt-1 pl-2 text-right">
+                    （月{formatCurrency(complaintsPerMonth)}件 × 隠れミス29件 × 修正0.5h × 時給{formatCurrency(hourlyWage)}円 × 12ヶ月）
+                  </p>
                 </div>
 
                 <div className="w-full h-px bg-white/20"></div>
@@ -213,13 +218,18 @@ export default function ApologyCalculator() {
                   <h3 className="text-sm font-bold text-sky-300 mb-1">② サイレント離反による「将来の売上喪失」</h3>
                   <p className="text-xs text-slate-400 mb-2 leading-relaxed">
                     クレーム対応すらさせてもらえず、ミスに呆れて無言で他社へ乗り換えた顧客。<br/>
-                    月に {churnedCustomersPerMonth}社の優良顧客を失うことは、会社の未来の売上を捨てるのと同じです。
+                    月に {formatCurrency(churnedCustomersPerMonth)}社の優良顧客を失うことは、会社の未来の売上を捨てるのと同じです。
                   </p>
-                  <div className="flex items-end gap-2 bg-white/10 p-3 rounded-lg border border-white/10">
+                  <div className="flex flex-col sm:flex-row items-end gap-2 bg-white/10 p-3 rounded-lg border border-white/10 mt-2">
                     <span className="text-sm font-bold text-slate-300 mb-1">喪失した売上（LTV）:</span>
-                    <span className="text-2xl font-black text-rose-400">{formatCurrency(displayHiddenLtvLoss)}</span>
-                    <span className="text-sm font-bold text-rose-300 mb-1">円 / 年</span>
+                    <div className="flex items-end gap-1">
+                      <span className="text-2xl font-black text-rose-400">{formatCurrency(displayHiddenLtvLoss)}</span>
+                      <span className="text-sm font-bold text-rose-300 mb-1">円 / 年</span>
+                    </div>
                   </div>
+                  <p className="text-[10px] text-slate-400 mt-1 pl-2 text-right">
+                    （月{formatCurrency(complaintsPerMonth)}件 × 離反{formatCurrency(silentChurnMultiplier)}社 × 12ヶ月 × LTV {formatCurrency(averageLtv)}円）
+                  </p>
                 </div>
 
                 <div className="bg-rose-900/50 border border-rose-500/50 p-4 rounded-xl mt-4 text-center">
