@@ -1,5 +1,5 @@
 ---
-id: "09"
+id: "10"
 layout: "template_a"
 title: "テレアポ外注化の損益分岐点シミュレーター"
 subtitle: "自社架電の限界と見えない赤字を可視化"
@@ -15,7 +15,7 @@ problems:
     description: "人件費や見えない機会損失まで含めた時、実は「外部委託やツール導入」の方が圧倒的に安上がりになることに気づいていない企業が多く存在します。"
     image: "common-cause.webp"
 hidden: true
-permalink: "09-simulator"
+permalink: "simulator-teleapo"
 blocks:
   - type: BlockCards
     subtitle: "STEP 1"
@@ -43,4 +43,3 @@ blocks:
       text: "無料診断を申し込む"
       url: "https://www.k-sp.co.jp/admin/std/contact/new"
 ---
-
