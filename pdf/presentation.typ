@@ -316,30 +316,52 @@
     // ----------------------------------------------------------------------------
     ] else if block.type == "BlockReasoningGrid" [
       #if "items" in block and block.items != none [
-        #let chunked = chunks(block.items, 2) // ★1スライド2件に変更
+        #let chunked = chunks(block.items, 1) // 1スライド1件（左右分割）
         #for (i, c) in chunked.enumerate() [
           #let sub = block.title
           #if chunked.len() > 1 { sub = sub + " (" + str(i + 1) + "/" + str(chunked.len()) + ")" }
           
           #slide(title: theme.title, subtitle: sub)[
             #v(1em)
-            #grid(
-              columns: (1fr, 1fr), // ★2列に変更（横幅を広げる）
-              gutter: 1.5em,
-              ..c.map(item => [
-                #box(stroke: 1pt + rgb("E2E8F0"), inset: 1.5em, radius: 1em, width: 100%, height: 100%, [
-                  #text(weight: "bold", size: 14pt, fill: rgb("C2410C"))[#item.num]
-                  #v(0.5em)
-                  #text(weight: "bold", size: 16pt)[#item.title]
-                  #if "image" in item and item.image != none [
-                    #v(1em)
-                    #align(center)[#image(resolve-image(item.image), width: 100%, height: 8em, fit: "contain")]
+            #for item in c [
+              #box(stroke: 1pt + rgb("E2E8F0"), inset: 2em, radius: 1em, width: 100%, height: 100%, [
+                #if "image" in item and item.image != none [
+                  #let text_content = [
+                    #text(weight: "bold", size: 16pt, fill: rgb("C2410C"))[#item.num]
+                    #v(0.8em)
+                    #text(weight: "bold", size: 22pt)[#item.title]
+                    #v(1.2em)
+                    #text(size: 16pt)[#item.desc]
                   ]
+                  #let img_content = [
+                    #align(center + horizon)[#image(resolve-image(item.image), width: 100%, height: 14em, fit: "contain")]
+                  ]
+                  
+                  // 偶数・奇数で画像を左右に振り分ける
+                  #if calc.rem(i, 2) == 0 [
+                    #grid(
+                      columns: (1fr, 1fr),
+                      gutter: 2em,
+                      align: horizon,
+                      text_content, img_content
+                    )
+                  ] else [
+                    #grid(
+                      columns: (1fr, 1fr),
+                      gutter: 2em,
+                      align: horizon,
+                      img_content, text_content
+                    )
+                  ]
+                ] else [
+                  #text(weight: "bold", size: 16pt, fill: rgb("C2410C"))[#item.num]
                   #v(0.8em)
-                  #text(size: 13pt)[#item.desc]
-                ])
+                  #text(weight: "bold", size: 22pt)[#item.title]
+                  #v(1.2em)
+                  #text(size: 16pt)[#item.desc]
+                ]
               ])
-            )
+            ]
           ]
         ]
       ]
