@@ -15,7 +15,7 @@ links:
     text: "詳細を確認する"
     icon: "external-link"
   - type: "link"
-    url: "/themes/simulator-hub/index.html"
+    url: "/themes/simulators/index.html"
     text: "無料シミュレーター一覧へ"
     icon: "calculator"
 problems:

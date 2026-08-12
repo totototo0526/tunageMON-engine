@@ -15,7 +15,7 @@ problems:
     description: "ワークフローがアナログなため、上司の承認待ちや部署間の連携ミスでムダな「待ち時間」が発生していませんか？"
     image: "06-human-approval.png"
 hidden: true
-permalink: "simulator-wasted"
+permalink: "simulators/wasted"
 blocks:
   - type: BlockSimulator
     simulatorType: "wasted-time"

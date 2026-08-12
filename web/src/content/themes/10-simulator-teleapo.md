@@ -15,7 +15,7 @@ problems:
     description: "人件費や見えない機会損失まで含めた時、実は「外部委託やツール導入」の方が圧倒的に安上がりになることに気づいていない企業が多く存在します。"
     image: "common-cause.webp"
 hidden: true
-permalink: "simulator-teleapo"
+permalink: "simulators/teleapo"
 blocks:
   - type: BlockCards
     subtitle: "STEP 1"
