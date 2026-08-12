@@ -1626,14 +1626,16 @@
               "url": "/themes/simulators/teleapo/index.html"
             },
             {
-              "badge": "Coming Soon",
+              "badge": "NEW",
               "title": "FAX継続の隠れ負債コスト計算機",
-              "desc": "「紙代」「インク代」だけじゃない。トナー交換や歩行時間など、FAXを使い続けることで発生する隠れコストを診断します。"
+              "desc": "「紙代」「インク代」だけじゃない。トナー交換や歩行時間など、FAXを使い続けることで発生する隠れコストを診断します。",
+              "url": "/themes/simulators/fax/index.html"
             },
             {
-              "badge": "Coming Soon",
+              "badge": "NEW",
               "title": "不要サブスクのチリツモコスト計算機",
-              "desc": "誰も使っていないSaaSアカウント。放置していると数年でどれだけの金額になるかを可視化します。"
+              "desc": "誰も使っていないSaaSアカウント。放置していると数年でどれだけの金額になるかを可視化します。",
+              "url": "/themes/simulators/subscription/index.html"
             }
           ]
         }
@@ -1742,6 +1744,126 @@
           "desc": "シミュレーターで表示された「年間の損失額」は、システム化によって利益に変えられる金額です。まずは無料で改善の余地を診断してみましょう。",
           "button": {
             "text": "無料でDX（自動化）の相談をする",
+            "url": "https://www.k-sp.co.jp/admin/std/contact/new"
+          }
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "layout": "template_a",
+      "title": "FAX継続の隠れ負債コスト計算機",
+      "subtitle": "「紙代」「インク代」だけじゃない隠れコストを診断",
+      "description": "「長年の習慣だから」と使い続けているFAX。実は目に見えない「トナー交換」「歩行時間」「再送対応」などで、毎月数万円単位の損失を出しているかもしれません。<br>まずは以下の計算機で、御社の「FAXの真のコスト」をチェックしてみましょう。",
+      "problems": [
+        {
+          "title": "「ちょっとFAX見てきて」で<br>作業が中断される",
+          "description": "FAXが届くたびに席を立ち、仕分けて担当者に配る。この「名もなき歩行時間」が全社員の集中力を奪っています。",
+          "image": "theme04_prob1.png"
+        },
+        {
+          "title": "インク切れや紙詰まりの<br>対応に追われている",
+          "description": "なぜか忙しい時に限って発生するトラブル。「IT担当」が本来の業務を止めて修理やトナー交換に走っていませんか？",
+          "image": "03-outdated-procedure.webp"
+        },
+        {
+          "title": "文字が潰れて読めず<br>確認の電話をしている",
+          "description": "手書きの数字が見えなくて「これ1ですか？7ですか？」と電話確認。この二度手間が互いの生産性を大きく下げています。",
+          "image": "01-decision.webp"
+        }
+      ],
+      "hidden": true,
+      "permalink": "simulators/fax",
+      "blocks": [
+        {
+          "type": "BlockCards",
+          "subtitle": "STEP 1",
+          "title": "計算の前に、以下の数字をご準備ください",
+          "items": [
+            {
+              "badge": "1",
+              "title": "1日の平均受信・送信枚数",
+              "desc": "大まかで構いません。1日に送受信しているFAXの総枚数を入力してください。"
+            },
+            {
+              "badge": "2",
+              "title": "担当者の平均時給",
+              "desc": "FAXの確認や仕分け、送信作業を行っているスタッフの平均時給です。"
+            }
+          ]
+        },
+        {
+          "type": "BlockSimulator",
+          "simulatorType": "fax"
+        },
+        {
+          "type": "BlockCTA",
+          "theme": "dark",
+          "align": "center",
+          "title": "自社に合ったペーパーレス化を相談する",
+          "desc": "シミュレーターの結果はいかがでしたか？より正確なコスト診断や、自社に合ったシステム化のご相談は無料で承っております。",
+          "button": {
+            "text": "無料相談を申し込む",
+            "url": "https://www.k-sp.co.jp/admin/std/contact/new"
+          }
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "layout": "template_a",
+      "title": "不要サブスクのチリツモコスト計算機",
+      "subtitle": "放置しているSaaSアカウントの無駄を可視化",
+      "description": "「とりあえず全員分契約したけど、誰も使っていないSaaSアカウント」はありませんか？<br>退職者のアカウント消し忘れや、重複ツールなど、数年間放置するとどれだけの金額になるかを可視化します。",
+      "problems": [
+        {
+          "title": "退職した社員の<br>アカウントが残ったまま",
+          "description": "社員が辞めるたびに全てのSaaSの権限を削除するのは至難の業。幽霊アカウントに毎月課金していませんか？",
+          "image": "theme04_prob1.png"
+        },
+        {
+          "title": "同じ機能のツールを<br>部署ごとに契約している",
+          "description": "営業部はツールA、総務部はツールB。実はどちらも同じ機能なのに、全社で統一されていないため無駄なコストが発生しています。",
+          "image": "02-memory.webp"
+        },
+        {
+          "title": "「いつか使うかも」で<br>高額プランのまま放置",
+          "description": "とりあえず最上位プランで契約したものの、実際には基本機能しか使っていない。その差額、年間で見るといくらになりますか？",
+          "image": "common-cause.webp"
+        }
+      ],
+      "hidden": true,
+      "permalink": "simulators/subscription",
+      "blocks": [
+        {
+          "type": "BlockCards",
+          "subtitle": "STEP 1",
+          "title": "計算の前に、以下の数字をご準備ください",
+          "items": [
+            {
+              "badge": "1",
+              "title": "使われていないアカウント数",
+              "desc": "退職者や、全くログインしていない社員のアカウント数です。"
+            },
+            {
+              "badge": "2",
+              "title": "1アカウントあたりの月額費用",
+              "desc": "そのSaaS（Chatwork、Kintone、各種ツールなど）の1アカウントあたりの平均月額料金です。"
+            }
+          ]
+        },
+        {
+          "type": "BlockSimulator",
+          "simulatorType": "subscription"
+        },
+        {
+          "type": "BlockCTA",
+          "theme": "dark",
+          "align": "center",
+          "title": "社内システムの最適化を相談する",
+          "desc": "シミュレーターの結果はいかがでしたか？不要なツールの洗い出しや、システム統合のご相談は無料で承っております。",
+          "button": {
+            "text": "無料相談を申し込む",
             "url": "https://www.k-sp.co.jp/admin/std/contact/new"
           }
         }
