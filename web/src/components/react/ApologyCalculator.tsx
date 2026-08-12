@@ -9,7 +9,7 @@ export default function ApologyCalculator() {
 
   // STEP 2: 海面下データ
   const [averageLtv, setAverageLtv] = useState<number>(1000000); // 円/年 (顧客1社の年間売上)
-  const [silentChurnMultiplier, setSilentChurnMultiplier] = useState<number>(1); // クレーム1件に対するサイレント離反数
+  const [silentChurnRate, setSilentChurnRate] = useState<number>(10); // クレーム1件あたりの離反率 (%)
 
   // アニメーション用
   const [displayVisibleCost, setDisplayVisibleCost] = useState<number>(0);
@@ -32,7 +32,7 @@ export default function ApologyCalculator() {
   const annualHiddenLaborCost = monthlyHiddenLaborCost * 12;
 
   // 3. サイレント離反による売上喪失（LTV喪失）
-  const churnedCustomersPerMonth = complaintsPerMonth * silentChurnMultiplier;
+  const churnedCustomersPerMonth = complaintsPerMonth * (silentChurnRate / 100);
   const annualHiddenLtvLoss = churnedCustomersPerMonth * averageLtv * 12;
 
   // 総合計
@@ -71,6 +71,7 @@ export default function ApologyCalculator() {
 
   const formatCurrency = (value: number) => Math.floor(value).toLocaleString();
   const formatTime = (value: number) => Math.floor(value).toLocaleString();
+  const formatDecimal = (value: number) => (Math.round(value * 10) / 10).toString();
 
   return (
     <div className="w-full max-w-5xl mx-auto p-4 sm:p-8">
@@ -149,11 +150,11 @@ export default function ApologyCalculator() {
 
                 <div className="space-y-2 pt-4 border-t border-sky-200">
                   <div className="flex justify-between items-end">
-                    <label className="block text-sm font-bold text-slate-700">クレーム1件に対するサイレント離反</label>
-                    <span className="text-lg font-black text-blue-900">{silentChurnMultiplier} <span className="text-sm font-bold text-slate-500">社</span></span>
+                    <label className="block text-sm font-bold text-slate-700">サイレント離反の発生確率</label>
+                    <span className="text-lg font-black text-blue-900">{silentChurnRate} <span className="text-sm font-bold text-slate-500">%</span></span>
                   </div>
-                  <input type="range" min="0" max="10" step="1" value={silentChurnMultiplier} onChange={(e) => setSilentChurnMultiplier(Number(e.target.value))} className="w-full h-2 bg-slate-300 rounded-lg appearance-none cursor-pointer accent-blue-800" />
-                  <p className="text-xs text-sky-700 font-bold mt-1">※表面化したクレームの裏で、何も言わずに他社へ乗り換える顧客の数（推定値）</p>
+                  <input type="range" min="1" max="100" step="1" value={silentChurnRate} onChange={(e) => setSilentChurnRate(Number(e.target.value))} className="w-full h-2 bg-slate-300 rounded-lg appearance-none cursor-pointer accent-blue-800" />
+                  <p className="text-xs text-sky-700 font-bold mt-1">※1件のクレームが発生した際、裏で何も言わずに他社へ乗り換える顧客が発生する確率（推定値）</p>
                 </div>
               </div>
             </div>
@@ -218,7 +219,7 @@ export default function ApologyCalculator() {
                   <h3 className="text-sm font-bold text-sky-300 mb-1">② サイレント離反による「将来の売上喪失」</h3>
                   <p className="text-xs text-slate-400 mb-2 leading-relaxed">
                     クレーム対応すらさせてもらえず、ミスに呆れて無言で他社へ乗り換えた顧客。<br/>
-                    月に {formatCurrency(churnedCustomersPerMonth)}社の優良顧客を失うことは、会社の未来の売上を捨てるのと同じです。
+                    月に {formatDecimal(churnedCustomersPerMonth)}社の優良顧客を失うことは、会社の未来の売上を捨てるのと同じです。
                   </p>
                   <div className="flex flex-col sm:flex-row items-end gap-2 bg-white/10 p-3 rounded-lg border border-white/10 mt-2">
                     <span className="text-sm font-bold text-slate-300 mb-1">喪失した売上（LTV）:</span>
@@ -228,7 +229,7 @@ export default function ApologyCalculator() {
                     </div>
                   </div>
                   <p className="text-[10px] text-slate-400 mt-1 pl-2 text-right">
-                    （月{formatCurrency(complaintsPerMonth)}件 × 離反{formatCurrency(silentChurnMultiplier)}社 × 12ヶ月 × LTV {formatCurrency(averageLtv)}円）
+                    （月{formatCurrency(complaintsPerMonth)}件 × 離反率{silentChurnRate}% × 12ヶ月 × LTV {formatCurrency(averageLtv)}円）
                   </p>
                 </div>
 
