@@ -139,11 +139,18 @@
       #text(weight: "bold", size: 18pt, fill: rgb("0F172A"))[■ つなげモンが提供する価値]
       #v(1.5em)
       #set text(size: 16pt)
-      ・ システムと現場をシームレスに連携 \
-      #v(1.5em)
-      ・ データの二重入力をなくし、自動化を実現 \
-      #v(1.5em)
-      ・ リアルタイムな情報共有で意思決定を加速 \
+      #if "values" in theme and theme.values != none [
+        #for v in theme.values [
+          ・ #v \
+          #v(1.5em)
+        ]
+      ] else [
+        ・ システムと現場をシームレスに連携 \
+        #v(1.5em)
+        ・ データの二重入力をなくし、自動化を実現 \
+        #v(1.5em)
+        ・ リアルタイムな情報共有で意思決定を加速 \
+      ]
     ])
   ]
 ]

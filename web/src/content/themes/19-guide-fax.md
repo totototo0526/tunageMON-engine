@@ -1,12 +1,20 @@
 ---
 id: "19"
 layout: "template_a"
-skip_default_slides: true
 title: "FAXをやめずに「社内だけDX」する方法"
 subtitle: "取引先の習慣を変えずに、手入力の負債をゼロにする"
 description: '「相手が高齢だから」「長年の習慣だから」と、ペーパーレス化を諦める必要はありません。取引先には今まで通りFAXを送らせたまま、自社の「手打ち入力」だけを自動化する魔法のような戦略を解説します。'
 hidden: true
 permalink: "guide-fax"
+problems:
+  - title: "アナログな紙文化による非効率の極み"
+    description: "FAXの送受信、仕分け、手入力、ファイリングなど、紙特有の煩雑な作業が業務を圧迫しています。"
+  - title: "誤入力や紛失などのヒューマンエラー"
+    description: "手作業による転記ミスや、FAX用紙の紛失・見落としが、重大なクレームにつながる危険性があります。"
+values:
+  - "FAXや紙ベースのやり取りをデジタル化・ペーパーレス化"
+  - "受注から社内システムへの入力を自動連係し、ミスを防止"
+  - "場所にとらわれない働き方（テレワーク等）の実現を支援"
 blocks:
   - type: BlockReasoningGrid
     title: "1. FAXによる「社内の疲弊」"
