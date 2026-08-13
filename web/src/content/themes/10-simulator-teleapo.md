@@ -41,5 +41,5 @@ blocks:
     desc: "シミュレーターの結果はいかがでしたか？より正確なコスト診断や、自社に合ったシステム・外注先のご相談は無料で承っております。"
     button:
       text: "見えない赤字対策ガイドをDL（無料）"
-      url: "/slides/16_presentation.pdf"
+      url: "/slides/17_presentation.pdf"
 ---

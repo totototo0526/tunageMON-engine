@@ -50,5 +50,5 @@ blocks:
     desc: "人を増やして人海戦術で乗り切るよりも、手打ちを自動化する方が圧倒的に高コスパです。取引先はFAXのままでOK！社内だけこっそりDXする事例集を用意しました。"
     button:
       text: "見えない赤字対策ガイドをDL（無料）"
-      url: "/slides/16_presentation.pdf"
+      url: "/slides/19_presentation.pdf"
 ---

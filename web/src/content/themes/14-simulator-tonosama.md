@@ -38,5 +38,5 @@ blocks:
     desc: "シミュレーションの結果はいかがでしたか？システム導入による処理コストの劇的な削減や、VIP顧客への単価交渉に使えるノウハウをまとめました。"
     button:
       text: "見えない赤字対策ガイドをDL（無料）"
-      url: "/slides/16_presentation.pdf"
+      url: "/slides/21_presentation.pdf"
 ---

@@ -38,5 +38,5 @@ blocks:
     desc: "シミュレーターの結果はいかがでしたか？システム連携による転記作業の自動化など、ミスが絶対に起きない環境作りのご相談は無料で承っております。"
     button:
       text: "見えない赤字対策ガイドをDL（無料）"
-      url: "/slides/16_presentation.pdf"
+      url: "/slides/22_presentation.pdf"
 ---
