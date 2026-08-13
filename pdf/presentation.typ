@@ -140,8 +140,8 @@
       #v(1.5em)
       #set text(size: 16pt)
       #if "values" in theme and theme.values != none [
-        #for v in theme.values [
-          ・ #v \
+        #for val in theme.values [
+          ・ #val \
           #v(1.5em)
         ]
       ] else [
