@@ -164,7 +164,7 @@ export default function WastedTimeCalculator() {
             {/* CTA (Howへの導線) */}
             {totalAnnualLoss > 0 && (
               <div className="mt-4 bg-slate-800 rounded-2xl p-6 border border-slate-700 text-center relative overflow-hidden group">
-                <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                 <h4 className="text-lg font-black text-white mb-2">この結果を上司に提出しませんか？</h4>
                 
                 <p className="text-sm text-slate-300 font-medium mb-4 leading-relaxed">

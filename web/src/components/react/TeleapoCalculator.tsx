@@ -281,7 +281,7 @@ export default function TeleapoCalculator() {
             {/* CTA (Howへの導線) */}
             {cpaDifference > 0 && (
               <div className="mt-4 bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl p-6 border border-orange-200 text-center relative overflow-hidden group">
-                <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                 <h4 className="text-lg font-black text-orange-800 mb-2">自社で消耗する前に、外注のリアルを知る</h4>
                 <p className="text-sm text-orange-700 font-medium mb-4 leading-relaxed">
                   代行業者の単価には、「リスト精査」「NG理由の分析」「スクリプト改善」などの運用費がすべて含まれています。<br/>
