@@ -46,6 +46,9 @@ blocks:
     title: "上司を説得するための武器を手に入れる"
     desc: "シミュレーターで表示された「ムダ時間」をそのまま訴えても上司は動いてくれません。稟議を通しやすくするための説得テンプレート集（PDF）を無料で配布しています。"
     button:
-      text: "見えない赤字対策ガイドをDL（無料）"
+      text: "対策ガイドをDL（無料）"
       url: "/slides/18_presentation.pdf"
+    secondaryButton:
+      text: "無料で相談する"
+      url: "https://www.k-sp.co.jp/admin/std/contact/new"
 ---

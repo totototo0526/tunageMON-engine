@@ -49,6 +49,9 @@ blocks:
     title: "新人採用の前に、システム化の検討を！"
     desc: "人を増やして人海戦術で乗り切るよりも、手打ちを自動化する方が圧倒的に高コスパです。取引先はFAXのままでOK！社内だけこっそりDXする事例集を用意しました。"
     button:
-      text: "見えない赤字対策ガイドをDL（無料）"
+      text: "対策ガイドをDL（無料）"
       url: "/slides/19_presentation.pdf"
+    secondaryButton:
+      text: "無料で相談する"
+      url: "https://www.k-sp.co.jp/admin/std/contact/new"
 ---

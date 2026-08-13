@@ -46,6 +46,9 @@ blocks:
     title: "自社に最適なビジネスモデルを設計する"
     desc: "シミュレーションの結果はいかがでしたか？自社に合ったモデルを見極めるための、価格設定とシステム構築のノウハウをまとめました。"
     button:
-      text: "見えない赤字対策ガイドをDL（無料）"
+      text: "対策ガイドをDL（無料）"
       url: "/slides/20_presentation.pdf"
+    secondaryButton:
+      text: "無料で相談する"
+      url: "https://www.k-sp.co.jp/admin/std/contact/new"
 ---

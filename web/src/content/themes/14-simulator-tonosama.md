@@ -37,6 +37,9 @@ blocks:
     title: "極小ロットの「見えない赤字」を止める"
     desc: "シミュレーションの結果はいかがでしたか？システム導入による処理コストの劇的な削減や、VIP顧客への単価交渉に使えるノウハウをまとめました。"
     button:
-      text: "見えない赤字対策ガイドをDL（無料）"
+      text: "対策ガイドをDL（無料）"
       url: "/slides/21_presentation.pdf"
+    secondaryButton:
+      text: "無料で相談する"
+      url: "https://www.k-sp.co.jp/admin/std/contact/new"
 ---

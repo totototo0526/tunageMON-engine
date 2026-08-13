@@ -40,6 +40,9 @@ blocks:
     title: "自社の最適な営業体制について相談する"
     desc: "シミュレーターの結果はいかがでしたか？より正確なコスト診断や、自社に合ったシステム・外注先のご相談は無料で承っております。"
     button:
-      text: "見えない赤字対策ガイドをDL（無料）"
+      text: "対策ガイドをDL（無料）"
       url: "/slides/17_presentation.pdf"
+    secondaryButton:
+      text: "無料で相談する"
+      url: "https://www.k-sp.co.jp/admin/std/contact/new"
 ---

@@ -7,8 +7,13 @@ const { block } = Astro.props;
   <p style={`margin:0 0 8px;font-size:clamp(20px,2.6vw,26px);font-weight:900;line-height:1.6;letter-spacing:.03em;color:${block.theme === 'dark' ? '#FFFFFF' : '#1F2430'};font-feature-settings:'palt'`}>{block.title}</p>
   {block.desc && <p style={`margin:0;font-size:13.5px;line-height:1.9;color:${block.theme === 'dark' ? 'rgba(255,255,255,.72)' : '#444B59'}`}>{block.desc}</p>}
 </div>
-{block.button && (
-<a href={block.button.url} style={`flex:none;display:inline-block;background:var(--c-accent);color:#FFFFFF;font-size:16px;font-weight:700;letter-spacing:.06em;padding:16px 38px;border-radius:3px;text-decoration:none;transition:filter .2s ease,transform .2s ease;${block.align === 'center' ? 'margin-top:20px;' : ''}`} style-hover="filter:brightness(.92);transform:translateY(-1px);color:#FFFFFF">{block.button.text}</a>
-)}
+<div style={`display:flex;gap:16px;flex-wrap:wrap;justify-content:${block.align === 'center' ? 'center' : 'flex-start'};${block.align === 'center' ? 'margin-top:20px;' : ''}`}>
+  {block.button && (
+    <a href={block.button.url} style={`flex:none;display:inline-block;background:var(--c-accent);color:#FFFFFF;font-size:16px;font-weight:700;letter-spacing:.06em;padding:16px 38px;border-radius:3px;text-decoration:none;transition:filter .2s ease,transform .2s ease;`} style-hover="filter:brightness(.92);transform:translateY(-1px);color:#FFFFFF">{block.button.text}</a>
+  )}
+  {block.secondaryButton && (
+    <a href={block.secondaryButton.url} style={`flex:none;display:inline-block;background:transparent;color:${block.theme === 'dark' ? '#FFFFFF' : 'var(--c-accent)'};border:2px solid ${block.theme === 'dark' ? 'rgba(255,255,255,0.4)' : 'var(--c-accent)'};font-size:16px;font-weight:700;letter-spacing:.06em;padding:14px 36px;border-radius:3px;text-decoration:none;transition:all .2s ease;`} style-hover={`background:${block.theme === 'dark' ? '#FFFFFF' : 'var(--c-accent)'};color:${block.theme === 'dark' ? 'var(--c-primary)' : '#FFFFFF'};`}>{block.secondaryButton.text}</a>
+  )}
+</div>
 </div>
 </section>
