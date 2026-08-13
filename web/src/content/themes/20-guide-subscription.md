@@ -20,7 +20,7 @@ blocks:
         image: "01-decision.webp"
 
   - type: BlockCards
-    title: "2. ストック型ビジネスへ移行する3つのヒント"
+    title: "2. ストック型へ移行する3つのヒント"
     items:
       - badge: "1"
         title: "IoTで「ハード＋保守」をセットに"

@@ -20,7 +20,7 @@ blocks:
         image: "iceberg_illustration.jpg"
 
   - type: BlockCards
-    title: "2. 解決策：システム連携でミスを物理的にゼロへ"
+    title: "2. 解決策：システム連携でミスをゼロへ"
     items:
       - badge: "STEP 1"
         title: "「言った・言わない」の口頭連絡をなくす"

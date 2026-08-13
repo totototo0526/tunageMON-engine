@@ -20,7 +20,7 @@ blocks:
         image: "theme04_prob1.png"
 
   - type: BlockCards
-    title: "2. 解決策：外注とシステム化のハイブリッド"
+    title: "2. 外注とシステム化のハイブリッド"
     items:
       - badge: "1"
         title: "損益分岐点を知る"

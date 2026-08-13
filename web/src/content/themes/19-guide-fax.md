@@ -20,7 +20,7 @@ blocks:
         image: "01-decision.webp"
 
   - type: BlockCards
-    title: "2. 解決策：クラウドFAX ＋ AI-OCR"
+    title: "2. 解決策：クラウドFAX＋AI-OCR"
     items:
       - badge: "STEP 1"
         title: "クラウドFAXで「紙と歩行」をなくす"

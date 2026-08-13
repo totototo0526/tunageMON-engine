@@ -20,7 +20,7 @@ blocks:
         image: "06-human-approval.png"
 
   - type: BlockCards
-    title: "2. 稟議を通す！上司を説得する3つのポイント"
+    title: "2. 上司を説得する3つのポイント"
     items:
       - badge: "POINT 1"
         title: "「忙しい」ではなく「会社が損している」"
