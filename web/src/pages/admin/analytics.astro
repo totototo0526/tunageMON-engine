@@ -1,0 +1,104 @@
+---
+import '../../styles/global.css';
+
+const isPreview = import.meta.env.PUBLIC_IS_PREVIEW !== 'false';
+
+// もし万が一本番環境（プレビューOFF）でビルドされてしまった場合は404ページなどにリダイレクトさせる保険
+if (!isPreview) {
+  return Astro.redirect('/404');
+}
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>【社内用】アクセス解析ダッシュボード</title>
+    <script is:inline src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen">
+    
+    <!-- ヘッダー -->
+    <header class="bg-slate-900 text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="bg-blue-500 p-2 rounded-lg">
+                    <i data-lucide="bar-chart-2" class="w-5 h-5 text-white"></i>
+                </div>
+                <h1 class="font-bold text-lg tracking-wide">アクセス解析ダッシュボード (社内専用)</h1>
+            </div>
+            <a href="/" class="text-sm font-bold text-slate-300 hover:text-white flex items-center gap-2 transition">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> トップページへ戻る
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- 警告メッセージ（ZIPには含まれないことの明示） -->
+        <div class="bg-orange-50 border-l-4 border-orange-500 p-4 rounded-r-lg mb-8 shadow-sm">
+            <div class="flex items-start">
+                <i data-lucide="alert-triangle" class="w-5 h-5 text-orange-500 mt-0.5 mr-3 flex-shrink-0"></i>
+                <div>
+                    <h3 class="text-sm font-bold text-orange-800">このページはプレビューサーバー専用です</h3>
+                    <p class="text-sm text-orange-700 mt-1">
+                        このページ (<code>/admin/analytics</code>) は、本番用の <code>production-build.zip</code> を生成する際に自動的に削除されます。<br>
+                        お客様向けの公開サイトには一切含まれませんので、安心して社内データを表示してください。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- セットアップ手順 / ダッシュボード表示エリア -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+            <div class="p-6 border-b border-slate-100 flex items-center justify-between bg-slate-50">
+                <h2 class="text-lg font-black text-slate-800 flex items-center gap-2">
+                    <i data-lucide="pie-chart" class="w-5 h-5 text-blue-500"></i> GA4 レポート
+                </h2>
+            </div>
+            
+            <div class="p-6">
+                <!-- ==========================================
+                     ⬇️ Looker Studioの埋め込みコード（iframe）をここに貼り付けます ⬇️
+                     ========================================== -->
+                <div class="w-full aspect-[16/9] bg-slate-100 rounded-xl border-2 border-dashed border-slate-300 flex flex-col items-center justify-center text-center p-8">
+                    
+                    <div class="bg-white p-4 rounded-full shadow-sm mb-4">
+                        <i data-lucide="area-chart" class="w-10 h-10 text-slate-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-700 mb-2">レポートがまだ設定されていません</h3>
+                    <p class="text-slate-500 text-sm mb-6 max-w-lg leading-relaxed">
+                        Google Looker Studio で作成したレポートの「埋め込みコード (iframe)」を、<br>
+                        <code>web/src/pages/admin/analytics.astro</code> の該当箇所に貼り付けると、ここにグラフが表示されます。
+                    </p>
+                    
+                    <div class="text-left bg-white p-6 rounded-xl shadow-sm border border-slate-200 max-w-2xl w-full">
+                        <h4 class="font-bold text-slate-800 mb-3 text-sm flex items-center gap-2 border-b border-slate-100 pb-2">
+                            <i data-lucide="help-circle" class="w-4 h-4 text-blue-500"></i> セットアップの3ステップ
+                        </h4>
+                        <ol class="list-decimal list-inside space-y-2 text-sm text-slate-600 font-medium ml-2">
+                            <li><a href="https://lookerstudio.google.com/" target="_blank" class="text-blue-600 hover:underline">Looker Studio</a> にアクセスし、GA4のデータを読み込んでグラフを作ります。</li>
+                            <li>画面右上の「共有」の横にある矢印から <strong>「レポートを埋め込む」</strong> を選択します。</li>
+                            <li>表示された <code>&lt;iframe&gt;...&lt;/iframe&gt;</code> のコードをコピーし、このAstroファイルの枠内に貼り付けます。</li>
+                        </ol>
+                    </div>
+
+                </div>
+                <!-- ==========================================
+                     ⬆️ Looker Studioの埋め込みコード（iframe）をここに貼り付けます ⬆️
+                     ========================================== -->
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // Lucideアイコンの初期化
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>
