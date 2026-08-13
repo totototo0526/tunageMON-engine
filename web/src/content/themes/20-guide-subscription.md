@@ -1,6 +1,7 @@
 ---
 id: "20"
 layout: "template_a"
+skip_default_slides: true
 title: "ビジネスモデル変革：売り切りからストック型へ"
 subtitle: "本当に儲かるのはどっち？サブスク化の真実と移行ステップ"
 description: '「世の中サブスクが流行っているからウチも…」と安易に考えていませんか？実は、解約率によっては「売り切りの方がマシだった」というケースも多々あります。自社に最適なビジネスモデルの選び方を解説します。'
@@ -8,7 +9,7 @@ hidden: true
 permalink: "guide-subscription"
 blocks:
   - type: BlockReasoningGrid
-    title: "1. 売り切りモデルの限界とサブスクの罠"
+    title: "1. 売り切りの限界とサブスクの罠"
     items:
       - num: "TRUTH 01"
         title: "毎月リセットされる「自転車操業」"

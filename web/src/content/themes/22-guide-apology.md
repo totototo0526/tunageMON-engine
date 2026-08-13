@@ -1,6 +1,7 @@
 ---
 id: "22"
 layout: "template_a"
+skip_default_slides: true
 title: "謝罪・ミス対応の「エラーの氷山モデル」"
 subtitle: "見えない致命傷を暴き、ミスが起きない環境を作る"
 description: 'FAXの見間違いや転記漏れなど、アナログな環境で発生するヒューマンエラー。その「謝罪対応の経費」は氷山の一角です。海面下に隠れた「内部の尻拭いコスト」と「無言で去る顧客（サイレント離反）」の恐ろしさを解説します。'
@@ -8,7 +9,7 @@ hidden: true
 permalink: "guide-apology"
 blocks:
   - type: BlockReasoningGrid
-    title: "1. ハインリッヒの法則と「エラーの氷山」"
+    title: "1. ハインリッヒの法則とエラーの氷山"
     items:
       - num: "TRUTH 01"
         title: "1件の重大クレームの裏に29件の隠れミス"

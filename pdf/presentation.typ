@@ -114,36 +114,38 @@
 // ----------------------------------------------------------------------------
 #let theme = json("temp_theme.json")
 
-#slide(title: theme.title, subtitle: "よくある課題")[
-  #v(2em)
-  #box(fill: rgb("FFF7ED"), inset: 2em, radius: 1em, width: 100%, [
-    #text(weight: "bold", size: 18pt, fill: rgb("C2410C"))[■ 現場や経営が抱える課題]
-    #v(1.5em)
-    #if "problems" in theme and theme.problems != none [
-      #for p in theme.problems [
-        #text(weight: "bold", size: 16pt)[・ #p.title] \
-        #text(size: 14pt, fill: rgb("475569"))[#p.description]
-        #v(1.5em)
+#if not theme.at("skip_default_slides", default: false) [
+  #slide(title: theme.title, subtitle: "よくある課題")[
+    #v(2em)
+    #box(fill: rgb("FFF7ED"), inset: 2em, radius: 1em, width: 100%, [
+      #text(weight: "bold", size: 18pt, fill: rgb("C2410C"))[■ 現場や経営が抱える課題]
+      #v(1.5em)
+      #if "problems" in theme and theme.problems != none [
+        #for p in theme.problems [
+          #text(weight: "bold", size: 16pt)[・ #p.title] \
+          #text(size: 14pt, fill: rgb("475569"))[#p.description]
+          #v(1.5em)
+        ]
+      ] else [
+        - 情報の分断と二重入力
+        - アナログ作業による効率低下
       ]
-    ] else [
-      - 情報の分断と二重入力
-      - アナログ作業による効率低下
-    ]
-  ])
-]
+    ])
+  ]
 
-#slide(title: theme.title, subtitle: "提供する価値")[
-  #v(2em)
-  #box(fill: rgb("F8FAFC"), inset: 2em, radius: 1em, width: 100%, [
-    #text(weight: "bold", size: 18pt, fill: rgb("0F172A"))[■ つなげモンが提供する価値]
-    #v(1.5em)
-    #set text(size: 16pt)
-    ・ システムと現場をシームレスに連携 \
-    #v(1.5em)
-    ・ データの二重入力をなくし、自動化を実現 \
-    #v(1.5em)
-    ・ リアルタイムな情報共有で意思決定を加速 \
-  ])
+  #slide(title: theme.title, subtitle: "提供する価値")[
+    #v(2em)
+    #box(fill: rgb("F8FAFC"), inset: 2em, radius: 1em, width: 100%, [
+      #text(weight: "bold", size: 18pt, fill: rgb("0F172A"))[■ つなげモンが提供する価値]
+      #v(1.5em)
+      #set text(size: 16pt)
+      ・ システムと現場をシームレスに連携 \
+      #v(1.5em)
+      ・ データの二重入力をなくし、自動化を実現 \
+      #v(1.5em)
+      ・ リアルタイムな情報共有で意思決定を加速 \
+    ])
+  ]
 ]
 
 #if "blocks" in theme and theme.blocks != none [

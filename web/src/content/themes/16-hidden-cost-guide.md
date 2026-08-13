@@ -1,6 +1,7 @@
 ---
 id: "16"
 layout: "template_a"
+skip_default_slides: true
 title: "企業をむしばむ「見えない赤字」の正体"
 subtitle: "売上が上がっても利益が残らない？システム未導入による5つの隠れコスト"
 description: '「システムを入れるお金がない」と先延ばしにしていませんか？実は、システムを入れないことで発生している「手作業の維持費」や「見えない機会損失」の方が、システム導入費用をはるかに上回っているケースがほとんどです。本資料では、B2B企業が陥りがちな「隠れ赤字」を視覚化します。'
@@ -8,7 +9,7 @@ hidden: true
 permalink: "hidden-cost-guide"
 blocks:
   - type: BlockReasoningGrid
-    title: "1. 視覚化された「見えないコスト」の真実"
+    title: "1. 「見えないコスト」の真実"
     summary: "アナログな運用とヒューマンエラーは、水面下で確実に会社をむしばんでいます。"
     items:
       - num: "TRUTH 01"

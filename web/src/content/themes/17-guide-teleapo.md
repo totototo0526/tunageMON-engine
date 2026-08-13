@@ -1,6 +1,7 @@
 ---
 id: "17"
 layout: "template_a"
+skip_default_slides: true
 title: "テレアポ外注化の最適なタイミング"
 subtitle: "自社架電の限界と、見えない赤字からの脱却"
 description: '「とりあえず自社の営業マンに電話させている」状態は、実は毎月大きな赤字を生み出している可能性があります。この資料では、テレアポ業務の裏に潜む「見えないコスト」と、外注・システム化による解決策を解説します。'
@@ -8,7 +9,7 @@ hidden: true
 permalink: "guide-teleapo"
 blocks:
   - type: BlockReasoningGrid
-    title: "1. 自社架電が引き起こす「負のループ」"
+    title: "1. 自社架電の「負のループ」"
     items:
       - num: "TRUTH 01"
         title: "エースの時間を奪う「見えない機会損失」"
@@ -36,7 +37,7 @@ blocks:
     theme: "dark"
     align: "center"
     title: "自社に最適な営業体制を構築する"
-    desc: "今の体制で本当に「費用対効果」が合っているのか？\nつなげモンの専門家が、御社に合わせた最適な営業体制とシステムをご提案します。"
+    desc: "今の体制で本当に「費用対効果」が合っているのか？\n業務改善のプロが、御社に合わせた最適な営業体制とシステムをご提案します。"
     button:
       text: "いますぐ「つなげモン」に無料相談する"
       url: "https://www.k-sp.co.jp/admin/std/contact/new"

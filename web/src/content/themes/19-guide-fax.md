@@ -1,6 +1,7 @@
 ---
 id: "19"
 layout: "template_a"
+skip_default_slides: true
 title: "FAXをやめずに「社内だけDX」する方法"
 subtitle: "取引先の習慣を変えずに、手入力の負債をゼロにする"
 description: '「相手が高齢だから」「長年の習慣だから」と、ペーパーレス化を諦める必要はありません。取引先には今まで通りFAXを送らせたまま、自社の「手打ち入力」だけを自動化する魔法のような戦略を解説します。'
@@ -8,7 +9,7 @@ hidden: true
 permalink: "guide-fax"
 blocks:
   - type: BlockReasoningGrid
-    title: "1. FAX継続による「社内の疲弊」"
+    title: "1. FAXによる「社内の疲弊」"
     items:
       - num: "TRUTH 01"
         title: "作業を分断する「名もなき歩行時間」"

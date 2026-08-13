@@ -1,6 +1,7 @@
 ---
 id: "21"
 layout: "template_a"
+skip_default_slides: true
 title: "バックオフィスの隠れ赤字・極小ロット対策"
 subtitle: "「お得意様」が会社を潰す？送料無料と頻回発注の恐怖"
 description: '「送料無料・即日発送」が当たり前になっていませんか？1日に何度も来る小口発注（極小ロット）のたびに、手作業で伝票を作成し自社で送料を負担する…この「売れば売るほど赤字になる」負のサイクルの断ち切り方を解説します。'
@@ -8,7 +9,7 @@ hidden: true
 permalink: "guide-tonosama"
 blocks:
   - type: BlockReasoningGrid
-    title: "1. 善意が裏目に出る「隠れ赤字」の構造"
+    title: "1. 善意による「隠れ赤字」の構造"
     items:
       - num: "TRUTH 01"
         title: "極小ロット・頻回発注の悲劇"

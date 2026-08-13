@@ -1,6 +1,7 @@
 ---
 id: "18"
 layout: "template_a"
+skip_default_slides: true
 title: "真のムダ時間コストと稟議の通し方"
 subtitle: "「またこの作業か…」から抜け出すための戦略"
 description: '「Excelからシステムへの二重入力」「過去の書類探し」など、あなたの貴重な時間が奪われている隠れコストを暴き、上司を説得してシステム導入（稟議）を通すための具体的なステップを解説します。'
@@ -8,7 +9,7 @@ hidden: true
 permalink: "guide-wasted"
 blocks:
   - type: BlockReasoningGrid
-    title: "1. 毎日蓄積される「ムダ時間」の恐怖"
+    title: "1. 蓄積されるムダ時間の恐怖"
     items:
       - num: "TRUTH 01"
         title: "不毛な二重入力とコピペ作業"
