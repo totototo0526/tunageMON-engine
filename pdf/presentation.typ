@@ -86,10 +86,17 @@
   
   // Header
   place(top + left, dy: -3.5em, [
-    #text(size: 24pt, weight: "bold", fill: rgb("1E293B"))[#title]
+    #let t_len = title.len()
+    #let s_len = if subtitle != "" { subtitle.len() } else { 0 }
+    #let total_len = t_len + s_len
+    
+    #let t_size = if total_len > 35 { 16pt } else if total_len > 28 { 18pt } else if total_len > 22 { 20pt } else { 24pt }
+    #let s_size = if total_len > 35 { 12pt } else if total_len > 28 { 13pt } else if total_len > 22 { 14pt } else { 16pt }
+
+    #text(size: t_size, weight: "bold", fill: rgb("1E293B"))[#title]
     #if subtitle != "" [
       #h(1em)
-      #text(size: 16pt, weight: "bold", fill: rgb("F97316"))[#subtitle]
+      #text(size: s_size, weight: "bold", fill: rgb("F97316"))[#subtitle]
     ]
     #v(0.5em)
     #line(length: 100%, stroke: 2pt + rgb("F97316"))
