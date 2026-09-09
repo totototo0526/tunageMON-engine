@@ -28,9 +28,15 @@ if (!fs.existsSync(outDir)) {
 
 console.log(`📄 Generating PDFs for ${themeData.themes.length} themes...`);
 
+const confidentialPdfs = [];
+
 for (const theme of themeData.themes) {
   const themeId = theme.id;
   console.log(`  🔄 Compiling PDF for: ${themeId}...`);
+  
+  if (theme.is_confidential) {
+    confidentialPdfs.push(`${themeId}_presentation.pdf`);
+  }
   
   // Typst に渡すための単一テーマの JSON を一時ファイルとして出力
   const tempJsonPath = path.resolve(pdfDir, 'temp_theme.json');
@@ -64,5 +70,9 @@ const tempJsonPath = path.resolve(pdfDir, 'temp_theme.json');
 if (fs.existsSync(tempJsonPath)) {
   fs.unlinkSync(tempJsonPath);
 }
+
+const confidentialListPath = path.resolve(outDir, '.confidential_list.txt');
+fs.writeFileSync(confidentialListPath, confidentialPdfs.join('\n') + '\n', 'utf-8');
+console.log(`📝 Saved ${confidentialPdfs.length} confidential PDF names to .confidential_list.txt`);
 
 console.log('🎉 All PDFs generated successfully!');

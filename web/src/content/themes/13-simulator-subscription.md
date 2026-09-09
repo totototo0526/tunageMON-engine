@@ -1,5 +1,6 @@
 ---
 id: "13"
+is_confidential: true
 layout: "template_a"
 title: "ビジネスモデル変革（売り切り vs サブスク）診断"
 subtitle: "「売り切り」と「サブスク」、本当に儲かるのはどっち？"

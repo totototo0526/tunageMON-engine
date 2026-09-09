@@ -1,5 +1,6 @@
 ---
 id: "10"
+is_confidential: true
 layout: "template_a"
 title: "テレアポ外注化の損益分岐点シミュレーター"
 subtitle: "自社架電の限界と見えない赤字を可視化"

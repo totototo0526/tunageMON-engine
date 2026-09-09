@@ -1,5 +1,6 @@
 ---
 id: "14"
+is_confidential: true
 layout: "template_a"
 title: "バックオフィスの隠れ赤字チェッカー"
 subtitle: "「お得意様」が会社を潰す？極小ロット・頻回発注の赤字チェッカー"

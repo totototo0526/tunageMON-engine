@@ -1,5 +1,6 @@
 ---
 id: "12"
+is_confidential: true
 layout: "template_a"
 title: "FAX継続の隠れ負債コスト計算機"
 subtitle: "「取引先がFAXだから」と思考停止していませんか？"
