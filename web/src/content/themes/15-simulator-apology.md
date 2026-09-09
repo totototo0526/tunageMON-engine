@@ -7,13 +7,13 @@ description: 'FAXの見間違いや、システム間の転記漏れなど、ア
 problems:
   - title: "「言った・言わない」の<br>トラブルが絶えない"
     description: "口頭や電話でのやり取りが多く、履歴が残らないため、後になってお客様とトラブルになるケースが多発していませんか？"
-    image: "02-memory.webp"
+    image: "apology_problem1_communication.jpeg"
   - title: "「1件の重大クレーム」の裏に<br>29件の隠れミス"
     description: "顧客に怒られる前に、社内で気付いてコッソリ修正しているミス。その尻拭いのための人件費が利益を圧迫しています。"
-    image: "03-manual.webp"
+    image: "apology_problem2_iceberg.jpeg"
   - title: "ミスに呆れて無言で去る<br>サイレント離反の恐怖"
     description: "クレームを言ってくれるお客様はまだマシです。一番恐ろしいのは、何も言わずに他社へ乗り換えてしまう顧客の喪失です。"
-    image: "common-cause.webp"
+    image: "apology_problem3_silentchurn.jpeg"
 hidden: true
 permalink: "simulators/apology"
 blocks:

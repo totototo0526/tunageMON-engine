@@ -7,13 +7,13 @@ description: '「世の中サブスクが流行っているからウチも…」
 problems:
   - title: "毎月リセットされる<br>新規営業がツラい"
     description: "売り切りモデルの宿命。「今月1000万売っても、来月はまたゼロからスタート」という自転車操業に疲弊していませんか？"
-    image: "theme04_prob1.png"
+    image: "sub_problem1_reset.jpeg"
   - title: "不景気になると<br>ピタッと売れなくなる"
     description: "単価の高い売り切り商材は、顧客の予算が削られると真っ先にカットされます。安定した「ベース収益」がありません。"
-    image: "01-decision.webp"
+    image: "sub_problem2_economy.jpeg"
   - title: "サブスク化の適正価格が<br>わからない"
     description: "「とりあえず月額〇万円にしよう」と適当に値付けをして、結局売り切りの利益を下回ってしまう失敗が後を絶ちません。"
-    image: "theme02_beforeafter3.png"
+    image: "sub_problem3_pricing.jpeg"
 hidden: true
 permalink: "simulators/subscription"
 blocks:

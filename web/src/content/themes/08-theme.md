@@ -2,7 +2,7 @@
 id: "08"
 isNew: true
 layout: "template_a"
-title: "つなげモン サポート（仮）"
+title: "つなげモン サポート"
 subtitle: "「ITの悩み」を丸投げ。あなたは本業に集中してください。"
 description: '専任のIT担当者がいなくても大丈夫です。現状のネットワーク調査から、最適なシステムの導入、運用マニュアルの作成まで、<span class="text-blue-600 font-bold border-b-2 border-blue-600">あなたの会社の「情シス部門」として伴走</span>します。'
 hero_services:
@@ -17,10 +17,13 @@ links:
 problems:
   - title: "ITに詳しい社員が兼務して疲弊"
     description: "専任の担当者がおらず、少しPCに詳しいだけの社員が「何でも屋」になってしまい、本来の業務が進まない。"
+    image: "support_problem1_exhausted_1788912452087.jpg"
   - title: "ネットワークが遅い・途切れる"
     description: "Wi-Fiが繋がりにくい場所があるが、原因がわからず放置されている。"
+    image: "support_problem2_network_1788912461597.jpg"
   - title: "IT化（DX）の進め方がわからない"
     description: "システムを入れたいけれど、自社に合ったソフトを誰に相談していいかわからない。"
+    image: "support_problem3_dx_1788912472226.jpg"
 blocks:
   - type: BlockBeforeAfter
     subtitle: "01"
