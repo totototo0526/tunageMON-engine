@@ -1,5 +1,6 @@
 ---
 id: "01"
+is_confidential: true
 layout: "template_a"
 title: "つなげモン ポータル"
 subtitle: "取引先・協力会社とのやり取りをすべてデジタル化。"

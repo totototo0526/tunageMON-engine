@@ -1,5 +1,6 @@
 ---
 id: "11"
+is_confidential: true
 layout: "template_a"
 title: "真のムダ時間コスト計算機"
 subtitle: "「またこの作業か…」と消耗していませんか？"

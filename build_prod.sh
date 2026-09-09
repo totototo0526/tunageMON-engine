@@ -30,9 +30,19 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-echo "🧹 社外秘資料（管理画面等）を除外しています..."
+echo "🧹 社外秘資料（管理画面・社外秘PDF等）を除外しています..."
 # dist内にある不要なモックアップデータや管理画面を本番配布物から消去する
 rm -rf dist/admin/
+
+if [ -f dist/slides/.confidential_list.txt ]; then
+  while IFS= read -r pdf_file; do
+    if [ -n "$pdf_file" ]; then
+      rm -f "dist/slides/$pdf_file"
+      echo "  🗑️ Deleted: $pdf_file"
+    fi
+  done < dist/slides/.confidential_list.txt
+  rm -f dist/slides/.confidential_list.txt
+fi
 # もし他にも消したい社内用フォルダがあればここに追記
 
 echo "🔗 ローカルでもCSSが効くようにパスを相対パスに変換しています..."

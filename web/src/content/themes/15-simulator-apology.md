@@ -1,5 +1,6 @@
 ---
 id: "15"
+is_confidential: true
 layout: "template_a"
 title: "謝罪・ミス対応コスト計算機"
 subtitle: "見えない致命傷を暴く「エラーの氷山モデル」チェッカー"

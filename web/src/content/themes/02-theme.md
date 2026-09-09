@@ -1,5 +1,6 @@
 ---
 id: "02"
+is_confidential: true
 layout: "template_a"
 title: "つなげモン 窓口"
 subtitle: "バラバラな問い合わせを、ひとつの画面に。"

@@ -1,5 +1,6 @@
 ---
 id: "06"
+is_confidential: true
 layout: "template_a"
 title: "つなげモン シミュレータ"
 subtitle: "経営の「たられば」を、データとシミュレーションで証明する。"

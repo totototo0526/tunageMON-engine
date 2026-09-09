@@ -1,5 +1,6 @@
 ---
 id: "05"
+is_confidential: true
 layout: "template_a"
 title: "つなげモン IoT"
 subtitle: "工場の「勘と経験」を、圧倒的な「データ」に変える。"

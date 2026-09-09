@@ -1,5 +1,6 @@
 ---
 id: "09"
+is_confidential: true
 layout: "template_a"
 title: "つなげモン 業務改善シミュレーター（β）"
 subtitle: "見えない赤字を可視化する無料診断ツール群"

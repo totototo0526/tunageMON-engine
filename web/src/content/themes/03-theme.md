@@ -1,5 +1,6 @@
 ---
 id: "03"
+is_confidential: true
 layout: "template_a"
 title: "つなげモン モバイル"
 subtitle: "現場のスマホが、最強の入力ツールになる。"
