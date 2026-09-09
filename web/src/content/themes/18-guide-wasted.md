@@ -22,11 +22,11 @@ blocks:
       - num: "TRUTH 01"
         title: "不毛な二重入力とコピペ作業"
         desc: "システム同士が連携していないせいで、手作業でデータを転記する「コピペ職人」になっていませんか？この作業は1円の売上も生み出しません。"
-        image: "03-manual.png"
+        image: "03-manual.webp"
       - num: "TRUTH 02"
         title: "「誰かの確認待ち」による業務ストップ"
         desc: "ワークフローがアナログなため、上司の承認待ちや部署間の連携ミスでムダな「待ち時間」が発生していませんか？"
-        image: "06-human-approval.png"
+        image: "06-human-approval.webp"
 
   - type: BlockCards
     title: "2. 上司を説得する3つのポイント"

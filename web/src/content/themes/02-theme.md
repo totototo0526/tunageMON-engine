@@ -17,13 +17,13 @@ button:
 problems:
   - title: "バラバラな窓口からの入力漏れ"
     description: "メール、LINE、電話など複数の窓口から連絡が来るため、対応履歴が一元管理できず「誰がどこまで対応したか」がブラックボックス化している。"
-    image: "theme02_problem1_scattered_1784773814562.png"
+    image: "theme02_problem1_scattered_1784773814562.webp"
   - title: "紙（FAX）の手動パンチ入力"
     description: "FAXで届いた注文書や問い合わせを、担当者が手作業でシステムに打ち直すという非効率な作業が続いている。"
-    image: "theme02_problem2_manualfax_1784773822068.png"
+    image: "theme02_problem2_manualfax_1784773822068.webp"
   - title: "顧客をお待たせするレスポンスの遅れ"
     description: "情報が分散しているため、過去の履歴を探すのに時間がかかり、結果的に顧客への回答が遅れてクレームに繋がる。"
-    image: "theme02_problem3_slowresponse_1784773840134.png"
+    image: "theme02_problem3_slowresponse_1784773840134.webp"
 diagram_html: |
   <div class="flex flex-col gap-2 z-10 w-24">
       <div class="bg-white py-2 px-3 rounded-lg shadow-sm text-center flex items-center justify-center gap-2 border-l-4 border-blue-400">
@@ -99,17 +99,17 @@ blocks:
         before: "営業マンの個人のLINEでやり取りが完結"
         after: "会社としてLINE対応を共有・管理"
         desc: "お客様とのLINEでのやり取りを「つなげモン」に集約。担当者が休みの時でも、別のスタッフが履歴を見てスムーズに対応できるようになりました。"
-        image: "theme02_beforeafter1.png"
+        image: "theme02_beforeafter1.webp"
       - tag: "食品卸売のFAX受注処理"
         before: "1日200枚のFAXを3人で手打ち入力"
         after: "AI-OCRが読み取り、確認ボタンを押すだけ"
         desc: "飲食店から届く手書きFAXをAI-OCRで自動データ化。入力ミスがゼロになり、入力にかかっていた数時間がたったの15分に短縮されました。"
-        image: "theme02_beforeafter2.png"
+        image: "theme02_beforeafter2.webp"
       - tag: "製造業の保守サポート窓口"
         before: "電話・メール・FAXでの依頼が混在"
         after: "顧客ごとの対応履歴を一元管理"
         desc: "バラバラな窓口からの問い合わせを自動で紐付け。過去の対応履歴が瞬時に確認できるため、担当者への引き継ぎがスムーズになり、顧客をお待たせしません。"
-        image: "theme02_beforeafter3.png"
+        image: "theme02_beforeafter3.webp"
 
   - type: BlockFAQ
     subtitle: "05"

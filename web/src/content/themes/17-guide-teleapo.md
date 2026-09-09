@@ -26,7 +26,7 @@ blocks:
       - num: "TRUTH 02"
         title: "採用と早期離職のコストループ"
         desc: "テレアポは精神的な負担が大きく、「断られ続けるストレス」でせっかく採用・教育した新人が早期離職してしまうケースが後を絶ちません。採用費と教育費がすべて無駄になります。"
-        image: "theme04_prob1.png"
+        image: "theme04_prob1.webp"
 
   - type: BlockCards
     title: "2. 外注とシステム化のハイブリッド"
