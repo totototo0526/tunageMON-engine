@@ -7,13 +7,13 @@ description: 'システム化や外部委託を先送りすることで、実は
 problems:
   - title: "「なんとなく非効率」だが<br>具体的な損失額が分からない"
     description: "日々の業務で「ムダが多いな」と感じてはいるものの、それが毎月いくらの赤字を生み出しているのか、具体的な数字で把握できていませんか？"
-    image: "hub_problem1_inefficient_1788912540405.jpg"
+    image: "hub_problem1_inefficient_1788912540405.webp"
   - title: "システム導入の「初期費用」<br>ばかり気にしてしまう"
     description: "新しいツールを入れるコストを嫌がり、実はアナログな手作業を続けることで、その何十倍もの人件費をドブに捨てているケースが多発しています。"
-    image: "hub_problem2_initialcost_1788912551442.jpg"
+    image: "hub_problem2_initialcost_1788912551442.webp"
   - title: "経営陣に「今のままでいい」<br>と却下されてしまう"
     description: "現場が悲鳴を上げても、具体的な「損害額のデータ」がないため上層部を説得できず、いつまでも古いやり方から抜け出せません。"
-    image: "hub_problem3_rejected_1788912562436.jpg"
+    image: "hub_problem3_rejected_1788912562436.webp"
 hidden: true
 permalink: "simulators"
 blocks:

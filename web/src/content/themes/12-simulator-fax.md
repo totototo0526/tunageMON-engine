@@ -7,13 +7,13 @@ description: '「相手が高齢だから」「長年の習慣だから」と、
 problems:
   - title: "「ちょっとFAX見てきて」で<br>作業が中断される"
     description: "FAXが届くたびに席を立ち、仕分けて担当者に配る。この「名もなき歩行時間」が全社員の集中力を奪っています。"
-    image: "fax_problem1_walk.jpeg"
+    image: "fax_problem1_walk.webp"
   - title: "文字が潰れて読めず<br>手打ち入力が地獄"
     description: "手書きの数字が見えなくて電話確認。その後システムにカタカタと手入力。この二重手間と入力ミスが最大のコストです。"
-    image: "fax_problem2_blurry.jpeg"
+    image: "fax_problem2_blurry.webp"
   - title: "アナログ環境に絶望して<br>若手社員が辞めていく"
     description: "「タイパが悪い」「昭和の会社だ」と見なされ、せっかく採用した新人がすぐに離職してしまうリスクが高まります。"
-    image: "fax_problem3_quit.jpeg"
+    image: "fax_problem3_quit.webp"
 hidden: true
 permalink: "simulators/fax"
 blocks:

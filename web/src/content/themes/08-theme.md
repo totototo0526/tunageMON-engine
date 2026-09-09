@@ -17,13 +17,13 @@ links:
 problems:
   - title: "ITに詳しい社員が兼務して疲弊"
     description: "専任の担当者がおらず、少しPCに詳しいだけの社員が「何でも屋」になってしまい、本来の業務が進まない。"
-    image: "support_problem1_exhausted_1788912452087.jpg"
+    image: "support_problem1_exhausted_1788912452087.webp"
   - title: "ネットワークが遅い・途切れる"
     description: "Wi-Fiが繋がりにくい場所があるが、原因がわからず放置されている。"
-    image: "support_problem2_network_1788912461597.jpg"
+    image: "support_problem2_network_1788912461597.webp"
   - title: "IT化（DX）の進め方がわからない"
     description: "システムを入れたいけれど、自社に合ったソフトを誰に相談していいかわからない。"
-    image: "support_problem3_dx_1788912472226.jpg"
+    image: "support_problem3_dx_1788912472226.webp"
 blocks:
   - type: BlockBeforeAfter
     subtitle: "01"

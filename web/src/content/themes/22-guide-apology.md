@@ -26,7 +26,7 @@ blocks:
       - num: "TRUTH 02"
         title: "ミスに呆れて無言で去るサイレント離反"
         desc: "クレームを言ってくれるお客様はまだ改善の余地があります。一番恐ろしいのは、ミスが続いたことで何も言わずに他社へ乗り換えてしまう顧客の喪失（将来の売上の消滅）です。"
-        image: "iceberg_illustration.jpg"
+        image: "iceberg_illustration.webp"
 
   - type: BlockCards
     title: "2. 解決策：システム連携でミスをゼロへ"

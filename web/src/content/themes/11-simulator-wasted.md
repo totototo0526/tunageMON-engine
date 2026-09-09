@@ -7,13 +7,13 @@ description: '「Excelからシステムへの二重入力」「過去の書類�
 problems:
   - title: "「あのファイルどこ？」<br>探し物に毎日時間を奪われる"
     description: "必要なデータや過去の履歴を探すために、社員が毎日数十分〜数時間を費やしていませんか？その時間にも「時給」は発生しています。"
-    image: "wasted_problem1_search_1788912710507.jpg"
+    image: "wasted_problem1_search_1788912710507.webp"
   - title: "「エクセルからシステムへ」<br>不毛な二重入力・転記作業"
     description: "システム同士が連携していないせいで、手作業でデータを転記する「コピペ職人」になっていませんか？"
-    image: "wasted_problem2_doubleentry_1788912720364.jpg"
+    image: "wasted_problem2_doubleentry_1788912720364.webp"
   - title: "「誰かの確認待ち」で<br>業務が完全にストップする"
     description: "ワークフローがアナログなため、上司の承認待ちや部署間の連携ミスでムダな「待ち時間」が発生していませんか？"
-    image: "wasted_problem3_waiting_1788912736414.jpg"
+    image: "wasted_problem3_waiting_1788912736414.webp"
 hidden: true
 permalink: "simulators/wasted"
 blocks:

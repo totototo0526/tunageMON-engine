@@ -23,11 +23,11 @@ blocks:
       - num: "TRUTH 01"
         title: "「システム導入は高い」という大いなる勘違い"
         desc: "多くの企業が初期費用を嫌いシステム化を後回しにします。しかし右図のように、毎日の「人件費の無駄」と「機会損失」による赤字（赤線）は、システム投資額（青線）をあっという間に追い越します。"
-        image: "cost_graph.jpg"
+        image: "cost_graph.webp"
       - num: "TRUTH 02"
         title: "エラーの氷山モデルとサイレント離反"
         desc: "表面化したクレームは氷山の一角。その下には、社内修正に追われる見えない人件費が沈んでいます。さらに恐ろしいのは、クレームすら言わずに無言で去っていく「サイレント離反」による将来の売上喪失です。"
-        image: "iceberg_illustration.jpg"
+        image: "iceberg_illustration.webp"
 
   - type: BlockCards
     title: "2. その他にも潜む「隠れ赤字」の罠"
