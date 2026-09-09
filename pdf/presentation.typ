@@ -112,7 +112,7 @@
   
   // Footer
   place(bottom + right, dy: 1em, [
-    #text(size: 10pt, fill: rgb("94A3B8"))[つなげモン 営業DX化プラットフォーム]
+    #text(size: 10pt, fill: rgb("94A3B8"))[つなげモン シリーズ]
   ])
 }
 
